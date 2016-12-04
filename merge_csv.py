@@ -43,11 +43,11 @@ for data in level_2:
                     if new_col not in converted_columns:
                         converted_columns.append(new_col)
 
-    for row in data.T:
-        row_data = data.iloc[row]
-        for column in converted_columns:
-            if not isinstance(row_data[column], int):
-                cases.set_value(row_data['CaseRef'], [column], 1)
+    # for row in data.T:
+    #     row_data = data.iloc[row]
+    #     for column in converted_columns:
+    #         if not isinstance(row_data[column], int):
+    #             cases.set_value(row_data['CaseRef'], [column], 1)
     # print(converted_columns)
 print(count)
 print(cases.shape)
