@@ -1,0 +1,1737 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10100.16.1103.2343                               -->
+<workbook source-build='10.1.1 (10100.16.1103.2343)' source-platform='win' version='10.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='test_2.01_WDB_Case_START.csv+ (Multiple Connections)' inline='true' name='federated.1rfe8in0eg1rgv1awqcog0jfa2e4' version='10.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='test_2.01_WDB_Case_START' name='textscan.1jmjckp00imfje19fghu41s6zzvx'>
+            <connection class='textscan' directory='E:/0_Delft/0_Courses/2nd_year/Q2/IN4086_Data Visualisation/IN4086/data' filename='test_2.01_WDB_Case_START.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv' name='textscan.1xdu0rj12zrzyy1djo8o10fnfxxc'>
+            <connection class='textscan' directory='E:/0_Delft/0_Courses/2nd_year/Q2/IN4086_Data Visualisation/IN4086/data/level_2' filename='Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='full' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
+              <expression op='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[CaseRef]' />
+            </expression>
+          </clause>
+          <relation join='full' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
+                <expression op='[Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv].[CaseRef]' />
+              </expression>
+            </clause>
+            <relation connection='textscan.1jmjckp00imfje19fghu41s6zzvx' name='test_2.01_WDB_Case_START.csv' table='[test_2.01_WDB_Case_START#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                <column datatype='string' name='CaseRef' ordinal='0' />
+                <column datatype='integer' name='NamedIndividual' ordinal='1' />
+                <column datatype='string' name='AccusedRef' ordinal='2' />
+                <column datatype='datetime' name='CaseStart_date_as_date' ordinal='3' />
+                <column datatype='datetime' name='Case_date_as_date' ordinal='4' />
+                <column datatype='integer' name='Age_at_case' ordinal='5' />
+                <column datatype='integer' name='Suspects_text' ordinal='6' />
+                <column datatype='integer' name='UNorthodoxRelPract_p' ordinal='7' />
+                <column datatype='integer' name='Consulting_s' ordinal='8' />
+                <column datatype='integer' name='Demonic_s' ordinal='9' />
+                <column datatype='integer' name='Demonic_possess_s' ordinal='10' />
+                <column datatype='integer' name='Fairies_s' ordinal='11' />
+                <column datatype='integer' name='Folk_healing_s' ordinal='12' />
+                <column datatype='integer' name='Maleficium_s' ordinal='13' />
+                <column datatype='integer' name='Midwifery_s' ordinal='14' />
+                <column datatype='integer' name='ImplicatedByAnother_s' ordinal='15' />
+                <column datatype='integer' name='Neighbhd_dispute_s' ordinal='16' />
+                <column datatype='integer' name='PoliticalMotive_s' ordinal='17' />
+                <column datatype='integer' name='PropertyMotive_s' ordinal='18' />
+                <column datatype='integer' name='RefusedCharity_s' ordinal='19' />
+                <column datatype='integer' name='Treason_s' ordinal='20' />
+                <column datatype='integer' name='Other_s' ordinal='21' />
+                <column datatype='string' name='OtherText' ordinal='22' />
+                <column datatype='integer' name='WhiteMagic_s' ordinal='23' />
+                <column datatype='string' name='Charnotes' ordinal='24' />
+                <column datatype='integer' name='DemonicPact' ordinal='25' />
+                <column datatype='integer' name='WitchesMeeting' ordinal='26' />
+                <column datatype='integer' name='DevilPresent' ordinal='27' />
+                <column datatype='integer' name='Maleficium' ordinal='28' />
+                <column datatype='integer' name='CommunalSex' ordinal='29' />
+                <column datatype='integer' name='DevilWorship' ordinal='30' />
+                <column datatype='integer' name='FoodAndDrink' ordinal='31' />
+                <column datatype='integer' name='Dancing' ordinal='32' />
+                <column datatype='integer' name='Singing' ordinal='33' />
+                <column datatype='integer' name='Elphane/Fairyland' ordinal='34' />
+                <column datatype='integer' name='Food/Drink' ordinal='35' />
+                <column datatype='integer' name='SpecificVerbalFormulae' ordinal='36' />
+                <column datatype='integer' name='SpecificRitualActs' ordinal='37' />
+                <column datatype='integer' name='Familiars' ordinal='38' />
+                <column datatype='integer' name='Shape-Changing' ordinal='39' />
+                <column datatype='integer' name='Dreams/Visions' ordinal='40' />
+                <column datatype='integer' name='UnorthodoxReligiousPractice' ordinal='41' />
+                <column datatype='integer' name='SympatheticMagic' ordinal='42' />
+                <column datatype='integer' name='Ridingdead' ordinal='43' />
+                <column datatype='integer' name='HumanIllness' ordinal='44' />
+                <column datatype='integer' name='HumanDeath' ordinal='45' />
+                <column datatype='integer' name='AnimalIllness' ordinal='46' />
+                <column datatype='integer' name='AnimalDeath' ordinal='47' />
+                <column datatype='integer' name='FemaleInfertility' ordinal='48' />
+                <column datatype='integer' name='MaleImpotence' ordinal='49' />
+                <column datatype='integer' name='AggravatingDisease' ordinal='50' />
+                <column datatype='integer' name='TransferringDisease' ordinal='51' />
+                <column datatype='integer' name='LayingOn' ordinal='52' />
+                <column datatype='integer' name='Removalbewitchment' ordinal='53' />
+                <column datatype='integer' name='Quarreling' ordinal='54' />
+                <column datatype='integer' name='Cursing' ordinal='55' />
+                <column datatype='integer' name='Poisoning' ordinal='56' />
+                <column datatype='integer' name='RecHealer' ordinal='57' />
+                <column datatype='integer' name='HealingHumans' ordinal='58' />
+                <column datatype='integer' name='HealingAnimals' ordinal='59' />
+                <column datatype='integer' name='Midwifery' ordinal='60' />
+                <column datatype='integer' name='PropertyDamage' ordinal='61' />
+                <column datatype='integer' name='WeatherModification' ordinal='62' />
+              </columns>
+            </relation>
+            <relation connection='textscan.1xdu0rj12zrzyy1djo8o10fnfxxc' name='Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv' table='[Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                <column datatype='string' name='CounterStrategyRef' ordinal='0' />
+                <column datatype='string' name='CaseRef' ordinal='1' />
+                <column datatype='string' name='CounterStrategy_Type' ordinal='2' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='textscan.1xdu0rj12zrzyy1djo8o10fnfxxc' name='Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv' table='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='DemonicRef' ordinal='0' />
+              <column datatype='string' name='CaseRef' ordinal='1' />
+              <column datatype='string' name='Demonic_Type' ordinal='2' />
+              <column datatype='string' name='Demonic_Text' ordinal='3' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[AccusedRef]' value='[test_2.01_WDB_Case_START.csv].[AccusedRef]' />
+          <map key='[Age_at_case]' value='[test_2.01_WDB_Case_START.csv].[Age_at_case]' />
+          <map key='[AggravatingDisease]' value='[test_2.01_WDB_Case_START.csv].[AggravatingDisease]' />
+          <map key='[AnimalDeath]' value='[test_2.01_WDB_Case_START.csv].[AnimalDeath]' />
+          <map key='[AnimalIllness]' value='[test_2.01_WDB_Case_START.csv].[AnimalIllness]' />
+          <map key='[CaseRef (Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv)]' value='[Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv].[CaseRef]' />
+          <map key='[CaseRef (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' value='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[CaseRef]' />
+          <map key='[CaseRef]' value='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
+          <map key='[CaseStart_date_as_date]' value='[test_2.01_WDB_Case_START.csv].[CaseStart_date_as_date]' />
+          <map key='[Case_date_as_date]' value='[test_2.01_WDB_Case_START.csv].[Case_date_as_date]' />
+          <map key='[Charnotes]' value='[test_2.01_WDB_Case_START.csv].[Charnotes]' />
+          <map key='[CommunalSex]' value='[test_2.01_WDB_Case_START.csv].[CommunalSex]' />
+          <map key='[Consulting_s]' value='[test_2.01_WDB_Case_START.csv].[Consulting_s]' />
+          <map key='[CounterStrategyRef]' value='[Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv].[CounterStrategyRef]' />
+          <map key='[CounterStrategy_Type]' value='[Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv].[CounterStrategy_Type]' />
+          <map key='[Cursing]' value='[test_2.01_WDB_Case_START.csv].[Cursing]' />
+          <map key='[Dancing]' value='[test_2.01_WDB_Case_START.csv].[Dancing]' />
+          <map key='[DemonicPact]' value='[test_2.01_WDB_Case_START.csv].[DemonicPact]' />
+          <map key='[DemonicRef]' value='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[DemonicRef]' />
+          <map key='[Demonic_Text]' value='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[Demonic_Text]' />
+          <map key='[Demonic_Type]' value='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[Demonic_Type]' />
+          <map key='[Demonic_possess_s]' value='[test_2.01_WDB_Case_START.csv].[Demonic_possess_s]' />
+          <map key='[Demonic_s]' value='[test_2.01_WDB_Case_START.csv].[Demonic_s]' />
+          <map key='[DevilPresent]' value='[test_2.01_WDB_Case_START.csv].[DevilPresent]' />
+          <map key='[DevilWorship]' value='[test_2.01_WDB_Case_START.csv].[DevilWorship]' />
+          <map key='[Dreams/Visions]' value='[test_2.01_WDB_Case_START.csv].[Dreams/Visions]' />
+          <map key='[Elphane/Fairyland]' value='[test_2.01_WDB_Case_START.csv].[Elphane/Fairyland]' />
+          <map key='[Fairies_s]' value='[test_2.01_WDB_Case_START.csv].[Fairies_s]' />
+          <map key='[Familiars]' value='[test_2.01_WDB_Case_START.csv].[Familiars]' />
+          <map key='[FemaleInfertility]' value='[test_2.01_WDB_Case_START.csv].[FemaleInfertility]' />
+          <map key='[Folk_healing_s]' value='[test_2.01_WDB_Case_START.csv].[Folk_healing_s]' />
+          <map key='[Food/Drink]' value='[test_2.01_WDB_Case_START.csv].[Food/Drink]' />
+          <map key='[FoodAndDrink]' value='[test_2.01_WDB_Case_START.csv].[FoodAndDrink]' />
+          <map key='[HealingAnimals]' value='[test_2.01_WDB_Case_START.csv].[HealingAnimals]' />
+          <map key='[HealingHumans]' value='[test_2.01_WDB_Case_START.csv].[HealingHumans]' />
+          <map key='[HumanDeath]' value='[test_2.01_WDB_Case_START.csv].[HumanDeath]' />
+          <map key='[HumanIllness]' value='[test_2.01_WDB_Case_START.csv].[HumanIllness]' />
+          <map key='[ImplicatedByAnother_s]' value='[test_2.01_WDB_Case_START.csv].[ImplicatedByAnother_s]' />
+          <map key='[LayingOn]' value='[test_2.01_WDB_Case_START.csv].[LayingOn]' />
+          <map key='[MaleImpotence]' value='[test_2.01_WDB_Case_START.csv].[MaleImpotence]' />
+          <map key='[Maleficium]' value='[test_2.01_WDB_Case_START.csv].[Maleficium]' />
+          <map key='[Maleficium_s]' value='[test_2.01_WDB_Case_START.csv].[Maleficium_s]' />
+          <map key='[Midwifery]' value='[test_2.01_WDB_Case_START.csv].[Midwifery]' />
+          <map key='[Midwifery_s]' value='[test_2.01_WDB_Case_START.csv].[Midwifery_s]' />
+          <map key='[NamedIndividual]' value='[test_2.01_WDB_Case_START.csv].[NamedIndividual]' />
+          <map key='[Neighbhd_dispute_s]' value='[test_2.01_WDB_Case_START.csv].[Neighbhd_dispute_s]' />
+          <map key='[OtherText]' value='[test_2.01_WDB_Case_START.csv].[OtherText]' />
+          <map key='[Other_s]' value='[test_2.01_WDB_Case_START.csv].[Other_s]' />
+          <map key='[Poisoning]' value='[test_2.01_WDB_Case_START.csv].[Poisoning]' />
+          <map key='[PoliticalMotive_s]' value='[test_2.01_WDB_Case_START.csv].[PoliticalMotive_s]' />
+          <map key='[PropertyDamage]' value='[test_2.01_WDB_Case_START.csv].[PropertyDamage]' />
+          <map key='[PropertyMotive_s]' value='[test_2.01_WDB_Case_START.csv].[PropertyMotive_s]' />
+          <map key='[Quarreling]' value='[test_2.01_WDB_Case_START.csv].[Quarreling]' />
+          <map key='[RecHealer]' value='[test_2.01_WDB_Case_START.csv].[RecHealer]' />
+          <map key='[RefusedCharity_s]' value='[test_2.01_WDB_Case_START.csv].[RefusedCharity_s]' />
+          <map key='[Removalbewitchment]' value='[test_2.01_WDB_Case_START.csv].[Removalbewitchment]' />
+          <map key='[Ridingdead]' value='[test_2.01_WDB_Case_START.csv].[Ridingdead]' />
+          <map key='[Shape-Changing]' value='[test_2.01_WDB_Case_START.csv].[Shape-Changing]' />
+          <map key='[Singing]' value='[test_2.01_WDB_Case_START.csv].[Singing]' />
+          <map key='[SpecificRitualActs]' value='[test_2.01_WDB_Case_START.csv].[SpecificRitualActs]' />
+          <map key='[SpecificVerbalFormulae]' value='[test_2.01_WDB_Case_START.csv].[SpecificVerbalFormulae]' />
+          <map key='[Suspects_text]' value='[test_2.01_WDB_Case_START.csv].[Suspects_text]' />
+          <map key='[SympatheticMagic]' value='[test_2.01_WDB_Case_START.csv].[SympatheticMagic]' />
+          <map key='[TransferringDisease]' value='[test_2.01_WDB_Case_START.csv].[TransferringDisease]' />
+          <map key='[Treason_s]' value='[test_2.01_WDB_Case_START.csv].[Treason_s]' />
+          <map key='[UNorthodoxRelPract_p]' value='[test_2.01_WDB_Case_START.csv].[UNorthodoxRelPract_p]' />
+          <map key='[UnorthodoxReligiousPractice]' value='[test_2.01_WDB_Case_START.csv].[UnorthodoxReligiousPractice]' />
+          <map key='[WeatherModification]' value='[test_2.01_WDB_Case_START.csv].[WeatherModification]' />
+          <map key='[WhiteMagic_s]' value='[test_2.01_WDB_Case_START.csv].[WhiteMagic_s]' />
+          <map key='[WitchesMeeting]' value='[test_2.01_WDB_Case_START.csv].[WitchesMeeting]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>CaseRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CaseRef]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>CaseRef</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NamedIndividual</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NamedIndividual]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>NamedIndividual</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AccusedRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AccusedRef]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>AccusedRef</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CaseStart_date_as_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[CaseStart_date_as_date]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>CaseStart_date_as_date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;datetime&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Case_date_as_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[Case_date_as_date]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Case_date_as_date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;datetime&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age_at_case</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age_at_case]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Age_at_case</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Suspects_text</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Suspects_text]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Suspects_text</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UNorthodoxRelPract_p</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[UNorthodoxRelPract_p]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>UNorthodoxRelPract_p</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Consulting_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Consulting_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Consulting_s</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Demonic_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Demonic_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Demonic_s</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Demonic_possess_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Demonic_possess_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Demonic_possess_s</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fairies_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Fairies_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Fairies_s</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Folk_healing_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Folk_healing_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Folk_healing_s</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Maleficium_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Maleficium_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Maleficium_s</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Midwifery_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Midwifery_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Midwifery_s</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ImplicatedByAnother_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ImplicatedByAnother_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>ImplicatedByAnother_s</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Neighbhd_dispute_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Neighbhd_dispute_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Neighbhd_dispute_s</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PoliticalMotive_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PoliticalMotive_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>PoliticalMotive_s</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PropertyMotive_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PropertyMotive_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>PropertyMotive_s</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RefusedCharity_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[RefusedCharity_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>RefusedCharity_s</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Treason_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Treason_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Treason_s</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Other_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Other_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Other_s</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OtherText</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OtherText]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>OtherText</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WhiteMagic_s</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WhiteMagic_s]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>WhiteMagic_s</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Charnotes</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Charnotes]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Charnotes</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DemonicPact</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DemonicPact]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>DemonicPact</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WitchesMeeting</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WitchesMeeting]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>WitchesMeeting</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DevilPresent</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DevilPresent]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>DevilPresent</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Maleficium</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Maleficium]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Maleficium</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CommunalSex</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CommunalSex]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>CommunalSex</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DevilWorship</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DevilWorship]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>DevilWorship</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FoodAndDrink</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[FoodAndDrink]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>FoodAndDrink</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dancing</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dancing]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Dancing</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Singing</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Singing]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Singing</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Elphane/Fairyland</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Elphane/Fairyland]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Elphane/Fairyland</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Food/Drink</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Food/Drink]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Food/Drink</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SpecificVerbalFormulae</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SpecificVerbalFormulae]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>SpecificVerbalFormulae</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SpecificRitualActs</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SpecificRitualActs]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>SpecificRitualActs</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Familiars</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Familiars]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Familiars</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape-Changing</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Shape-Changing]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Shape-Changing</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dreams/Visions</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Dreams/Visions]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Dreams/Visions</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UnorthodoxReligiousPractice</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[UnorthodoxReligiousPractice]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>UnorthodoxReligiousPractice</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SympatheticMagic</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SympatheticMagic]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>SympatheticMagic</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ridingdead</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Ridingdead]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Ridingdead</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HumanIllness</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[HumanIllness]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>HumanIllness</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HumanDeath</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[HumanDeath]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>HumanDeath</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AnimalIllness</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AnimalIllness]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>AnimalIllness</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AnimalDeath</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AnimalDeath]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>AnimalDeath</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FemaleInfertility</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[FemaleInfertility]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>FemaleInfertility</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MaleImpotence</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MaleImpotence]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>MaleImpotence</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AggravatingDisease</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AggravatingDisease]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>AggravatingDisease</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TransferringDisease</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TransferringDisease]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>TransferringDisease</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LayingOn</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LayingOn]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>LayingOn</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Removalbewitchment</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Removalbewitchment]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Removalbewitchment</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Quarreling</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Quarreling]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Quarreling</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cursing</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cursing]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Cursing</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Poisoning</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Poisoning]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Poisoning</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RecHealer</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[RecHealer]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>RecHealer</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HealingHumans</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[HealingHumans]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>HealingHumans</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HealingAnimals</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[HealingAnimals]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>HealingAnimals</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Midwifery</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Midwifery]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>Midwifery</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PropertyDamage</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PropertyDamage]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>PropertyDamage</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WeatherModification</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WeatherModification]</local-name>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias>WeatherModification</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[test_2.01_WDB_Case_START.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CounterStrategyRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CounterStrategyRef]</local-name>
+            <parent-name>[Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv]</parent-name>
+            <remote-alias>CounterStrategyRef</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CaseRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CaseRef (Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv)]</local-name>
+            <parent-name>[Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv]</parent-name>
+            <remote-alias>CaseRef</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CounterStrategy_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CounterStrategy_Type]</local-name>
+            <parent-name>[Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv]</parent-name>
+            <remote-alias>CounterStrategy_Type</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DemonicRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DemonicRef]</local-name>
+            <parent-name>[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv]</parent-name>
+            <remote-alias>DemonicRef</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CaseRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CaseRef (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]</local-name>
+            <parent-name>[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv]</parent-name>
+            <remote-alias>CaseRef</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Demonic_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Demonic_Type]</local-name>
+            <parent-name>[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv]</parent-name>
+            <remote-alias>Demonic_Type</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Demonic_Text</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Demonic_Text]</local-name>
+            <parent-name>[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv]</parent-name>
+            <remote-alias>Demonic_Text</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Accused Ref' datatype='string' name='[AccusedRef]' role='dimension' type='nominal' />
+      <column caption='Age at case' datatype='integer' name='[Age_at_case]' role='measure' type='quantitative' />
+      <column caption='Aggravating Disease' datatype='integer' name='[AggravatingDisease]' role='measure' type='quantitative' />
+      <column caption='Animal Death' datatype='integer' name='[AnimalDeath]' role='measure' type='quantitative' />
+      <column caption='Animal Illness' datatype='integer' name='[AnimalIllness]' role='measure' type='quantitative' />
+      <column caption='CaseRef (Copy of 2.03 WDB CounterStrategy.csv - WDB CounterStrategy.csv.csv)' datatype='string' name='[CaseRef (Copy of 2.03_WDB_CounterStrategy.csv - WDB_CounterStrategy.csv.csv)]' role='dimension' type='nominal' />
+      <column caption='CaseRef (Copy of 2.04 WDB DemonicPact.csv - WDB DemonicPact.csv.csv)' datatype='string' name='[CaseRef (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' role='dimension' type='nominal' />
+      <column caption='Case Ref' datatype='string' name='[CaseRef]' role='dimension' type='nominal' />
+      <column caption='CaseStart date as date' datatype='datetime' name='[CaseStart_date_as_date]' role='dimension' type='ordinal' />
+      <column caption='Case date as date' datatype='datetime' name='[Case_date_as_date]' role='dimension' type='ordinal' />
+      <column caption='Communal Sex' datatype='integer' name='[CommunalSex]' role='measure' type='quantitative' />
+      <column caption='Consulting s' datatype='integer' name='[Consulting_s]' role='measure' type='quantitative' />
+      <column caption='Counter Strategy Ref' datatype='string' name='[CounterStrategyRef]' role='dimension' type='nominal' />
+      <column caption='CounterStrategy Type' datatype='string' name='[CounterStrategy_Type]' role='dimension' type='nominal' />
+      <column caption='Demonic Pact' datatype='integer' name='[DemonicPact]' role='measure' type='quantitative' />
+      <column caption='Demonic Ref' datatype='string' name='[DemonicRef]' role='dimension' type='nominal' />
+      <column caption='Demonic Text' datatype='string' name='[Demonic_Text]' role='dimension' type='nominal' />
+      <column caption='Demonic Type' datatype='string' name='[Demonic_Type]' role='dimension' type='nominal' />
+      <column caption='Demonic possess s' datatype='integer' name='[Demonic_possess_s]' role='measure' type='quantitative' />
+      <column caption='Demonic s' datatype='integer' name='[Demonic_s]' role='measure' type='quantitative' />
+      <column caption='Devil Present' datatype='integer' name='[DevilPresent]' role='measure' type='quantitative' />
+      <column caption='Devil Worship' datatype='integer' name='[DevilWorship]' role='measure' type='quantitative' />
+      <column caption='Fairies s' datatype='integer' name='[Fairies_s]' role='measure' type='quantitative' />
+      <column caption='Female Infertility' datatype='integer' name='[FemaleInfertility]' role='measure' type='quantitative' />
+      <column caption='Folk healing s' datatype='integer' name='[Folk_healing_s]' role='measure' type='quantitative' />
+      <column caption='Food And Drink' datatype='integer' name='[FoodAndDrink]' role='measure' type='quantitative' />
+      <column caption='Healing Animals' datatype='integer' name='[HealingAnimals]' role='measure' type='quantitative' />
+      <column caption='Healing Humans' datatype='integer' name='[HealingHumans]' role='measure' type='quantitative' />
+      <column caption='Human Death' datatype='integer' name='[HumanDeath]' role='measure' type='quantitative' />
+      <column caption='Human Illness' datatype='integer' name='[HumanIllness]' role='measure' type='quantitative' />
+      <column caption='ImplicatedByAnother s' datatype='integer' name='[ImplicatedByAnother_s]' role='measure' type='quantitative' />
+      <column caption='Laying On' datatype='integer' name='[LayingOn]' role='measure' type='quantitative' />
+      <column caption='Male Impotence' datatype='integer' name='[MaleImpotence]' role='measure' type='quantitative' />
+      <column caption='Maleficium s' datatype='integer' name='[Maleficium_s]' role='measure' type='quantitative' />
+      <column caption='Midwifery s' datatype='integer' name='[Midwifery_s]' role='measure' type='quantitative' />
+      <column caption='Named Individual' datatype='integer' name='[NamedIndividual]' role='measure' type='quantitative' />
+      <column caption='Neighbhd dispute s' datatype='integer' name='[Neighbhd_dispute_s]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Other Text' datatype='string' name='[OtherText]' role='dimension' type='nominal' />
+      <column caption='Other s' datatype='integer' name='[Other_s]' role='measure' type='quantitative' />
+      <column caption='PoliticalMotive s' datatype='integer' name='[PoliticalMotive_s]' role='measure' type='quantitative' />
+      <column caption='Property Damage' datatype='integer' name='[PropertyDamage]' role='measure' type='quantitative' />
+      <column caption='PropertyMotive s' datatype='integer' name='[PropertyMotive_s]' role='measure' type='quantitative' />
+      <column caption='Rec Healer' datatype='integer' name='[RecHealer]' role='measure' type='quantitative' />
+      <column caption='RefusedCharity s' datatype='integer' name='[RefusedCharity_s]' role='measure' type='quantitative' />
+      <column caption='Specific Ritual Acts' datatype='integer' name='[SpecificRitualActs]' role='measure' type='quantitative' />
+      <column caption='Specific Verbal Formulae' datatype='integer' name='[SpecificVerbalFormulae]' role='measure' type='quantitative' />
+      <column caption='Suspects text' datatype='integer' name='[Suspects_text]' role='measure' type='quantitative' />
+      <column caption='Sympathetic Magic' datatype='integer' name='[SympatheticMagic]' role='measure' type='quantitative' />
+      <column caption='Transferring Disease' datatype='integer' name='[TransferringDisease]' role='measure' type='quantitative' />
+      <column caption='Treason s' datatype='integer' name='[Treason_s]' role='measure' type='quantitative' />
+      <column caption='UNorthodoxRelPract p' datatype='integer' name='[UNorthodoxRelPract_p]' role='measure' type='quantitative' />
+      <column caption='Unorthodox Religious Practice' datatype='integer' name='[UnorthodoxReligiousPractice]' role='measure' type='quantitative' />
+      <column caption='Weather Modification' datatype='integer' name='[WeatherModification]' role='measure' type='quantitative' />
+      <column caption='WhiteMagic s' datatype='integer' name='[WhiteMagic_s]' role='measure' type='quantitative' />
+      <column caption='Witches Meeting' datatype='integer' name='[WitchesMeeting]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.527326' measure-ordering='alphabetic' measure-percentage='0.472674' show-structure='true' user-set-layout='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Yearly animal healing deaths</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='test_2.01_WDB_Case_START.csv+ (Multiple Connections)' name='federated.1rfe8in0eg1rgv1awqcog0jfa2e4' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1rfe8in0eg1rgv1awqcog0jfa2e4'>
+            <column caption='Animal Death' datatype='integer' name='[AnimalDeath]' role='measure' type='quantitative' />
+            <column caption='Animal Illness' datatype='integer' name='[AnimalIllness]' role='measure' type='quantitative' />
+            <column caption='Case date as date' datatype='datetime' name='[Case_date_as_date]' role='dimension' type='ordinal' />
+            <column caption='Healing Animals' datatype='integer' name='[HealingAnimals]' role='measure' type='quantitative' />
+            <column-instance column='[AnimalDeath]' derivation='Sum' name='[sum:AnimalDeath:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[AnimalIllness]' derivation='Sum' name='[sum:AnimalIllness:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[HealingAnimals]' derivation='Sum' name='[sum:HealingAnimals:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Case_date_as_date]' derivation='Year' name='[yr:Case_date_as_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:AnimalDeath:qk]' included-values='in-range'>
+            <min>0</min>
+            <max>28</max>
+          </filter>
+          <slices>
+            <column>[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:AnimalDeath:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+          </pane>
+          <pane id='1' y-axis-name='[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:AnimalDeath:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+          </pane>
+          <pane id='3' y-axis-name='[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:HealingAnimals:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+          </pane>
+          <pane id='4' y-axis-name='[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:AnimalIllness:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+          </pane>
+        </panes>
+        <rows>([federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:AnimalDeath:qk] + ([federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:HealingAnimals:qk] + [federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:AnimalIllness:qk]))</rows>
+        <cols>[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[yr:Case_date_as_date:ok]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[yr:Case_date_as_date:ok]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:HealingAnimals:qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:AnimalDeath:qk]</field>
+                  <field>[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:AnimalIllness:qk]</field>
+                  <field>[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[sum:HealingAnimals:qk]</field>
+                  <field>[federated.1rfe8in0eg1rgv1awqcog0jfa2e4].[yr:Case_date_as_date:ok]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>19</value>
+                <value>9</value>
+                <value>14</value>
+                <value>1958</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      QmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
