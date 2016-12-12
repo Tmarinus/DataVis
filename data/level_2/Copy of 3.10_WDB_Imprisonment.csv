@@ -1,0 +1,641 @@
+ImprisonRef,Trialref,CentralTrialImprison,Imprisondate_as_date,Prison,Location,Moving,Fate_in_prison
+IM/JO/10,T/JO/78,0,,Tolbooth,Haddington,0,
+IM/JO/11,T/JO/79,0,,Tolbooth,Haddington,0,
+IM/JO/12,T/JO/80,0,,Tolbooth,Haddington,0,
+IM/JO/127,T/JO/416,1,,Tolbooth,Canongate,0,Released
+IM/JO/128,T/JO/417,0,,Tolbooth,Stirling,0,
+IM/JO/129,T/JO/420,0,3/1/1959 0:00:00,Tolbooth,Stirling,0,
+IM/JO/13,T/JO/81,0,6/1/1930 0:00:00,Tolbooth,Haddington,0,
+IM/JO/130,T/JO/422,0,3/1/1959 0:00:00,Tolbooth,Stirling,0,
+IM/JO/131,T/JO/433,0,,,Dalkeith,0,
+IM/JO/14,T/JO/82,0,,Tolbooth,Haddington,0,Released
+IM/JO/141,T/LA/234,0,8/9/2015 0:00:00,Tolbooth,Linlithgow,0,
+IM/JO/142,T/JO/511,0,,,,0,
+IM/JO/143,T/LA/240,0,3/26/2017 0:00:00,,,0,
+IM/JO/144,T/LA/239,0,3/1/2017 0:00:00,,,0,
+IM/JO/145,T/LA/238,0,3/1/2017 0:00:00,,,0,
+IM/JO/146,T/JO/513,0,,,,0,
+IM/JO/147,T/JO/515,0,12/1/1943 0:00:00,Tolbooth,Queensferry,0,
+IM/JO/148,T/JO/517,0,12/1/1943 0:00:00,Tolbooth,Queensferry,0,
+IM/JO/149,T/JO/518,0,12/1/1943 0:00:00,Tolbooth,Queensferry,0,
+IM/JO/15,T/JO/86,0,4/1/1930 0:00:00,Tolbooth,Haddington,0,
+IM/JO/150,T/JO/519,0,12/1/1943 0:00:00,Tolbooth,Queensferry,0,
+IM/JO/151,T/JO/520,0,12/1/1943 0:00:00,Tolbooth,Queensferry,0,
+IM/JO/152,T/JO/521,0,12/1/1943 0:00:00,Tolbooth,Queensferry,0,
+IM/JO/153,T/JO/522,0,12/1/1943 0:00:00,Tolbooth,Queensferry,0,
+IM/JO/154,T/JO/523,0,3/1/1944 0:00:00,Tolbooth,Queensferry,0,
+IM/JO/155,T/JO/529,0,,,Falkirk,0,
+IM/JO/156,T/JO/539,0,4/1/1944 0:00:00,Tolbooth,Queensferry,0,Released
+IM/JO/157,T/JO/573,0,,,Peebles,0,
+IM/JO/158,T/JO/574,0,5/17/1949 0:00:00,,Peebles,0,
+IM/JO/159,T/JO/575,0,6/1/1949 0:00:00,,Peebles,0,
+IM/JO/16,T/JO/87,0,4/1/1930 0:00:00,Tolbooth,Haddington,0,
+IM/JO/160,T/JO/577,0,10/1/1949 0:00:00,,Peebles,0,
+IM/JO/161,T/JO/579,0,10/1/1949 0:00:00,,Peebles,0,
+IM/JO/162,T/JO/580,0,10/1/1949 0:00:00,,Peebles,0,
+IM/JO/163,T/JO/582,0,10/1/1949 0:00:00,,Peebles,0,
+IM/JO/164,T/JO/584,0,10/1/1949 0:00:00,,Peebles,0,
+IM/JO/165,T/JO/590,0,11/1/1949 0:00:00,,Peebles,0,
+IM/JO/166,T/JO/591,0,,,Peebles,0,
+IM/JO/167,T/JO/592,0,6/1/2004 0:00:00,,Pittenweem,0,Released
+IM/JO/168,T/JO/595,0,5/14/1988 0:00:00,Tolbooth,Dunbar,0,
+IM/JO/169,T/JO/597,0,3/1/1982 0:00:00,Tolbooth,Ayr,0,Moved
+IM/JO/17,T/JO/88,0,4/1/1930 0:00:00,Tolbooth,Haddington,0,
+IM/JO/170,T/JO/598,0,7/9/1978 0:00:00,Tolbooth,Prestonpans,0,Released
+IM/JO/171,T/JO/599,0,10/1/1978 0:00:00,,Loanhead of Lasswade,0,
+IM/JO/172,T/JO/600,0,10/1/1978 0:00:00,,Loanhead of Lasswade,0,
+IM/JO/173,T/JO/601,0,10/1/1978 0:00:00,,Loanhead of Lasswade,0,
+IM/JO/174,T/JO/602,0,10/1/1978 0:00:00,,Loanhead of Lasswade,0,
+IM/JO/175,T/JO/603,0,11/1/1979 0:00:00,Tolbooth,Bo'ness,0,
+IM/JO/176,T/JO/604,0,11/1/1979 0:00:00,Tolbooth,Bo'ness,0,
+IM/JO/177,T/JO/605,0,11/1/1979 0:00:00,Tolbooth,Bo'ness,0,
+IM/JO/178,T/JO/606,0,11/1/1979 0:00:00,Tolbooth,Bo'ness,0,
+IM/JO/179,T/JO/607,0,11/1/1979 0:00:00,Tolbooth,Bo'ness,0,
+IM/JO/18,T/JO/91,0,,Castle,Dirleton,0,
+IM/JO/180,T/JO/608,0,11/1/1979 0:00:00,Tolbooth,Bo'ness,0,
+IM/JO/181,T/JO/613,0,3/1/1979 0:00:00,Tolbooth,Canongate,0,Released
+IM/JO/182,T/JO/615,0,1/1/1977 0:00:00,Tolbooth,Paisley,0,Moved
+IM/JO/183,T/JO/616,0,1/1/1977 0:00:00,Tolbooth,Paisley,0,
+IM/JO/184,T/JO/614,0,1/1/1977 0:00:00,,,0,
+IM/JO/185,T/JO/617,0,1/1/1977 0:00:00,Tolbooth,Paisley,0,
+IM/JO/186,T/JO/618,0,1/1/1977 0:00:00,Tolbooth,Paisley,0,
+IM/JO/187,T/JO/619,0,2/1/1977 0:00:00,,,0,
+IM/JO/188,T/JO/615,0,4/1/1977 0:00:00,Tolbooth,Glasgow,0,
+IM/JO/189,T/JO/620,0,,Tolbooth,Haddington,0,
+IM/JO/19,T/JO/92,0,6/1/1949 0:00:00,,Dirleton,0,
+IM/JO/190,T/JO/621,0,6/1/1977 0:00:00,Tolbooth,Dumbarton,0,
+IM/JO/191,T/JO/622,0,6/1/1977 0:00:00,Tolbooth,Dumbarton,0,
+IM/JO/192,T/JO/623,0,6/1/1977 0:00:00,Tolbooth,Dumbarton,0,
+IM/JO/193,T/JO/624,0,6/1/1977 0:00:00,Tolbooth,Dumbarton,0,
+IM/JO/194,T/JO/625,0,6/1/1977 0:00:00,Tolbooth,Dumbarton,0,
+IM/JO/195,T/JO/626,0,4/1/1977 0:00:00,Tolbooth,Stirling,0,
+IM/JO/196,T/JO/627,0,4/1/1977 0:00:00,Tolbooth,Stirling,0,
+IM/JO/197,T/JO/628,0,4/1/1977 0:00:00,Tolbooth,Stirling,0,
+IM/JO/198,T/JO/629,0,4/1/1977 0:00:00,Tolbooth,Stirling,0,
+IM/JO/199,T/JO/630,0,5/1/1977 0:00:00,Tolbooth,Haddington,0,
+IM/JO/20,T/JO/93,0,,,Dirleton,0,
+IM/JO/200,T/JO/631,0,5/1/1978 0:00:00,Tolbooth,Prestonpans,0,
+IM/JO/201,T/JO/632,0,5/1/1978 0:00:00,Tolbooth,Prestonpans,0,
+IM/JO/202,T/JO/633,0,1/1/1973 0:00:00,Tolbooth,Scalloway,0,
+IM/JO/203,T/JO/634,0,1/1/1973 0:00:00,Tolbooth,Scalloway,0,
+IM/JO/204,T/JO/637,0,1/1/1973 0:00:00,Tolbooth,Scalloway,0,
+IM/JO/205,T/JO/638,0,1/1/1973 0:00:00,Tolbooth,Scalloway,0,
+IM/JO/206,T/JO/640,0,4/1/1969 0:00:00,Tolbooth,Duns,0,
+IM/JO/207,T/JO/641,0,7/1/1969 0:00:00,,Aberdeen,0,
+IM/JO/208,T/JO/642,0,7/1/1969 0:00:00,,Aberdeen,0,
+IM/JO/209,T/JO/643,0,7/1/1969 0:00:00,,Aberdeen,0,
+IM/JO/21,T/JO/94,0,6/9/1949 0:00:00,,Haddington,0,
+IM/JO/210,T/JO/644,0,7/1/1969 0:00:00,,Aberdeen,0,
+IM/JO/211,T/JO/645,0,9/1/1969 0:00:00,Castle,Tioram,0,
+IM/JO/212,T/JO/646,0,8/1/1969 0:00:00,Castle,Tioram,0,
+IM/JO/213,T/JO/647,0,,Castle,Tioram,0,
+IM/JO/214,T/JO/648,0,11/1/1969 0:00:00,Tolbooth,Dundee,0,
+IM/JO/215,T/JO/649,0,5/1/1970 0:00:00,Tolbooth,Lanark,0,
+IM/JO/216,T/JO/769,0,6/1/1965 0:00:00,Tolbooth,Stirling,0,Released
+IM/JO/217,T/JO/769,1,12/1/1964 0:00:00,Tolbooth,Edinburgh,0,Moved
+IM/JO/218,T/JO/770,0,,,Forfar,0,
+IM/JO/219,T/JO/772,0,5/1/1966 0:00:00,Tolbooth,Anstruther Wester,0,
+IM/JO/220,T/JO/773,0,9/1/1966 0:00:00,Tolbooth,Torryburn,0,
+IM/JO/221,T/JO/774,0,9/1/1966 0:00:00,Tolbooth,Torryburn,0,
+IM/JO/222,T/JO/775,0,9/1/1966 0:00:00,Tolbooth,Torryburn,0,
+IM/JO/223,T/JO/776,0,9/1/1966 0:00:00,Tolbooth,Torryburn,0,
+IM/JO/224,T/JO/777,0,9/1/1966 0:00:00,Tolbooth,Torryburn,0,
+IM/JO/225,T/JO/778,0,9/1/1966 0:00:00,Tolbooth,Torryburn,0,
+IM/JO/226,T/JO/779,0,9/1/1966 0:00:00,Tolbooth,Torryburn,0,
+IM/JO/227,T/JO/780,0,1/1/1967 0:00:00,Tolbooth,St Andrews,0,
+IM/JO/228,T/JO/769,0,6/1/1964 0:00:00,,Dunblane,0,Moved
+IM/JO/229,T/JO/782,0,,,Jedburgh,0,
+IM/JO/23,T/JO/102,0,,,Haddington,0,
+IM/JO/230,T/JO/783,0,,,Jedburgh,0,
+IM/JO/231,T/JO/784,0,,,Jedburgh,0,
+IM/JO/232,T/JO/788,0,,,Tyninghame,0,
+IM/JO/233,T/JO/789,0,,,Tyninghame,0,
+IM/JO/235,T/JO/812,0,,,,0,
+IM/JO/236,T/JO/813,0,,,,0,
+IM/JO/237,T/JO/814,0,9/1/1961 0:00:00,,,0,
+IM/JO/238,T/JO/815,0,9/1/1961 0:00:00,,,0,
+IM/JO/239,T/JO/816,0,9/1/1961 0:00:00,,,0,
+IM/JO/24,T/JO/104,0,,,Haddington,0,
+IM/JO/240,T/JO/817,0,9/1/1961 0:00:00,,,0,
+IM/JO/241,T/JO/818,0,9/1/1961 0:00:00,,,0,
+IM/JO/243,T/LA/402,0,9/1/1961 0:00:00,,,0,Released
+IM/JO/244,T/JO/819,0,9/1/1961 0:00:00,,,0,
+IM/JO/245,T/JO/830,0,,Tolbooth,Duns,0,Released
+IM/JO/246,T/JO/421,0,3/1/1959 0:00:00,Tolbooth,Stirling,0,
+IM/JO/247,T/JO/419,0,3/1/1959 0:00:00,Tolbooth,Stirling,0,
+IM/JO/248,T/JO/867,0,,,Falkland,0,Released
+IM/JO/249,T/JO/868,0,,,Falkland,0,Released
+IM/JO/25,T/JO/105,0,7/1/1949 0:00:00,,Haddington,0,
+IM/JO/250,T/JO/880,0,,,Lasswade,0,Released
+IM/JO/251,T/JO/881,0,,Tolbooth,Ayton,0,Released
+IM/JO/252,T/JO/896,0,,Tolbooth,Duns,0,Released
+IM/JO/253,T/JO/831,0,,,Rhynd,0,
+IM/JO/254,T/JO/832,0,,,Rhynd,0,
+IM/JO/255,T/JO/833,0,,,Rhynd,0,
+IM/JO/256,T/JO/834,0,,,Rhynd,0,
+IM/JO/257,T/JO/897,0,,,Rhynd,0,Moved
+IM/JO/258,T/JO/898,0,,,Rhynd,0,Moved
+IM/JO/259,T/JO/899,0,,,Rhynd,0,Moved
+IM/JO/26,T/JO/107,0,,,Haddington,0,
+IM/JO/260,T/JO/900,0,,,Rhynd,0,Moved
+IM/JO/261,T/JO/901,0,,,Rhynd,0,Moved
+IM/JO/262,T/JO/830,0,,Tolbooth,Eyemouth,0,Released
+IM/JO/263,T/JO/905,0,,,Eyemouth,0,Released
+IM/JO/264,T/JO/939,0,,,,0,
+IM/JO/265,T/JO/940,0,,,,0,
+IM/JO/266,T/JO/941,0,,,,0,
+IM/JO/267,T/JO/942,0,,,,0,
+IM/JO/268,T/JO/943,0,5/1/1962 0:00:00,,,0,
+IM/JO/269,T/JO/944,0,,,,0,
+IM/JO/27,T/JO/108,0,,,Haddington,0,
+IM/JO/270,T/JO/945,0,,,,0,
+IM/JO/271,T/JO/946,0,,,,0,
+IM/JO/272,T/JO/947,0,,,,0,
+IM/JO/273,T/JO/951,0,,,Lauder,0,
+IM/JO/274,T/JO/952,0,,,Lauder,0,
+IM/JO/275,T/JO/953,0,,,Lauder,0,
+IM/JO/276,T/JO/957,1,,,Edinburgh,0,
+IM/JO/277,T/JO/957,0,,Tolbooth,Auchtermuchty,1,Moved
+IM/JO/278,T/JO/958,0,,Tolbooth,Jedburgh,0,
+IM/JO/279,T/JO/969,0,1/10/1962 0:00:00,,Montrose,1,Moved
+IM/JO/28,T/JO/109,0,,,Haddington,0,
+IM/JO/280,T/JO/969,0,9/16/1962 0:00:00,,Forfar,0,Released
+IM/JO/281,T/JO/970,0,1/10/1962 0:00:00,,Montrose,1,Moved
+IM/JO/282,T/JO/970,0,9/16/1962 0:00:00,,Forfar,0,Released
+IM/JO/283,T/JO/984,0,7/1/1962 0:00:00,Tolbooth,Inverness,0,
+IM/JO/284,T/JO/986,0,,House,Comer,0,
+IM/JO/285,T/JO/987,0,,House,Comer,0,
+IM/JO/286,T/JO/988,0,6/1/1962 0:00:00,,,0,
+IM/JO/287,T/JO/989,0,,House,Comer,0,
+IM/JO/288,T/JO/990,0,,House,Comer,0,
+IM/JO/289,T/JO/991,0,,House,Comer,0,
+IM/JO/29,T/JO/111,0,,,Haddington,0,
+IM/JO/290,T/JO/992,0,,House,Comer,0,
+IM/JO/291,T/JO/993,0,,House,Comer,0,
+IM/JO/292,T/JO/994,0,,House,Comer,0,
+IM/JO/293,T/JO/996,0,,House,Comer,0,
+IM/JO/294,T/JO/998,0,,House,Comer,0,
+IM/JO/295,T/JO/999,0,,House,Comer,0,
+IM/JO/296,T/JO/1007,0,8/1/1962 0:00:00,,,0,
+IM/JO/297,T/JO/1008,0,8/1/1962 0:00:00,,,0,
+IM/JO/298,T/JO/1009,0,8/1/1962 0:00:00,,,0,
+IM/JO/299,T/JO/1010,0,8/1/1962 0:00:00,,,0,
+IM/JO/30,T/JO/112,0,,,Haddington,0,
+IM/JO/300,T/JO/1011,0,8/1/1962 0:00:00,,,0,
+IM/JO/301,T/JO/1012,0,8/1/1962 0:00:00,,,0,
+IM/JO/302,T/JO/1017,0,,Wardhouse,Forfar,0,Released
+IM/JO/303,T/JO/769,0,6/1/1964 0:00:00,,Stirling,0,Moved
+IM/JO/304,T/JO/1019,0,,Tolbooth,Paisley,0,
+IM/JO/305,T/JO/1020,0,,,Lauder,0,Released
+IM/JO/308,T/JO/1073,0,,Tolbooth,Canongate,0,
+IM/JO/309,T/JO/1075,0,8/1/1961 0:00:00,Tolbooth,Forfar,0,
+IM/JO/31,T/JO/113,0,,,Haddington,0,
+IM/JO/310,T/JO/1076,0,8/1/1961 0:00:00,Tolbooth,Forfar,0,
+IM/JO/311,T/JO/1077,0,1/29/2006 0:00:00,Tolbooth,Wigtown,0,Escaped
+IM/JO/318,T/JO/1111,0,8/1/1946 0:00:00,,,0,Released
+IM/JO/319,T/JO/1113,0,11/22/1949 0:00:00,Tolbooth,Lanark,0,Released
+IM/JO/32,T/JO/114,0,,,Haddington,0,
+IM/JO/320,T/JO/1114,0,,Tolbooth,Lanark,0,Released
+IM/JO/321,T/JO/1115,0,11/22/1949 0:00:00,Tolbooth,Lanark,0,
+IM/JO/322,T/JO/1116,0,11/22/1949 0:00:00,Tolbooth,Lanark,0,Released
+IM/JO/323,T/JO/1117,0,11/22/1949 0:00:00,Tolbooth,Lanark,0,Released
+IM/JO/324,T/JO/1118,0,11/22/1949 0:00:00,Tolbooth,Lanark,0,Released
+IM/JO/325,T/JO/1119,0,,Tolbooth,Lanark,0,Released
+IM/JO/326,T/JO/1120,0,,Tolbooth,Lanark,0,
+IM/JO/327,T/JO/1121,0,11/22/1949 0:00:00,Tolbooth,Lanark,0,Released
+IM/JO/328,T/JO/1122,0,11/22/1949 0:00:00,Tolbooth,Lanark,0,Released
+IM/JO/329,T/JO/1123,0,11/22/1949 0:00:00,Tolbooth,Lanark,0,Released
+IM/JO/33,T/JO/115,0,,,Haddington,0,
+IM/JO/330,T/JO/1125,0,9/1/1949 0:00:00,,Renfrew,0,
+IM/JO/331,T/JO/1126,0,9/1/1949 0:00:00,,Renfrew,0,
+IM/JO/332,T/JO/1127,0,9/1/1949 0:00:00,,Renfrew,0,
+IM/JO/333,T/JO/1128,0,9/1/1949 0:00:00,,Renfrew,0,
+IM/JO/334,T/JO/1132,0,2/1/1997 0:00:00,House,,1,
+IM/JO/335,T/JO/1133,0,2/1/1997 0:00:00,House,,1,
+IM/JO/336,T/JO/1134,0,,House,,1,
+IM/JO/337,T/JO/1168,0,2/1/1996 0:00:00,,Greenock,0,
+IM/JO/338,T/JO/1169,0,,,Balliemore,0,
+IM/JO/339,T/JO/1173,0,4/1/1949 0:00:00,,Inverkeithing,0,
+IM/JO/34,T/JO/116,0,,,Haddington,0,
+IM/JO/340,T/JO/1174,0,4/1/1949 0:00:00,,Inverkeithing,0,
+IM/JO/341,T/JO/1175,0,4/1/1949 0:00:00,,Inverkeithing,0,
+IM/JO/342,T/JO/1177,0,8/1/1961 0:00:00,,Aberdour,0,
+IM/JO/343,T/JO/1178,0,,,Aberdour,0,
+IM/JO/344,T/JO/1179,0,,,Aberdour,0,
+IM/JO/345,T/JO/1185,0,9/1/1938 0:00:00,Steeple,Dysart,0,Released
+IM/JO/346,T/JO/1183,0,10/1/1938 0:00:00,,Dysart,0,
+IM/JO/347,T/JO/1184,0,10/1/1938 0:00:00,,Dysart,0,
+IM/JO/348,T/JO/1186,0,1/1/1939 0:00:00,,Wemyss,0,
+IM/JO/349,T/JO/1188,0,9/1/1942 0:00:00,Steeple,Dysart,0,Released
+IM/JO/35,T/JO/117,0,,,Haddington,0,
+IM/JO/350,T/LA/1077,0,,,Dysart,0,Released
+IM/JO/351,T/JO/1206,0,12/1/1949 0:00:00,,Brechin,0,
+IM/JO/352,T/JO/1208,0,4/1/1950 0:00:00,Steeple,Brechin,0,
+IM/JO/353,T/JO/1209,0,,,Montrose,0,
+IM/JO/354,T/JO/1212,0,9/1/1959 0:00:00,,Montrose,0,
+IM/JO/36,T/JO/118,0,,,Haddington,0,
+IM/JO/37,T/JO/126,0,8/15/1949 0:00:00,,Humbie,0,
+IM/JO/38,T/JO/127,0,8/15/1949 0:00:00,,Humbie,0,
+IM/JO/389,T/LA/497,0,,Steeple,,0,Released
+IM/JO/39,T/JO/128,0,8/15/1949 0:00:00,,Humbie,0,
+IM/JO/390,T/LA/497,0,,Tolbooth,Perth,0,Released
+IM/JO/391,T/LA/497,0,,,,0,
+IM/JO/392,T/JO/1265,0,11/1/1946 0:00:00,,Elgin,0,Escaped
+IM/JO/393,T/JO/1266,0,9/1/1936 0:00:00,,Aberdeen,0,Escaped
+IM/JO/394,T/JO/1271,0,3/1/2019 0:00:00,,Thurso,0,
+IM/JO/395,T/JO/1272,0,3/1/2019 0:00:00,,Thurso,0,
+IM/JO/396,T/JO/1273,0,3/1/2019 0:00:00,,Thurso,0,
+IM/JO/397,T/JO/1274,0,3/1/2019 0:00:00,,Thurso,0,
+IM/JO/398,T/JO/1275,0,3/1/2019 0:00:00,,Thurso,0,
+IM/JO/399,T/JO/1276,0,3/1/2019 0:00:00,,Thurso,0,
+IM/JO/40,T/JO/129,0,8/15/1949 0:00:00,,Humbie,0,
+IM/JO/400,T/JO/1289,0,,,Dumfries,0,Released
+IM/JO/402,T/JO/1298,0,1/1/1998 0:00:00,,Aberdeen,0,
+IM/JO/403,T/JO/1300,0,1/1/1997 0:00:00,,Slains,0,Moved
+IM/JO/404,T/JO/1300,0,4/1/1997 0:00:00,,Aberdeen,0,
+IM/JO/405,T/JO/1306,0,11/1/1997 0:00:00,,Aberdeen,0,Released
+IM/JO/406,T/JO/1307,0,6/1/1996 0:00:00,Castle,Slains,0,Released
+IM/JO/409,T/JO/1405,0,,,Kirkwall,0,
+IM/JO/41,T/JO/130,0,,,Humbie,0,
+IM/JO/410,T/JO/1406,0,,,Kirwall,0,
+IM/JO/411,T/JO/1407,0,,,Kirkwall,0,
+IM/JO/412,T/JO/1408,0,,,Kirkwall,0,
+IM/JO/413,T/JO/1411,0,,,Kirkwall,0,
+IM/JO/414,T/JO/1435,0,,Tolbooth,Stirling,0,
+IM/JO/415,T/JO/1446,0,,,Dysart,0,
+IM/JO/416,T/JO/1450,0,,,Dysart,0,
+IM/JO/417,T/JO/1452,0,,,Dysart,0,
+IM/JO/418,T/JO/1456,0,8/7/1949 0:00:00,,Dysart,0,
+IM/JO/419,T/JO/1457,0,,,Dysart,0,
+IM/JO/42,T/JO/132,0,8/15/1949 0:00:00,,Humbie,0,
+IM/JO/420,T/JO/1458,0,,,Dysart,0,
+IM/JO/421,T/JO/1459,0,,,Dysart,0,
+IM/JO/422,T/JO/1461,0,,,Lauder,0,
+IM/JO/424,T/JO/1463,0,,,Stirling,0,
+IM/JO/425,T/JO/1464,0,,,Stirling,0,
+IM/JO/426,T/JO/1471,0,5/1/1958 0:00:00,,Alloa,0,
+IM/JO/427,T/LA/1296,0,6/1/1958 0:00:00,,Alloa,0,
+IM/JO/428,T/LA/1295,0,6/1/1958 0:00:00,,Alloa,0,
+IM/JO/429,T/LA/1294,0,6/1/1958 0:00:00,,Alloa,0,
+IM/JO/43,T/JO/133,0,,,Haddington,0,
+IM/JO/430,T/JO/1487,0,6/1/1958 0:00:00,,Alloa,0,
+IM/JO/431,T/JO/1497,0,4/1/1997 0:00:00,Tolbooth,Aberdeen,0,
+IM/JO/432,T/JO/1514,0,,,Corstorphine,0,Died
+IM/JO/433,T/JO/1515,0,6/1/1949 0:00:00,,Corstorphine,0,
+IM/JO/434,T/JO/1532,0,,,Corstorphine,0,
+IM/JO/435,T/JO/1534,0,9/1/1949 0:00:00,,Corstorphine,0,
+IM/JO/436,T/JO/1535,0,,,Dunfermline,0,
+IM/JO/437,T/JO/1536,0,12/1/1949 0:00:00,,Dunfermline,0,
+IM/JO/438,T/JO/1537,0,6/1/1949 0:00:00,,Dunfermline,0,
+IM/JO/439,T/JO/1317,0,,Tolbooth,Aberdeen,0,
+IM/JO/44,T/JO/134,0,,,Haddington,0,
+IM/JO/45,T/JO/138,0,10/1/1949 0:00:00,Tolbooth,Stenton,0,Escaped
+IM/JO/451,T/JO/1641,0,,,,0,Released
+IM/JO/452,T/JO/1642,0,,,,0,
+IM/JO/453,T/JO/1643,0,,,,0,
+IM/JO/454,T/JO/1644,0,,,,0,
+IM/JO/455,T/JO/1645,0,,,,0,
+IM/JO/456,T/JO/1646,0,,,,0,
+IM/JO/457,T/JO/1647,0,,,,0,
+IM/JO/458,T/JO/1648,0,,,,0,
+IM/JO/459,T/JO/1649,0,12/1/1949 0:00:00,,,0,
+IM/JO/46,T/JO/146,0,,,Haddington,0,
+IM/JO/460,T/JO/1650,0,,,,0,
+IM/JO/461,T/JO/1651,0,,,,0,
+IM/JO/462,T/LA/1028,0,,,Burntisland,0,
+IM/JO/463,T/JO/1661,0,,Tolbooth,Inveresk,0,
+IM/JO/464,T/JO/1662,0,11/1/1961 0:00:00,Tolbooth,Inveresk,0,
+IM/JO/465,T/JO/1663,0,,,Newbattle,0,
+IM/JO/466,T/JO/1666,0,,,Newbattle,0,
+IM/JO/467,T/JO/1667,0,,,Newbattle,0,
+IM/JO/468,T/JO/1674,1,6/19/1949 0:00:00,Tolbooth,Edinburgh,0,
+IM/JO/469,T/JO/1688,0,2/1/1998 0:00:00,House,Lathetker,0,
+IM/JO/47,T/JO/147,0,,,Haddington,0,
+IM/JO/470,T/JO/1694,0,7/1/1975 0:00:00,,Crail,0,Died
+IM/JO/471,T/JO/1695,0,6/1/2004 0:00:00,,Pittenweem,0,
+IM/JO/472,T/JO/1696,0,6/1/2004 0:00:00,,Pittenweem,0,
+IM/JO/473,T/JO/1697,0,6/1/2004 0:00:00,,Pittenweem,0,
+IM/JO/474,T/JO/1698,0,6/1/2004 0:00:00,,Pittenweem,0,
+IM/JO/475,T/JO/1699,0,,,Pittenweem,0,
+IM/JO/476,T/JO/1712,0,,Tolbooth,Haddington,0,
+IM/JO/477,T/JO/1713,0,,Tolbooth,Haddington,0,
+IM/JO/48,T/JO/148,0,,,Haddington,0,Released
+IM/JO/480,T/JO/1789,0,,Tolbooth,Haddington,0,
+IM/JO/481,T/JO/1790,0,,Tolbooth,Haddington,0,
+IM/JO/482,T/JO/1791,0,,Tolbooth,Haddington,0,
+IM/JO/483,T/JO/1813,0,5/1/1961 0:00:00,,Haddington,0,
+IM/JO/484,T/JO/1812,0,5/1/1961 0:00:00,,Haddington,0,
+IM/JO/485,T/JO/1814,0,,,Haddington,0,
+IM/JO/486,T/JO/1815,0,,,Haddington,0,
+IM/JO/487,T/JO/1816,0,,,Haddington,0,
+IM/JO/488,T/JO/1817,0,,,Haddington,0,
+IM/JO/489,T/JO/1838,0,5/1/1950 0:00:00,,,0,
+IM/JO/49,T/JO/149,0,,,Haddington,0,
+IM/JO/490,T/LA/784,0,,Tolbooth,Glasgow,0,
+IM/JO/491,T/JO/1876,0,6/13/1949 0:00:00,Castle,Dirleton,0,
+IM/JO/492,T/JO/1879,0,,,Rothesay,0,
+IM/JO/493,T/JO/1880,0,,,Bute,0,
+IM/JO/494,T/JO/1884,0,1/18/1962 0:00:00,Tolbooth,Rothesay,0,
+IM/JO/50,T/JO/150,0,,,Aberlady,0,
+IM/JO/503,T/JO/81,0,6/1/1930 0:00:00,Tolbooth,Haddington,0,
+IM/JO/504,T/LA/99,0,7/1/1930 0:00:00,,Edinburgh,0,Released
+IM/JO/505,T/LA/172,0,4/14/1991 0:00:00,Castle,Edinburgh,0,Escaped
+IM/JO/506,T/LA/799,1,11/2/1930 0:00:00,,Edinburgh,0,
+IM/JO/507,T/LA/810,0,,,Leith,0,Released
+IM/JO/508,T/LA/1076,0,,Tolbooth,Canongate,0,Released
+IM/JO/509,T/LA/1015,0,7/2/1949 0:00:00,Tolbooth,Eyemouth,0,
+IM/JO/51,T/JO/191,0,,,North Berwick,0,
+IM/JO/510,T/LA/1023,0,7/13/1949 0:00:00,Tolbooth,Haddington,0,
+IM/JO/511,T/LA/1250,0,,,,0,Released
+IM/JO/512,T/JO/995,0,,House,Comer,0,
+IM/JO/52,T/JO/192,0,,,North Berwick,0,
+IM/JO/53,T/JO/205,0,6/1/1962 0:00:00,Tolbooth,Rothesay,0,Escaped
+IM/JO/8,T/JO/3,0,,Tolbooth,Aberdeen,0,
+IM/JO/89,T/JO/308,1,,Tolbooth,Edinburgh,1,Moved
+IM/JO/9,T/JO/77,0,11/12/2028 0:00:00,Tolbooth,Dalkeith,0,
+IM/JO/90,T/JO/333,0,4/29/1930 0:00:00,,Crichton,0,
+IM/JO/91,T/JO/342,0,,,Dalkeith,0,
+IM/JO/92,T/JO/343,0,,,Dalkeith,0,Released
+IM/LA/1,T/LA/1,1,2/13/2029 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/100,T/LA/352,0,,,Glasgow,0,
+IM/LA/101,T/LA/354,0,,Tolbooth,Linlithgow,0,
+IM/LA/102,T/LA/355,0,,,St. Colme,0,
+IM/LA/103,T/LA/356,0,,,St. Colme,0,
+IM/LA/104,T/LA/357,0,,,St. Colme,0,
+IM/LA/105,T/LA/358,0,,,St. Colme,0,
+IM/LA/106,T/LA/359,0,,,St. Colme,0,
+IM/LA/107,T/LA/362,0,,,Inverkeithing,0,
+IM/LA/108,T/LA/363,0,,,Inverkeithing,0,
+IM/LA/109,T/LA/364,0,,,Inverkeithing,0,
+IM/LA/110,T/LA/69,0,,,Inverkeithing,0,
+IM/LA/111,T/LA/65,0,3/1/2023 0:00:00,,Inverkeithing,0,
+IM/LA/112,T/LA/66,0,,,Inverkeithing,0,
+IM/LA/113,T/LA/67,0,,,Inverkeithing,0,
+IM/LA/114,T/LA/365,0,,,Inverkeithing,0,
+IM/LA/115,T/LA/366,0,,,Inverkeithing,0,
+IM/LA/116,T/LA/64,0,5/1/2023 0:00:00,,Inverkeithing,0,
+IM/LA/117,T/LA/68,0,5/1/2023 0:00:00,,Inverkeithing,0,
+IM/LA/118,T/LA/371,0,,Tolbooth,Perth,0,
+IM/LA/119,T/LA/370,0,,Tolbooth,Perth,0,
+IM/LA/120,T/LA/375,0,,Tolbooth,Musselburgh,0,
+IM/LA/121,T/LA/374,0,6/1/1961 0:00:00,Tolbooth,Musselburgh,0,Released
+IM/LA/122,T/LA/377,0,,Tolbooth,Musselburgh,0,
+IM/LA/123,T/LA/378,0,,Tolbooth,Musselburgh,0,
+IM/LA/124,T/LA/379,0,,Tolbooth,musselburgh,0,
+IM/LA/125,T/LA/264,0,,,Edmestoun,0,Moved
+IM/LA/126,T/LA/265,0,,,Edmestoun,0,
+IM/LA/127,T/LA/416,0,2/1/2024 0:00:00,Tolbooth,Culross,0,
+IM/LA/128,T/LA/429,0,,,Culross,0,
+IM/LA/129,T/LA/430,0,,,Culross,0,
+IM/LA/130,T/LA/434,0,,Tolbooth,Crail,0,
+IM/LA/131,T/LA/435,0,,Tolbooth,Dysart,0,
+IM/LA/132,T/LA/437,0,,Tolbooth,Dysart,0,
+IM/LA/133,T/LA/438,0,,Tolbooth,Dysart,0,
+IM/LA/134,T/LA/439,0,,Tolbooth,Dysart,0,
+IM/LA/135,T/LA/440,0,,Tolbooth,Dysart,0,
+IM/LA/136,T/LA/479,0,,Tolbooth,Dysart,0,Released
+IM/LA/137,T/LA/480,0,,Tolbooth,Dunfermline,0,
+IM/LA/138,T/LA/487,0,,Tolbooth,Stirling,0,
+IM/LA/139,T/LA/489,0,7/5/2028 0:00:00,Tolbooth,Leith,0,Released
+IM/LA/140,T/LA/509,0,8/11/2028 0:00:00,Tolbooth,Musselburgh,0,
+IM/LA/15,T/LA/83,1,2/13/2029 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/16,T/LA/15,0,,,Haddington,1,
+IM/LA/168,T/LA/83,0,11/1/2028 0:00:00,Tolbooth,Stirling,0,Moved
+IM/LA/169,T/LA/83,0,12/19/2028 0:00:00,,Linlithgow,0,Moved
+IM/LA/17,T/LA/24,1,2/2/1930 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/170,T/LA/83,0,12/20/2028 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/171,T/LA/83,1,1/8/2029 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/173,T/LA/618,0,,Tolbooth,Dysart,0,Released
+IM/LA/174,T/LA/618,0,8/15/1930 0:00:00,Tolbooth,Dysart,0,
+IM/LA/175,T/LA/628,0,4/1/1930 0:00:00,Tolbooth,Dysart,0,
+IM/LA/177,T/LA/626,0,1/1/2029 0:00:00,Pit,Eyemouth,0,
+IM/LA/178,T/LA/720,0,,Tolbooth,Duns,0,Released
+IM/LA/179,T/LA/721,0,,Tolbooth,Duns,0,Released
+IM/LA/18,T/LA/86,1,11/12/2029 0:00:00,,Edinburgh,0,Released
+IM/LA/180,T/LA/726,0,6/1/2029 0:00:00,Tolbooth,Musselburgh,0,
+IM/LA/181,T/LA/727,0,6/1/2029 0:00:00,Tolbooth,Musselburgh,0,
+IM/LA/182,T/LA/754,0,,Tolbooth,Causland,0,
+IM/LA/183,T/LA/755,0,,Tolbooth,Cowsland,0,
+IM/LA/184,T/LA/756,0,,Tolbooth,Causland,0,
+IM/LA/19,T/LA/87,1,11/12/2029 0:00:00,,Edinburgh,0,Released
+IM/LA/2,T/LA/10,1,,Tolbooth,Edinburgh,0,
+IM/LA/21,T/LA/88,1,12/17/2029 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/216,T/LA/771,0,,Tolbooth,Jedburgh,0,Released
+IM/LA/217,T/LA/772,0,,Tolbooth,Jedburgh,0,Released
+IM/LA/218,T/LA/773,0,,Tolbooth,Jedburgh,0,Released
+IM/LA/219,T/LA/774,0,,Tolbooth,Edinburgh,0,
+IM/LA/22,T/LA/88,0,10/1/2029 0:00:00,House,Newbattle Kirk,1,Moved
+IM/LA/220,T/LA/776,0,4/1/1971 0:00:00,Dungeon,Kirkudbrigh,0,Released
+IM/LA/221,T/LA/777,0,4/1/1971 0:00:00,Dungeon,Kirkudbrigh,0,Released
+IM/LA/222,T/LA/778,0,4/1/1971 0:00:00,Dungeon,Kirkudbright,0,Released
+IM/LA/223,T/LA/25,1,7/1/1930 0:00:00,,Edinburgh,0,
+IM/LA/224,T/LA/804,0,,Tolbooth,Culross,0,
+IM/LA/225,T/LA/803,0,,Tolbooth,Culross,0,
+IM/LA/226,T/LA/805,0,,Tolbooth,Culross,0,
+IM/LA/227,T/LA/806,0,,Tolbooth,Culross,0,
+IM/LA/228,T/LA/808,0,,Tolbooth,Leith,0,
+IM/LA/229,T/LA/813,0,,,Renfrew,1,Released
+IM/LA/23,T/LA/24,1,2/5/1930 0:00:00,,Edinburgh,0,
+IM/LA/230,T/LA/813,0,,,Innerkip,0,
+IM/LA/231,T/JO/609,0,,,Edinburgh,0,
+IM/LA/232,T/JO/612,1,9/1/1978 0:00:00,,Edinburgh,0,
+IM/LA/233,T/JO/610,1,9/1/1978 0:00:00,,Edinburgh,0,
+IM/LA/234,T/JO/611,1,9/1/1978 0:00:00,,Edinburgh,0,
+IM/LA/235,T/LA/822,1,9/1/1978 0:00:00,,Edinburgh,0,
+IM/LA/236,T/LA/823,1,,,Edinburgh,0,
+IM/LA/237,T/LA/824,1,,,Edinburgh,0,
+IM/LA/238,T/LA/829,1,9/1/1978 0:00:00,,Edinburgh,0,
+IM/LA/239,T/JO/609,1,9/1/1978 0:00:00,,Edinburgh,0,
+IM/LA/24,T/LA/24,0,1/7/1930 0:00:00,,,0,Moved
+IM/LA/240,T/LA/828,1,,,Edinburgh,0,
+IM/LA/241,T/LA/830,1,,,Edinburgh,0,
+IM/LA/242,T/JO/436,1,9/8/1979 0:00:00,Tolbooth,Edinburgh,0,Released
+IM/LA/243,T/LA/849,0,1/1/1980 0:00:00,,Bo'ness,0,
+IM/LA/244,T/LA/851,1,,Tolbooth,Edinburgh,0,Released
+IM/LA/25,T/LA/24,1,5/23/1930 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/250,T/LA/47,1,,Tolbooth,Edinburgh,0,
+IM/LA/26,T/LA/25,1,12/1/1930 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/264,T/LA/999,0,2/1/1932 0:00:00,House,"Nobelstoun, Refrewshire",0,
+IM/LA/27,T/LA/104,1,2/11/1934 0:00:00,Tolbooth,Edinburgh,0,Free on bail
+IM/LA/28,T/LA/104,1,3/11/1934 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/29,T/LA/104,0,1/9/1934 0:00:00,Tolbooth,Duns,1,
+IM/LA/3,T/LA/15,1,8/1/2029 0:00:00,,Edinburgh,0,
+IM/LA/307,T/LA/1071,0,,Tolbooth,Perth,0,
+IM/LA/308,T/LA/1072,0,,Tolbooth,Perth,0,
+IM/LA/309,T/LA/1073,0,,Tolbooth,Perth,0,
+IM/LA/310,T/LA/1074,0,,Vestry of the Kirk,Calder,0,Released
+IM/LA/311,T/LA/1075,0,,Tolbooth,Culross,0,
+IM/LA/312,T/LA/1075,0,12/12/1944 0:00:00,Tolbooth,Canongate,0,
+IM/LA/313,T/LA/1076,0,,Tolbooth,Culross,0,Moved
+IM/LA/314,T/LA/1089,0,,Tolbooth,Lanark,0,
+IM/LA/315,T/LA/1090,0,,Tolbooth,Lanark,0,
+IM/LA/316,T/LA/83,0,1/1/2029 0:00:00,Tolbooth,Stirling,0,
+IM/LA/317,T/LA/1106,0,,Steeple,Dysart,0,
+IM/LA/318,T/LA/1108,0,,,"Berwick, England",0,
+IM/LA/319,T/LA/1119,1,10/7/1951 0:00:00,,Ayr,0,
+IM/LA/320,T/LA/1161,0,,Tolbooth,Dumfries,0,
+IM/LA/321,T/LA/1162,0,,Tolbooth,dumfries,0,
+IM/LA/337,T/JO/614,1,12/1/1976 0:00:00,Tolbooth,Paisley,0,
+IM/LA/351,T/LA/1189,0,,Tolbooth,Renfrew,0,Moved
+IM/LA/352,T/LA/1189,0,4/15/1997 0:00:00,Tolbooth,Glasgow,0,Moved
+IM/LA/353,T/LA/1189,0,5/12/1997 0:00:00,Tolbooth,Renfrew,0,
+IM/LA/354,T/LA/1191,0,4/15/1997 0:00:00,Tolbooth,Renfrew,0,Moved
+IM/LA/355,T/LA/1191,0,5/12/1997 0:00:00,Tolbooth,Glasgow,0,Moved
+IM/LA/356,T/LA/1191,0,,Tolbooth,Renfrew,0,
+IM/LA/357,T/JO/1131,0,4/15/1997 0:00:00,Tolbooth,Paisley,0,
+IM/LA/359,T/JO/1133,0,4/15/1997 0:00:00,Tolbooth,Renfrew,0,Moved
+IM/LA/360,T/LA/1190,0,4/15/1997 0:00:00,Tolbooth,Paisley,0,
+IM/LA/361,T/LA/1199,0,4/13/1997 0:00:00,Tolbooth,Paisley,0,Moved
+IM/LA/362,T/LA/1199,0,4/15/1997 0:00:00,Tolbooth,Glasgow,0,Moved
+IM/LA/363,T/LA/1199,0,5/12/1997 0:00:00,Tolbooth,Paisley,0,Moved
+IM/LA/364,T/LA/1201,0,4/15/1997 0:00:00,Tolbooth,Renfrew,0,Moved
+IM/LA/365,T/LA/1201,0,4/13/1997 0:00:00,Tolbooth,paisley,0,Moved
+IM/LA/366,T/LA/1201,0,5/12/1997 0:00:00,Tolbooth,Paisley,0,
+IM/LA/367,T/LA/1202,0,7/7/1944 0:00:00,,Dunbar,0,
+IM/LA/368,T/LA/1203,0,7/7/1944 0:00:00,,Dunbar,0,
+IM/LA/369,T/LA/1204,0,7/7/1944 0:00:00,,Dunbar,0,
+IM/LA/370,T/LA/1205,0,7/7/1944 0:00:00,,Dunbar,0,
+IM/LA/371,T/JO/1133,0,5/12/1997 0:00:00,Tolbooth,Paisley,0,
+IM/LA/372,T/LA/1208,0,4/15/1997 0:00:00,,,0,
+IM/LA/373,T/LA/1209,0,4/15/1997 0:00:00,Tolbooth,Renfrew,0,Released
+IM/LA/374,T/LA/1210,0,4/15/1997 0:00:00,Tolbooth,Renfrew,0,Released
+IM/LA/375,T/LA/1211,0,4/15/1997 0:00:00,,Renfrew,0,
+IM/LA/376,T/LA/1212,0,,,Refrew,0,Released
+IM/LA/377,T/LA/1213,0,4/15/1997 0:00:00,,Renfrew,0,
+IM/LA/378,T/LA/1214,0,4/15/1997 0:00:00,,Renfrew,0,Moved
+IM/LA/379,T/LA/1214,0,5/12/1997 0:00:00,,Paisley,0,
+IM/LA/380,T/LA/1215,0,4/15/1997 0:00:00,,Renfrew,0,
+IM/LA/381,T/LA/1216,0,4/15/1997 0:00:00,,Renfrew,0,
+IM/LA/382,T/LA/1217,0,4/15/1997 0:00:00,,Paisley,0,
+IM/LA/383,T/LA/1218,0,4/15/1997 0:00:00,,Paisley,0,
+IM/LA/384,T/LA/1219,0,4/15/1997 0:00:00,,Renfrew,0,
+IM/LA/385,T/LA/1220,0,4/15/1997 0:00:00,,Renfrew,0,
+IM/LA/386,T/LA/1221,0,4/15/1997 0:00:00,,Renfrew,0,
+IM/LA/387,T/LA/1222,0,4/15/1997 0:00:00,,Renfrew,0,
+IM/LA/388,T/LA/1224,1,6/1/2000 0:00:00,,Edinburgh,0,
+IM/LA/394,T/JO/419,0,9/1/1958 0:00:00,Tolbooth,Alloa,0,Released
+IM/LA/395,T/JO/421,0,12/28/1958 0:00:00,Tolbooth,Alloa,0,Released
+IM/LA/396,T/LA/1137,0,,,Stirling,0,
+IM/LA/397,T/JO/421,0,3/16/1969 0:00:00,,,0,Released
+IM/LA/4,T/LA/15,0,,,Berwick,1,Moved
+IM/LA/407,T/LA/1313,0,,Tolbooth,Haddington,0,Moved
+IM/LA/408,T/LA/1313,0,1/16/1962 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/409,T/JO/628,0,12/3/1977 0:00:00,Tolbooth,Edinburgh,0,Released
+IM/LA/410,T/JO/627,0,12/3/1977 0:00:00,Tolbooth,Edinbrugh,0,Released
+IM/LA/411,T/JO/629,0,12/3/1977 0:00:00,Tolbooth,Edinburgh,0,Released
+IM/LA/412,T/LA/1395,0,,Tolbooth,Edinburgh,0,Released
+IM/LA/413,T/LA/1104,0,6/1/2024 0:00:00,,Orkney,0,
+IM/LA/43,T/LA/137,0,6/4/1934 0:00:00,,Ayton,0,
+IM/LA/431,T/LA/1164,0,11/1/1962 0:00:00,,Lauder,0,Released
+IM/LA/432,T/JO/510,0,,Tolbooth,Linlithgow,0,Released
+IM/LA/433,T/LA/873,0,,,Edinburgh,0,
+IM/LA/434,T/LA/1503,0,1/12/1950 0:00:00,,Dumfries,0,
+IM/LA/435,T/LA/29,0,,Tolbooth,Edinburgh,0,
+IM/LA/437,T/LA/1566,0,,Tolbooth,Galloway,0,
+IM/LA/438,T/LA/1585,0,8/1/1951 0:00:00,,,0,
+IM/LA/439,T/LA/1130,0,,Prison,Stirling,0,
+IM/LA/44,T/LA/146,0,3/1/2024 0:00:00,,Eyemouth,0,
+IM/LA/440,T/JO/204,0,,Tolbooth,Dunbar,0,
+IM/LA/441,T/LA/1620,0,,Tolbooth,Dunbar,0,Moved
+IM/LA/442,T/LA/1620,0,3/1/1959 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/443,T/LA/1626,0,,Tolbooth,Dunbar,0,Moved
+IM/LA/444,T/LA/1626,0,,Tolbooth,Edinburgh,0,
+IM/LA/445,T/LA/1624,0,,Tolbooth,Dunbar,0,Moved
+IM/LA/446,T/LA/1624,0,3/1/1959 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/447,T/LA/1622,0,,Tolbooth,Dunbar,0,Moved
+IM/LA/448,T/LA/1622,0,3/1/1959 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/449,T/LA/1144,0,,,Kircudbright,0,
+IM/LA/45,T/LA/156,0,12/14/1933 0:00:00,,Eyemouth,0,Released
+IM/LA/450,T/LA/1141,0,6/1/1959 0:00:00,,Kirkcudbright,0,
+IM/LA/451,T/LA/1257,0,6/1/1990 0:00:00,Tolbooth,Aberdeen,0,
+IM/LA/452,T/LA/1647,0,7/4/1991 0:00:00,House,Tranent,0,
+IM/LA/453,T/LA/1647,0,,Tolbooth,Edinburgh,0,
+IM/LA/46,T/LA/156,0,1/1/1934 0:00:00,,Eyemouth,0,
+IM/LA/468,T/LA/1651,0,6/1/1991 0:00:00,Pit,Seaton,0,
+IM/LA/469,T/LA/1647,0,,Pit,Seaton,0,
+IM/LA/47,T/LA/156,0,3/28/1934 0:00:00,,Eyemouth,0,Released
+IM/LA/470,T/LA/1674,0,,Tolbooth,Edinburgh,0,
+IM/LA/471,T/LA/1649,0,,Tolbooth,Haddington,0,
+IM/LA/472,T/LA/1651,0,6/1/1991 0:00:00,Castle,Seaton,0,
+IM/LA/473,T/LA/1683,0,,Tolbooth,Tranent,0,
+IM/LA/474,T/LA/1727,0,,Tolbooth,Tranent,0,
+IM/LA/475,T/LA/1727,0,,Tolbooth,Edinburgh,0,
+IM/LA/476,T/LA/1683,0,,Tolbooth,Edinburgh,0,
+IM/LA/477,T/LA/1120,0,,Tolbooth,Ayr,0,
+IM/LA/478,T/LA/1748,0,,Tolbooth,Ayr,0,
+IM/LA/479,T/LA/1750,0,,Tolbooth,Irvine,0,
+IM/LA/48,T/LA/157,1,1/12/1944 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/480,T/LA/1800,0,,Tolbooth,Kirkend of Kircudbright,0,
+IM/LA/481,T/LA/1799,0,,Tolbooth,Kirkend of Kircudbright,0,
+IM/LA/482,T/LA/1805,0,,,Fortrose,0,
+IM/LA/483,T/LA/1803,0,,,Fortrose,0,
+IM/LA/484,T/JO/1699,0,,Thieves' Hole,Pittenweem,0,
+IM/LA/485,T/JO/1699,0,,Dungeon,Pittemweem,0,
+IM/LA/49,T/LA/90,1,10/28/1998 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/490,T/LA/1872,0,,Tolbooth,Dumfries,0,
+IM/LA/491,T/LA/801,0,,Tolbooth,Haddington,0,
+IM/LA/492,T/LA/1900,0,6/1/1932 0:00:00,Steeple,Lasswade,0,
+IM/LA/493,T/LA/1247,0,3/1/1998 0:00:00,Priory,Bewlie (in Ross),0,Released
+IM/LA/494,T/LA/776,0,,Tolbooth,Dumfries,0,
+IM/LA/495,T/LA/1937,0,12/18/1934 0:00:00,Tolbooth,Haddington,0,
+IM/LA/496,T/JO/1174,0,8/28/1949 0:00:00,Steeple,Inverkeithing,0,Moved
+IM/LA/497,T/JO/1174,0,,,Burntisland,0,
+IM/LA/498,T/LA/1977,0,,Steeple,Dunfermline,0,Moved
+IM/LA/499,T/LA/1977,0,4/1/1949 0:00:00,Tolbooth,Dunfermline,0,
+IM/LA/5,T/LA/15,0,7/13/2029 0:00:00,Tolbooth,Duns,1,Moved
+IM/LA/500,T/JO/575,0,,Tolbooth,Peebles,0,
+IM/LA/501,T/LA/2135,0,6/1/1942 0:00:00,Tolbooth,Duns,0,
+IM/LA/502,T/LA/2138,0,11/1/1949 0:00:00,Old Exchequer House,Edinburgh,0,
+IM/LA/503,T/LA/1115,1,,,Edinburgh,0,
+IM/LA/513,T/LA/852,0,,,,0,Released
+IM/LA/514,T/LA/853,0,,,,0,Released
+IM/LA/515,T/LA/854,0,,,,0,Released
+IM/LA/516,T/LA/850,0,,,,0,Released
+IM/LA/53,T/LA/175,0,,,Perth,0,
+IM/LA/54,T/LA/204,0,,,Dunkeld,0,
+IM/LA/55,T/LA/205,0,,,Dunkeld,0,
+IM/LA/56,T/LA/207,0,7/6/2009 0:00:00,,Crichton,0,Rescued
+IM/LA/57,T/LA/207,1,,Tolbooth,Edinburgh,0,
+IM/LA/58,T/LA/207,0,7/1/2009 0:00:00,Tolbooth,Musselburgh,1,
+IM/LA/59,T/LA/220,0,,Tolbooth,Perth,0,
+IM/LA/6,T/LA/37,0,,Tolbooth,Edinburgh,0,
+IM/LA/60,T/LA/221,0,,Tolbooth,Perth,0,
+IM/LA/61,T/LA/231,0,,Tolbooth,Dunblane,0,
+IM/LA/62,T/LA/232,0,,Tolbooth,Dunblane,0,
+IM/LA/63,T/LA/241,0,,Tolbooth,Linlithgow,0,
+IM/LA/64,T/LA/242,0,,Tolbooth,Linlithgow,0,
+IM/LA/65,T/LA/244,0,,,Irvine,0,
+IM/LA/66,T/LA/243,0,,,Irvine,0,
+IM/LA/67,T/LA/245,0,8/1/2017 0:00:00,Tolbooth,Stirling,0,
+IM/LA/68,T/LA/247,0,,,Irvine,0,
+IM/LA/69,T/LA/248,0,,,Ayr,0,
+IM/LA/7,T/LA/40,1,7/1/1944 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/70,T/LA/249,0,,,Ayr,0,
+IM/LA/71,T/LA/250,0,,,Brechin,0,
+IM/LA/72,T/LA/251,0,,,Inverkeithing,0,
+IM/LA/73,T/LA/252,0,,,Crail,0,
+IM/LA/74,T/LA/253,0,,,Inverkeithing,0,
+IM/LA/75,T/LA/254,0,,,Inverkeithing,0,
+IM/LA/76,T/LA/255,0,,,Inverkeithing,0,
+IM/LA/77,T/LA/256,0,,,Inverkeithing,0,
+IM/LA/78,T/LA/258,0,,,Inverkeithing,0,
+IM/LA/79,T/LA/260,1,,Tolbooth,Edinburgh,0,Released
+IM/LA/80,T/LA/261,1,,Tolbooth,Edinburgh,0,
+IM/LA/81,T/LA/263,0,,,Musselburgh,0,
+IM/LA/82,T/LA/264,0,,Tolbooth,Musselburgh,0,
+IM/LA/83,T/LA/265,0,,Tolbooth,Musselburgh,0,
+IM/LA/84,T/LA/266,0,,,Musselburgh,0,
+IM/LA/85,T/LA/286,1,,Tolbooth,Edinburgh,0,Released
+IM/LA/86,T/LA/287,1,,Tolbooth,Edinburgh,0,Released
+IM/LA/87,T/LA/288,0,6/14/1961 0:00:00,Tolbooth,Dalkeith,0,
+IM/LA/88,T/LA/302,1,8/9/1961 0:00:00,Tolbooth,Edinburgh,0,
+IM/LA/89,T/LA/322,0,,,,0,
+IM/LA/90,T/LA/322,1,,,Edinburgh,0,Released
+IM/LA/91,T/LA/323,1,,,Edinburgh,0,Released
+IM/LA/92,T/LA/325,1,,Tolbooth,Edinburgh,0,
+IM/LA/93,T/LA/326,0,,,Haddington,1,
+IM/LA/94,T/LA/326,1,,Tolbooth,Edinburgh,0,
+IM/LA/96,T/LA/288,0,,,Niddry,1,Moved
+IM/LA/97,T/LA/345,0,,,Culross,0,
+IM/LA/98,T/LA/346,0,,Tolbooth,Kirkcaldy,0,
+IM/LA/99,T/LA/348,0,,Castle,Glasgow,0,
