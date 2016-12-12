@@ -7,453 +7,394 @@
     <preference name='ui.shelf.height' value='26' />
   </preferences>
   <datasources>
-    <datasource caption='Copy of 2.18_WDB_Percentageofaccusations' inline='true' name='federated.1e8odoc1hpnbp0137butc1097oze' version='10.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='Copy of 2.18_WDB_Percentageofaccusations' name='textscan.056qs040cy5w0p14wzpe81ghjv36'>
-            <connection class='textscan' directory='C:/Users/Dwarrel/Documents/DataVis/data/allData' filename='Copy of 2.18_WDB_Percentageofaccusations.csv' password='' server='' />
-          </named-connection>
-        </named-connections>
-        <relation connection='textscan.056qs040cy5w0p14wzpe81ghjv36' name='Copy of 2.18_WDB_Percentageofaccusations.csv' table='[Copy of 2.18_WDB_Percentageofaccusations#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='string' name='Type of accusations' ordinal='0' />
-            <column datatype='real' name='percentage of cases with accusations' ordinal='1' />
-          </columns>
-        </relation>
-        <metadata-records>
-          <metadata-record class='column'>
-            <remote-name>Type of accusations</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Type of accusations]</local-name>
-            <parent-name>[Copy of 2.18_WDB_Percentageofaccusations.csv]</parent-name>
-            <remote-alias>Type of accusations</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
-              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
-              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>percentage of cases with accusations</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[percentage of cases with accusations]</local-name>
-            <parent-name>[Copy of 2.18_WDB_Percentageofaccusations.csv]</parent-name>
-            <remote-alias>percentage of cases with accusations</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[Copy of 2.18_WDB_Percentageofaccusations.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
-        <calculation class='tableau' formula='1' />
-      </column>
-      <column caption='Percentage Of Cases With Accusations' datatype='real' name='[percentage of cases with accusations]' role='measure' type='quantitative' />
-      <layout dim-ordering='alphabetic' dim-percentage='0.488242' measure-ordering='alphabetic' measure-percentage='0.511758' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
-      </semantic-values>
-    </datasource>
     <datasource caption='test_2.01_WDB_Case_START+' inline='true' name='federated.07kol7t0aqizri18hh0la04cs8wk' version='10.1'>
       <connection class='federated'>
         <named-connections>
           <named-connection caption='test_2.01_WDB_Case_START' name='textscan.1btmp6g0to2abc1fdkqyz1grhr6w'>
             <connection class='textscan' directory='C:/Users/Dwarrel/Documents/DataVis/data/allData' filename='Copy of 1.01_WDB_Accused.csv' password='' server='' />
           </named-connection>
+          <named-connection caption='exec_county_lat_long' name='textscan.0sa90jg1lh9xoi1bt7y6p1mf1yiz'>
+            <connection class='textscan' directory='C:/Users/Dwarrel/Documents/DataVis/data/allData' filename='exec_county_lat_long.csv' password='' server='' />
+          </named-connection>
         </named-connections>
-        <relation join='full' type='join'>
+        <relation join='left' type='join'>
           <clause type='join'>
             <expression op='='>
               <expression op='[Copy of 3.11_WDB_Trial.csv].[Trialref]' />
-              <expression op='[Copy of 3.10_WDB_Imprisonment.csv].[Trialref]' />
+              <expression op='[exec_county_lat_long.csv].[Trialref]' />
             </expression>
           </clause>
           <relation join='full' type='join'>
             <clause type='join'>
               <expression op='='>
                 <expression op='[Copy of 3.11_WDB_Trial.csv].[Trialref]' />
-                <expression op='[Copy of 3.08_WDB_Ordeal.csv].[Trialref]' />
+                <expression op='[Copy of 3.10_WDB_Imprisonment.csv].[Trialref]' />
               </expression>
             </clause>
             <relation join='full' type='join'>
               <clause type='join'>
                 <expression op='='>
                   <expression op='[Copy of 3.11_WDB_Trial.csv].[Trialref]' />
-                  <expression op='[Copy of 3.05_WDB_Denunciation.csv].[Trialref]' />
+                  <expression op='[Copy of 3.08_WDB_Ordeal.csv].[Trialref]' />
                 </expression>
               </clause>
               <relation join='full' type='join'>
                 <clause type='join'>
                   <expression op='='>
                     <expression op='[Copy of 3.11_WDB_Trial.csv].[Trialref]' />
-                    <expression op='[Copy of 3.04_WDB_Confession.csv].[Trialref]' />
+                    <expression op='[Copy of 3.05_WDB_Denunciation.csv].[Trialref]' />
                   </expression>
                 </clause>
-                <relation join='left' type='join'>
+                <relation join='full' type='join'>
                   <clause type='join'>
                     <expression op='='>
                       <expression op='[Copy of 3.11_WDB_Trial.csv].[Trialref]' />
-                      <expression op='[Copy of 3.03_WDB_Complaint.csv].[Trialref]' />
+                      <expression op='[Copy of 3.04_WDB_Confession.csv].[Trialref]' />
                     </expression>
                   </clause>
                   <relation join='left' type='join'>
                     <clause type='join'>
                       <expression op='='>
                         <expression op='[Copy of 3.11_WDB_Trial.csv].[Trialref]' />
-                        <expression op='[Copy of 3.02_WDB_Commission.csv].[Trialref]' />
+                        <expression op='[Copy of 3.03_WDB_Complaint.csv].[Trialref]' />
                       </expression>
                     </clause>
-                    <relation join='full' type='join'>
+                    <relation join='left' type='join'>
                       <clause type='join'>
                         <expression op='='>
-                          <expression op='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
-                          <expression op='[Copy of 3.11_WDB_Trial.csv].[CaseRef]' />
+                          <expression op='[Copy of 3.11_WDB_Trial.csv].[Trialref]' />
+                          <expression op='[Copy of 3.02_WDB_Commission.csv].[Trialref]' />
                         </expression>
                       </clause>
-                      <relation join='left' type='join'>
+                      <relation join='full' type='join'>
                         <clause type='join'>
                           <expression op='='>
                             <expression op='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
-                            <expression op='[Copy of 2.17_WDB_WitchesMeetingPlace.csv - WDB_WitchesMeetingPlace.csv.csv].[CaseRef]' />
+                            <expression op='[Copy of 3.11_WDB_Trial.csv].[CaseRef]' />
                           </expression>
                         </clause>
                         <relation join='left' type='join'>
                           <clause type='join'>
                             <expression op='='>
                               <expression op='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
-                              <expression op='[Copy of 2.13_WDB_RitualObject.csv - WDB_RitualObject.csv.csv].[CaseRef]' />
+                              <expression op='[Copy of 2.17_WDB_WitchesMeetingPlace.csv - WDB_WitchesMeetingPlace.csv.csv].[CaseRef]' />
                             </expression>
                           </clause>
                           <relation join='left' type='join'>
                             <clause type='join'>
                               <expression op='='>
                                 <expression op='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
-                                <expression op='[Copy of 2.11_WDB_PropertyDamage.csv - WDB_PropertyDamage.csv.csv].[CaseRef]' />
+                                <expression op='[Copy of 2.13_WDB_RitualObject.csv - WDB_RitualObject.csv.csv].[CaseRef]' />
                               </expression>
                             </clause>
                             <relation join='left' type='join'>
                               <clause type='join'>
                                 <expression op='='>
                                   <expression op='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
-                                  <expression op='[Copy of 2.09_WDB_OtherCharges.csv - WDB_OtherCharges.csv.csv].[CaseRef]' />
+                                  <expression op='[Copy of 2.11_WDB_PropertyDamage.csv - WDB_PropertyDamage.csv.csv].[CaseRef]' />
                                 </expression>
                               </clause>
                               <relation join='left' type='join'>
                                 <clause type='join'>
                                   <expression op='='>
                                     <expression op='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
-                                    <expression op='[Copy of 2.05_WDB_DevilAppearance.csv - WDB_DevilAppearance.csv.csv].[CaseRef]' />
+                                    <expression op='[Copy of 2.09_WDB_OtherCharges.csv - WDB_OtherCharges.csv.csv].[CaseRef]' />
                                   </expression>
                                 </clause>
                                 <relation join='left' type='join'>
                                   <clause type='join'>
                                     <expression op='='>
                                       <expression op='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
-                                      <expression op='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[CaseRef]' />
+                                      <expression op='[Copy of 2.05_WDB_DevilAppearance.csv - WDB_DevilAppearance.csv.csv].[CaseRef]' />
                                     </expression>
                                   </clause>
-                                  <relation join='full' type='join'>
+                                  <relation join='left' type='join'>
                                     <clause type='join'>
                                       <expression op='='>
-                                        <expression op='[test_2.01_WDB_Case_START.csv].[AccusedRef]' />
-                                        <expression op='[Copy of 1.02_WDB_Accused_family.csv].[AccusedRef]' />
+                                        <expression op='[test_2.01_WDB_Case_START.csv].[CaseRef]' />
+                                        <expression op='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[CaseRef]' />
                                       </expression>
                                     </clause>
                                     <relation join='full' type='join'>
                                       <clause type='join'>
                                         <expression op='='>
                                           <expression op='[test_2.01_WDB_Case_START.csv].[AccusedRef]' />
-                                          <expression op='[Copy of 1.01_WDB_Accused.csv].[AccusedRef]' />
+                                          <expression op='[Copy of 1.02_WDB_Accused_family.csv].[AccusedRef]' />
                                         </expression>
                                       </clause>
-                                      <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='test_2.01_WDB_Case_START.csv' table='[test_2.01_WDB_Case_START#csv]' type='table'>
-                                        <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                                          <column datatype='string' name='CaseRef' ordinal='0' />
-                                          <column datatype='integer' name='NamedIndividual' ordinal='1' />
-                                          <column datatype='string' name='AccusedRef' ordinal='2' />
-                                          <column datatype='datetime' name='CaseStart_date_as_date' ordinal='3' />
-                                          <column datatype='datetime' name='Case_date_as_date' ordinal='4' />
-                                          <column datatype='integer' name='Age_at_case' ordinal='5' />
-                                          <column datatype='integer' name='Suspects_text' ordinal='6' />
-                                          <column datatype='integer' name='UNorthodoxRelPract_p' ordinal='7' />
-                                          <column datatype='integer' name='Consulting_s' ordinal='8' />
-                                          <column datatype='integer' name='Demonic_s' ordinal='9' />
-                                          <column datatype='integer' name='Demonic_possess_s' ordinal='10' />
-                                          <column datatype='integer' name='Fairies_s' ordinal='11' />
-                                          <column datatype='integer' name='Folk_healing_s' ordinal='12' />
-                                          <column datatype='integer' name='Maleficium_s' ordinal='13' />
-                                          <column datatype='integer' name='Midwifery_s' ordinal='14' />
-                                          <column datatype='integer' name='ImplicatedByAnother_s' ordinal='15' />
-                                          <column datatype='integer' name='Neighbhd_dispute_s' ordinal='16' />
-                                          <column datatype='integer' name='PoliticalMotive_s' ordinal='17' />
-                                          <column datatype='integer' name='PropertyMotive_s' ordinal='18' />
-                                          <column datatype='integer' name='RefusedCharity_s' ordinal='19' />
-                                          <column datatype='integer' name='Treason_s' ordinal='20' />
-                                          <column datatype='integer' name='Other_s' ordinal='21' />
-                                          <column datatype='string' name='OtherText' ordinal='22' />
-                                          <column datatype='integer' name='WhiteMagic_s' ordinal='23' />
-                                          <column datatype='string' name='Charnotes' ordinal='24' />
-                                          <column datatype='integer' name='DemonicPact' ordinal='25' />
-                                          <column datatype='integer' name='WitchesMeeting' ordinal='26' />
-                                          <column datatype='integer' name='DevilPresent' ordinal='27' />
-                                          <column datatype='integer' name='Maleficium' ordinal='28' />
-                                          <column datatype='integer' name='CommunalSex' ordinal='29' />
-                                          <column datatype='integer' name='DevilWorship' ordinal='30' />
-                                          <column datatype='integer' name='FoodAndDrink' ordinal='31' />
-                                          <column datatype='integer' name='Dancing' ordinal='32' />
-                                          <column datatype='integer' name='Singing' ordinal='33' />
-                                          <column datatype='integer' name='Elphane/Fairyland' ordinal='34' />
-                                          <column datatype='integer' name='Food/Drink' ordinal='35' />
-                                          <column datatype='integer' name='SpecificVerbalFormulae' ordinal='36' />
-                                          <column datatype='integer' name='SpecificRitualActs' ordinal='37' />
-                                          <column datatype='integer' name='Familiars' ordinal='38' />
-                                          <column datatype='integer' name='Shape-Changing' ordinal='39' />
-                                          <column datatype='integer' name='Dreams/Visions' ordinal='40' />
-                                          <column datatype='integer' name='UnorthodoxReligiousPractice' ordinal='41' />
-                                          <column datatype='integer' name='SympatheticMagic' ordinal='42' />
-                                          <column datatype='integer' name='Ridingdead' ordinal='43' />
-                                          <column datatype='integer' name='HumanIllness' ordinal='44' />
-                                          <column datatype='integer' name='HumanDeath' ordinal='45' />
-                                          <column datatype='integer' name='AnimalIllness' ordinal='46' />
-                                          <column datatype='integer' name='AnimalDeath' ordinal='47' />
-                                          <column datatype='integer' name='FemaleInfertility' ordinal='48' />
-                                          <column datatype='integer' name='MaleImpotence' ordinal='49' />
-                                          <column datatype='integer' name='AggravatingDisease' ordinal='50' />
-                                          <column datatype='integer' name='TransferringDisease' ordinal='51' />
-                                          <column datatype='integer' name='LayingOn' ordinal='52' />
-                                          <column datatype='integer' name='Removalbewitchment' ordinal='53' />
-                                          <column datatype='integer' name='Quarreling' ordinal='54' />
-                                          <column datatype='integer' name='Cursing' ordinal='55' />
-                                          <column datatype='integer' name='Poisoning' ordinal='56' />
-                                          <column datatype='integer' name='RecHealer' ordinal='57' />
-                                          <column datatype='integer' name='HealingHumans' ordinal='58' />
-                                          <column datatype='integer' name='HealingAnimals' ordinal='59' />
-                                          <column datatype='integer' name='Midwifery' ordinal='60' />
-                                          <column datatype='integer' name='PropertyDamage' ordinal='61' />
-                                          <column datatype='integer' name='WeatherModification' ordinal='62' />
-                                        </columns>
+                                      <relation join='full' type='join'>
+                                        <clause type='join'>
+                                          <expression op='='>
+                                            <expression op='[test_2.01_WDB_Case_START.csv].[AccusedRef]' />
+                                            <expression op='[Copy of 1.01_WDB_Accused.csv].[AccusedRef]' />
+                                          </expression>
+                                        </clause>
+                                        <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='test_2.01_WDB_Case_START.csv' table='[test_2.01_WDB_Case_START#csv]' type='table'>
+                                          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                                            <column datatype='string' name='CaseRef' ordinal='0' />
+                                            <column datatype='integer' name='NamedIndividual' ordinal='1' />
+                                            <column datatype='string' name='AccusedRef' ordinal='2' />
+                                            <column datatype='datetime' name='CaseStart_date_as_date' ordinal='3' />
+                                            <column datatype='datetime' name='Case_date_as_date' ordinal='4' />
+                                            <column datatype='integer' name='Age_at_case' ordinal='5' />
+                                            <column datatype='integer' name='Suspects_text' ordinal='6' />
+                                            <column datatype='integer' name='UNorthodoxRelPract_p' ordinal='7' />
+                                            <column datatype='integer' name='Consulting_s' ordinal='8' />
+                                            <column datatype='integer' name='Demonic_s' ordinal='9' />
+                                            <column datatype='integer' name='Demonic_possess_s' ordinal='10' />
+                                            <column datatype='integer' name='Fairies_s' ordinal='11' />
+                                            <column datatype='integer' name='Folk_healing_s' ordinal='12' />
+                                            <column datatype='integer' name='Maleficium_s' ordinal='13' />
+                                            <column datatype='integer' name='Midwifery_s' ordinal='14' />
+                                            <column datatype='integer' name='ImplicatedByAnother_s' ordinal='15' />
+                                            <column datatype='integer' name='Neighbhd_dispute_s' ordinal='16' />
+                                            <column datatype='integer' name='PoliticalMotive_s' ordinal='17' />
+                                            <column datatype='integer' name='PropertyMotive_s' ordinal='18' />
+                                            <column datatype='integer' name='RefusedCharity_s' ordinal='19' />
+                                            <column datatype='integer' name='Treason_s' ordinal='20' />
+                                            <column datatype='integer' name='Other_s' ordinal='21' />
+                                            <column datatype='string' name='OtherText' ordinal='22' />
+                                            <column datatype='integer' name='WhiteMagic_s' ordinal='23' />
+                                            <column datatype='string' name='Charnotes' ordinal='24' />
+                                            <column datatype='integer' name='DemonicPact' ordinal='25' />
+                                            <column datatype='integer' name='WitchesMeeting' ordinal='26' />
+                                            <column datatype='integer' name='DevilPresent' ordinal='27' />
+                                            <column datatype='integer' name='Maleficium' ordinal='28' />
+                                            <column datatype='integer' name='CommunalSex' ordinal='29' />
+                                            <column datatype='integer' name='DevilWorship' ordinal='30' />
+                                            <column datatype='integer' name='FoodAndDrink' ordinal='31' />
+                                            <column datatype='integer' name='Dancing' ordinal='32' />
+                                            <column datatype='integer' name='Singing' ordinal='33' />
+                                            <column datatype='integer' name='Elphane/Fairyland' ordinal='34' />
+                                            <column datatype='integer' name='Food/Drink' ordinal='35' />
+                                            <column datatype='integer' name='SpecificVerbalFormulae' ordinal='36' />
+                                            <column datatype='integer' name='SpecificRitualActs' ordinal='37' />
+                                            <column datatype='integer' name='Familiars' ordinal='38' />
+                                            <column datatype='integer' name='Shape-Changing' ordinal='39' />
+                                            <column datatype='integer' name='Dreams/Visions' ordinal='40' />
+                                            <column datatype='integer' name='UnorthodoxReligiousPractice' ordinal='41' />
+                                            <column datatype='integer' name='SympatheticMagic' ordinal='42' />
+                                            <column datatype='integer' name='Ridingdead' ordinal='43' />
+                                            <column datatype='integer' name='HumanIllness' ordinal='44' />
+                                            <column datatype='integer' name='HumanDeath' ordinal='45' />
+                                            <column datatype='integer' name='AnimalIllness' ordinal='46' />
+                                            <column datatype='integer' name='AnimalDeath' ordinal='47' />
+                                            <column datatype='integer' name='FemaleInfertility' ordinal='48' />
+                                            <column datatype='integer' name='MaleImpotence' ordinal='49' />
+                                            <column datatype='integer' name='AggravatingDisease' ordinal='50' />
+                                            <column datatype='integer' name='TransferringDisease' ordinal='51' />
+                                            <column datatype='integer' name='LayingOn' ordinal='52' />
+                                            <column datatype='integer' name='Removalbewitchment' ordinal='53' />
+                                            <column datatype='integer' name='Quarreling' ordinal='54' />
+                                            <column datatype='integer' name='Cursing' ordinal='55' />
+                                            <column datatype='integer' name='Poisoning' ordinal='56' />
+                                            <column datatype='integer' name='RecHealer' ordinal='57' />
+                                            <column datatype='integer' name='HealingHumans' ordinal='58' />
+                                            <column datatype='integer' name='HealingAnimals' ordinal='59' />
+                                            <column datatype='integer' name='Midwifery' ordinal='60' />
+                                            <column datatype='integer' name='PropertyDamage' ordinal='61' />
+                                            <column datatype='integer' name='WeatherModification' ordinal='62' />
+                                          </columns>
+                                        </relation>
+                                        <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 1.01_WDB_Accused.csv' table='[Copy of 1.01_WDB_Accused#csv]' type='table'>
+                                          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                                            <column datatype='string' name='AccusedRef' ordinal='0' />
+                                            <column datatype='string' name='FirstName' ordinal='1' />
+                                            <column datatype='string' name='LastName' ordinal='2' />
+                                            <column datatype='string' name='Alias' ordinal='3' />
+                                            <column datatype='string' name='DesTitle' ordinal='4' />
+                                            <column datatype='string' name='Sex' ordinal='5' />
+                                            <column datatype='string' name='Res_settlement' ordinal='6' />
+                                            <column datatype='string' name='Res_parish' ordinal='7' />
+                                            <column datatype='string' name='Res_presbytery' ordinal='8' />
+                                            <column datatype='string' name='Res_county' ordinal='9' />
+                                            <column datatype='string' name='MaritalStatus' ordinal='10' />
+                                            <column datatype='string' name='Occupation' ordinal='11' />
+                                            <column datatype='string' name='Notes' ordinal='12' />
+                                          </columns>
+                                        </relation>
                                       </relation>
-                                      <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 1.01_WDB_Accused.csv' table='[Copy of 1.01_WDB_Accused#csv]' type='table'>
+                                      <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 1.02_WDB_Accused_family.csv' table='[Copy of 1.02_WDB_Accused_family#csv]' type='table'>
                                         <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                                          <column datatype='string' name='AccusedRef' ordinal='0' />
-                                          <column datatype='string' name='FirstName' ordinal='1' />
-                                          <column datatype='string' name='LastName' ordinal='2' />
-                                          <column datatype='string' name='Alias' ordinal='3' />
-                                          <column datatype='string' name='DesTitle' ordinal='4' />
-                                          <column datatype='string' name='Sex' ordinal='5' />
-                                          <column datatype='string' name='Res_settlement' ordinal='6' />
-                                          <column datatype='string' name='Res_parish' ordinal='7' />
-                                          <column datatype='string' name='Res_presbytery' ordinal='8' />
-                                          <column datatype='string' name='Res_county' ordinal='9' />
-                                          <column datatype='string' name='MaritalStatus' ordinal='10' />
-                                          <column datatype='string' name='Occupation' ordinal='11' />
-                                          <column datatype='string' name='Notes' ordinal='12' />
+                                          <column datatype='string' name='Accused_familyRef' ordinal='0' />
+                                          <column datatype='string' name='Surname' ordinal='1' />
+                                          <column datatype='string' name='Firstname' ordinal='2' />
+                                          <column datatype='string' name='Relationship' ordinal='3' />
+                                          <column datatype='string' name='AccusedRef' ordinal='4' />
                                         </columns>
                                       </relation>
                                     </relation>
-                                    <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 1.02_WDB_Accused_family.csv' table='[Copy of 1.02_WDB_Accused_family#csv]' type='table'>
+                                    <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv' table='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv#csv]' type='table'>
                                       <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                                        <column datatype='string' name='Accused_familyRef' ordinal='0' />
-                                        <column datatype='string' name='Surname' ordinal='1' />
-                                        <column datatype='string' name='Firstname' ordinal='2' />
-                                        <column datatype='string' name='Relationship' ordinal='3' />
-                                        <column datatype='string' name='AccusedRef' ordinal='4' />
+                                        <column datatype='string' name='DemonicRef' ordinal='0' />
+                                        <column datatype='string' name='CaseRef' ordinal='1' />
+                                        <column datatype='string' name='Demonic_Type' ordinal='2' />
+                                        <column datatype='string' name='Demonic_Text' ordinal='3' />
                                       </columns>
                                     </relation>
                                   </relation>
-                                  <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv' table='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv#csv]' type='table'>
+                                  <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.05_WDB_DevilAppearance.csv - WDB_DevilAppearance.csv.csv' table='[Copy of 2.05_WDB_DevilAppearance.csv - WDB_DevilAppearance.csv#csv]' type='table'>
                                     <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                                      <column datatype='string' name='DemonicRef' ordinal='0' />
+                                      <column datatype='string' name='DevilRef' ordinal='0' />
                                       <column datatype='string' name='CaseRef' ordinal='1' />
-                                      <column datatype='string' name='Demonic_Type' ordinal='2' />
-                                      <column datatype='string' name='Demonic_Text' ordinal='3' />
+                                      <column datatype='string' name='Devil_Type' ordinal='2' />
+                                      <column datatype='string' name='Devil_Text' ordinal='3' />
                                     </columns>
                                   </relation>
                                 </relation>
-                                <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.05_WDB_DevilAppearance.csv - WDB_DevilAppearance.csv.csv' table='[Copy of 2.05_WDB_DevilAppearance.csv - WDB_DevilAppearance.csv#csv]' type='table'>
+                                <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.09_WDB_OtherCharges.csv - WDB_OtherCharges.csv.csv' table='[Copy of 2.09_WDB_OtherCharges.csv - WDB_OtherCharges.csv#csv]' type='table'>
                                   <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                                    <column datatype='string' name='DevilRef' ordinal='0' />
+                                    <column datatype='string' name='OtherChargesRef' ordinal='0' />
                                     <column datatype='string' name='CaseRef' ordinal='1' />
-                                    <column datatype='string' name='Devil_Type' ordinal='2' />
-                                    <column datatype='string' name='Devil_Text' ordinal='3' />
+                                    <column datatype='string' name='OtherCharges_Type' ordinal='2' />
                                   </columns>
                                 </relation>
                               </relation>
-                              <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.09_WDB_OtherCharges.csv - WDB_OtherCharges.csv.csv' table='[Copy of 2.09_WDB_OtherCharges.csv - WDB_OtherCharges.csv#csv]' type='table'>
+                              <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.11_WDB_PropertyDamage.csv - WDB_PropertyDamage.csv.csv' table='[Copy of 2.11_WDB_PropertyDamage.csv - WDB_PropertyDamage.csv#csv]' type='table'>
                                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                                  <column datatype='string' name='OtherChargesRef' ordinal='0' />
+                                  <column datatype='string' name='PropertyDamageRef' ordinal='0' />
                                   <column datatype='string' name='CaseRef' ordinal='1' />
-                                  <column datatype='string' name='OtherCharges_Type' ordinal='2' />
+                                  <column datatype='string' name='PropertyDamage_Type' ordinal='2' />
                                 </columns>
                               </relation>
                             </relation>
-                            <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.11_WDB_PropertyDamage.csv - WDB_PropertyDamage.csv.csv' table='[Copy of 2.11_WDB_PropertyDamage.csv - WDB_PropertyDamage.csv#csv]' type='table'>
+                            <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.13_WDB_RitualObject.csv - WDB_RitualObject.csv.csv' table='[Copy of 2.13_WDB_RitualObject.csv - WDB_RitualObject.csv#csv]' type='table'>
                               <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                                <column datatype='string' name='PropertyDamageRef' ordinal='0' />
+                                <column datatype='string' name='RitualObjectRef' ordinal='0' />
                                 <column datatype='string' name='CaseRef' ordinal='1' />
-                                <column datatype='string' name='PropertyDamage_Type' ordinal='2' />
+                                <column datatype='string' name='RitualObject_Type' ordinal='2' />
                               </columns>
                             </relation>
                           </relation>
-                          <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.13_WDB_RitualObject.csv - WDB_RitualObject.csv.csv' table='[Copy of 2.13_WDB_RitualObject.csv - WDB_RitualObject.csv#csv]' type='table'>
+                          <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.17_WDB_WitchesMeetingPlace.csv - WDB_WitchesMeetingPlace.csv.csv' table='[Copy of 2.17_WDB_WitchesMeetingPlace.csv - WDB_WitchesMeetingPlace.csv#csv]' type='table'>
                             <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                              <column datatype='string' name='RitualObjectRef' ordinal='0' />
+                              <column datatype='string' name='MeetingPlaceRef' ordinal='0' />
                               <column datatype='string' name='CaseRef' ordinal='1' />
-                              <column datatype='string' name='RitualObject_Type' ordinal='2' />
+                              <column datatype='string' name='MeetingPlace_Place' ordinal='2' />
+                              <column datatype='integer' name='Inversion' ordinal='3' />
+                              <column datatype='string' name='Location' ordinal='4' />
                             </columns>
                           </relation>
                         </relation>
-                        <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 2.17_WDB_WitchesMeetingPlace.csv - WDB_WitchesMeetingPlace.csv.csv' table='[Copy of 2.17_WDB_WitchesMeetingPlace.csv - WDB_WitchesMeetingPlace.csv#csv]' type='table'>
+                        <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.11_WDB_Trial.csv' table='[Copy of 3.11_WDB_Trial#csv]' type='table'>
                           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                            <column datatype='string' name='MeetingPlaceRef' ordinal='0' />
+                            <column datatype='string' name='Trialref' ordinal='0' />
                             <column datatype='string' name='CaseRef' ordinal='1' />
-                            <column datatype='string' name='MeetingPlace_Place' ordinal='2' />
-                            <column datatype='integer' name='Inversion' ordinal='3' />
-                            <column datatype='string' name='Location' ordinal='4' />
+                            <column datatype='integer' name='TrialType' ordinal='2' />
+                            <column datatype='string' name='Trial_settlement' ordinal='3' />
+                            <column datatype='string' name='Trial_parish' ordinal='4' />
+                            <column datatype='string' name='Trial_presbytery' ordinal='5' />
+                            <column datatype='string' name='Trial_county' ordinal='6' />
+                            <column datatype='string' name='Trial_burgh' ordinal='7' />
+                            <column datatype='integer' name='Arrest' ordinal='8' />
+                            <column datatype='datetime' name='ArrestDate_as_date' ordinal='9' />
+                            <column datatype='integer' name='Fled' ordinal='10' />
+                            <column datatype='datetime' name='FledDate_as_date' ordinal='11' />
+                            <column datatype='integer' name='ActionDropped' ordinal='12' />
+                            <column datatype='datetime' name='Actiondropdate_as_date' ordinal='13' />
+                            <column datatype='string' name='Actiondroppedby' ordinal='14' />
+                            <column datatype='datetime' name='TrialDate_as_date' ordinal='15' />
+                            <column datatype='integer' name='Female_accusers' ordinal='16' />
+                            <column datatype='integer' name='Male_accusers' ordinal='17' />
+                            <column datatype='integer' name='High_status' ordinal='18' />
+                            <column datatype='integer' name='Defence' ordinal='19' />
+                            <column datatype='string' name='Verdict' ordinal='20' />
+                            <column datatype='string' name='Sentence' ordinal='21' />
+                            <column datatype='integer' name='Cjtorder' ordinal='22' />
+                            <column datatype='datetime' name='Cjtdate_as_date' ordinal='23' />
+                            <column datatype='integer' name='Localwithcrep' ordinal='24' />
+                            <column datatype='integer' name='Noreftocentral' ordinal='25' />
+                            <column datatype='string' name='TrialNotes' ordinal='26' />
+                            <column datatype='integer' name='Execution' ordinal='27' />
+                            <column datatype='string' name='Executionmethod' ordinal='28' />
+                            <column datatype='datetime' name='ExecutionDate_as_date' ordinal='29' />
+                            <column datatype='string' name='ExecutionPlace' ordinal='30' />
+                            <column datatype='string' name='Exec_settlement' ordinal='31' />
+                            <column datatype='string' name='Exec_parish' ordinal='32' />
+                            <column datatype='string' name='Exec_presbytery' ordinal='33' />
+                            <column datatype='string' name='Exec_county' ordinal='34' />
+                            <column datatype='string' name='Exec_burgh' ordinal='35' />
+                            <column datatype='string' name='PostTrialNotes' ordinal='36' />
                           </columns>
                         </relation>
                       </relation>
-                      <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.11_WDB_Trial.csv' table='[Copy of 3.11_WDB_Trial#csv]' type='table'>
+                      <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.02_WDB_Commission.csv' table='[Copy of 3.02_WDB_Commission#csv]' type='table'>
                         <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                          <column datatype='string' name='Trialref' ordinal='0' />
-                          <column datatype='string' name='CaseRef' ordinal='1' />
-                          <column datatype='integer' name='TrialType' ordinal='2' />
-                          <column datatype='string' name='Trial_settlement' ordinal='3' />
-                          <column datatype='string' name='Trial_parish' ordinal='4' />
-                          <column datatype='string' name='Trial_presbytery' ordinal='5' />
-                          <column datatype='string' name='Trial_county' ordinal='6' />
-                          <column datatype='string' name='Trial_burgh' ordinal='7' />
-                          <column datatype='integer' name='Arrest' ordinal='8' />
-                          <column datatype='datetime' name='ArrestDate_as_date' ordinal='9' />
-                          <column datatype='integer' name='Fled' ordinal='10' />
-                          <column datatype='datetime' name='FledDate_as_date' ordinal='11' />
-                          <column datatype='integer' name='ActionDropped' ordinal='12' />
-                          <column datatype='datetime' name='Actiondropdate_as_date' ordinal='13' />
-                          <column datatype='string' name='Actiondroppedby' ordinal='14' />
-                          <column datatype='datetime' name='TrialDate_as_date' ordinal='15' />
-                          <column datatype='integer' name='Female_accusers' ordinal='16' />
-                          <column datatype='integer' name='Male_accusers' ordinal='17' />
-                          <column datatype='integer' name='High_status' ordinal='18' />
-                          <column datatype='integer' name='Defence' ordinal='19' />
-                          <column datatype='string' name='Verdict' ordinal='20' />
-                          <column datatype='string' name='Sentence' ordinal='21' />
-                          <column datatype='integer' name='Cjtorder' ordinal='22' />
-                          <column datatype='datetime' name='Cjtdate_as_date' ordinal='23' />
-                          <column datatype='integer' name='Localwithcrep' ordinal='24' />
-                          <column datatype='integer' name='Noreftocentral' ordinal='25' />
-                          <column datatype='string' name='TrialNotes' ordinal='26' />
-                          <column datatype='integer' name='Execution' ordinal='27' />
-                          <column datatype='string' name='Executionmethod' ordinal='28' />
-                          <column datatype='datetime' name='ExecutionDate_as_date' ordinal='29' />
-                          <column datatype='string' name='ExecutionPlace' ordinal='30' />
-                          <column datatype='string' name='Exec_settlement' ordinal='31' />
-                          <column datatype='string' name='Exec_parish' ordinal='32' />
-                          <column datatype='string' name='Exec_presbytery' ordinal='33' />
-                          <column datatype='string' name='Exec_county' ordinal='34' />
-                          <column datatype='string' name='Exec_burgh' ordinal='35' />
-                          <column datatype='string' name='PostTrialNotes' ordinal='36' />
+                          <column datatype='string' name='CommissionRef' ordinal='0' />
+                          <column datatype='string' name='Trialref' ordinal='1' />
+                          <column datatype='string' name='Commbody' ordinal='2' />
+                          <column datatype='string' name='Commtype' ordinal='3' />
                         </columns>
                       </relation>
                     </relation>
-                    <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.02_WDB_Commission.csv' table='[Copy of 3.02_WDB_Commission#csv]' type='table'>
+                    <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.03_WDB_Complaint.csv' table='[Copy of 3.03_WDB_Complaint#csv]' type='table'>
                       <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                        <column datatype='string' name='CommissionRef' ordinal='0' />
+                        <column datatype='string' name='ComplaintRef' ordinal='0' />
                         <column datatype='string' name='Trialref' ordinal='1' />
-                        <column datatype='string' name='Commbody' ordinal='2' />
-                        <column datatype='string' name='Commtype' ordinal='3' />
+                        <column datatype='integer' name='Complaint' ordinal='2' />
+                        <column datatype='string' name='Complaint_type' ordinal='3' />
+                        <column datatype='datetime' name='Complaintdate_as_date' ordinal='4' />
+                        <column datatype='string' name='Wherelodged' ordinal='5' />
+                        <column datatype='string' name='Accused_familyRef' ordinal='6' />
+                        <column datatype='string' name='PersonRef' ordinal='7' />
+                        <column datatype='string' name='Involvement' ordinal='8' />
                       </columns>
                     </relation>
                   </relation>
-                  <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.03_WDB_Complaint.csv' table='[Copy of 3.03_WDB_Complaint#csv]' type='table'>
+                  <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.04_WDB_Confession.csv' table='[Copy of 3.04_WDB_Confession#csv]' type='table'>
                     <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                      <column datatype='string' name='ComplaintRef' ordinal='0' />
+                      <column datatype='string' name='ConfessionRef' ordinal='0' />
                       <column datatype='string' name='Trialref' ordinal='1' />
-                      <column datatype='integer' name='Complaint' ordinal='2' />
-                      <column datatype='string' name='Complaint_type' ordinal='3' />
-                      <column datatype='datetime' name='Complaintdate_as_date' ordinal='4' />
-                      <column datatype='string' name='Wherelodged' ordinal='5' />
-                      <column datatype='string' name='Accused_familyRef' ordinal='6' />
-                      <column datatype='string' name='PersonRef' ordinal='7' />
-                      <column datatype='string' name='Involvement' ordinal='8' />
+                      <column datatype='integer' name='CentralTrialConfession' ordinal='2' />
+                      <column datatype='integer' name='Confessionrec' ordinal='3' />
+                      <column datatype='datetime' name='Confessiondate_as_date' ordinal='4' />
+                      <column datatype='string' name='Confessionlocation' ordinal='5' />
+                      <column datatype='integer' name='Confessiontext' ordinal='6' />
+                      <column datatype='integer' name='Confessiondetails' ordinal='7' />
+                      <column datatype='integer' name='Confessionret' ordinal='8' />
                     </columns>
                   </relation>
                 </relation>
-                <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.04_WDB_Confession.csv' table='[Copy of 3.04_WDB_Confession#csv]' type='table'>
+                <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.05_WDB_Denunciation.csv' table='[Copy of 3.05_WDB_Denunciation#csv]' type='table'>
                   <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                    <column datatype='string' name='ConfessionRef' ordinal='0' />
+                    <column datatype='string' name='DenuncRef' ordinal='0' />
                     <column datatype='string' name='Trialref' ordinal='1' />
-                    <column datatype='integer' name='CentralTrialConfession' ordinal='2' />
-                    <column datatype='integer' name='Confessionrec' ordinal='3' />
-                    <column datatype='datetime' name='Confessiondate_as_date' ordinal='4' />
-                    <column datatype='string' name='Confessionlocation' ordinal='5' />
-                    <column datatype='integer' name='Confessiontext' ordinal='6' />
-                    <column datatype='integer' name='Confessiondetails' ordinal='7' />
-                    <column datatype='integer' name='Confessionret' ordinal='8' />
+                    <column datatype='integer' name='Denunc_exists' ordinal='2' />
+                    <column datatype='datetime' name='Denuncdate_as_date' ordinal='3' />
+                    <column datatype='string' name='Denunc_text' ordinal='4' />
                   </columns>
                 </relation>
               </relation>
-              <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.05_WDB_Denunciation.csv' table='[Copy of 3.05_WDB_Denunciation#csv]' type='table'>
+              <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.08_WDB_Ordeal.csv' table='[Copy of 3.08_WDB_Ordeal#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='string' name='DenuncRef' ordinal='0' />
+                  <column datatype='string' name='OrdealRef' ordinal='0' />
                   <column datatype='string' name='Trialref' ordinal='1' />
-                  <column datatype='integer' name='Denunc_exists' ordinal='2' />
-                  <column datatype='datetime' name='Denuncdate_as_date' ordinal='3' />
-                  <column datatype='string' name='Denunc_text' ordinal='4' />
+                  <column datatype='integer' name='Ordealexists' ordinal='2' />
+                  <column datatype='string' name='Ordealdate' ordinal='3' />
+                  <column datatype='datetime' name='Ordealdate_as_date' ordinal='4' />
+                  <column datatype='string' name='Ordealtype' ordinal='5' />
                 </columns>
               </relation>
             </relation>
-            <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.08_WDB_Ordeal.csv' table='[Copy of 3.08_WDB_Ordeal#csv]' type='table'>
+            <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.10_WDB_Imprisonment.csv' table='[Copy of 3.10_WDB_Imprisonment#csv]' type='table'>
               <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                <column datatype='string' name='OrdealRef' ordinal='0' />
+                <column datatype='string' name='ImprisonRef' ordinal='0' />
                 <column datatype='string' name='Trialref' ordinal='1' />
-                <column datatype='integer' name='Ordealexists' ordinal='2' />
-                <column datatype='string' name='Ordealdate' ordinal='3' />
-                <column datatype='datetime' name='Ordealdate_as_date' ordinal='4' />
-                <column datatype='string' name='Ordealtype' ordinal='5' />
+                <column datatype='integer' name='CentralTrialImprison' ordinal='2' />
+                <column datatype='datetime' name='Imprisondate_as_date' ordinal='3' />
+                <column datatype='string' name='Prison' ordinal='4' />
+                <column datatype='string' name='Location' ordinal='5' />
+                <column datatype='integer' name='Moving' ordinal='6' />
+                <column datatype='string' name='Fate_in_prison' ordinal='7' />
               </columns>
             </relation>
           </relation>
-          <relation connection='textscan.1btmp6g0to2abc1fdkqyz1grhr6w' name='Copy of 3.10_WDB_Imprisonment.csv' table='[Copy of 3.10_WDB_Imprisonment#csv]' type='table'>
+          <relation connection='textscan.0sa90jg1lh9xoi1bt7y6p1mf1yiz' name='exec_county_lat_long.csv' table='[exec_county_lat_long#csv]' type='table'>
             <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-              <column datatype='string' name='ImprisonRef' ordinal='0' />
-              <column datatype='string' name='Trialref' ordinal='1' />
-              <column datatype='integer' name='CentralTrialImprison' ordinal='2' />
-              <column datatype='datetime' name='Imprisondate_as_date' ordinal='3' />
-              <column datatype='string' name='Prison' ordinal='4' />
-              <column datatype='string' name='Location' ordinal='5' />
-              <column datatype='integer' name='Moving' ordinal='6' />
-              <column datatype='string' name='Fate_in_prison' ordinal='7' />
+              <column datatype='string' name='Trialref' ordinal='0' />
+              <column datatype='string' name='Exec_county' ordinal='1' />
+              <column datatype='real' name='exec county lat' ordinal='2' />
+              <column datatype='real' name='exec county long' ordinal='3' />
             </columns>
           </relation>
         </relation>
@@ -526,6 +467,7 @@
           <map key='[Dreams/Visions]' value='[test_2.01_WDB_Case_START.csv].[Dreams/Visions]' />
           <map key='[Elphane/Fairyland]' value='[test_2.01_WDB_Case_START.csv].[Elphane/Fairyland]' />
           <map key='[Exec_burgh]' value='[Copy of 3.11_WDB_Trial.csv].[Exec_burgh]' />
+          <map key='[Exec_county (exec_county_lat_long.csv)]' value='[exec_county_lat_long.csv].[Exec_county]' />
           <map key='[Exec_county]' value='[Copy of 3.11_WDB_Trial.csv].[Exec_county]' />
           <map key='[Exec_parish]' value='[Copy of 3.11_WDB_Trial.csv].[Exec_parish]' />
           <map key='[Exec_presbytery]' value='[Copy of 3.11_WDB_Trial.csv].[Exec_presbytery]' />
@@ -631,6 +573,7 @@
           <map key='[Trialref (Copy of 3.05_WDB_Denunciation.csv)]' value='[Copy of 3.05_WDB_Denunciation.csv].[Trialref]' />
           <map key='[Trialref (Copy of 3.08_WDB_Ordeal.csv)]' value='[Copy of 3.08_WDB_Ordeal.csv].[Trialref]' />
           <map key='[Trialref (Copy of 3.10_WDB_Imprisonment.csv)]' value='[Copy of 3.10_WDB_Imprisonment.csv].[Trialref]' />
+          <map key='[Trialref (exec_county_lat_long.csv)]' value='[exec_county_lat_long.csv].[Trialref]' />
           <map key='[Trialref]' value='[Copy of 3.11_WDB_Trial.csv].[Trialref]' />
           <map key='[UNorthodoxRelPract_p]' value='[test_2.01_WDB_Case_START.csv].[UNorthodoxRelPract_p]' />
           <map key='[UnorthodoxReligiousPractice]' value='[test_2.01_WDB_Case_START.csv].[UnorthodoxReligiousPractice]' />
@@ -639,6 +582,8 @@
           <map key='[Wherelodged]' value='[Copy of 3.03_WDB_Complaint.csv].[Wherelodged]' />
           <map key='[WhiteMagic_s]' value='[test_2.01_WDB_Case_START.csv].[WhiteMagic_s]' />
           <map key='[WitchesMeeting]' value='[test_2.01_WDB_Case_START.csv].[WitchesMeeting]' />
+          <map key='[exec county lat]' value='[exec_county_lat_long.csv].[exec county lat]' />
+          <map key='[exec county long]' value='[exec_county_lat_long.csv].[exec county long]' />
         </cols>
         <metadata-records>
           <metadata-record class='column'>
@@ -4143,6 +4088,94 @@
               <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
             </attributes>
           </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Trialref</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Trialref (exec_county_lat_long.csv)]</local-name>
+            <parent-name>[exec_county_lat_long.csv]</parent-name>
+            <remote-alias>Trialref</remote-alias>
+            <ordinal>181</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Exec_county</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Exec_county (exec_county_lat_long.csv)]</local-name>
+            <parent-name>[exec_county_lat_long.csv]</parent-name>
+            <remote-alias>Exec_county</remote-alias>
+            <ordinal>182</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>exec county lat</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[exec county lat]</local-name>
+            <parent-name>[exec_county_lat_long.csv]</parent-name>
+            <remote-alias>exec county lat</remote-alias>
+            <ordinal>183</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>exec county long</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[exec county long]</local-name>
+            <parent-name>[exec_county_lat_long.csv]</parent-name>
+            <remote-alias>exec county long</remote-alias>
+            <ordinal>184</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[exec_county_lat_long.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
@@ -4196,6 +4229,7 @@
       <column caption='Devil Text' datatype='string' name='[Devil_Text]' role='dimension' type='nominal' />
       <column caption='Devil Type' datatype='string' name='[Devil_Type]' role='dimension' type='nominal' />
       <column caption='Exec burgh' datatype='string' name='[Exec_burgh]' role='dimension' type='nominal' />
+      <column caption='Exec county (exec county lat long.csv)' datatype='string' hidden='true' name='[Exec_county (exec_county_lat_long.csv)]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
       <column caption='Exec county' datatype='string' name='[Exec_county]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
       <column caption='Exec parish' datatype='string' name='[Exec_parish]' role='dimension' type='nominal' />
       <column caption='Exec presbytery' datatype='string' name='[Exec_presbytery]' role='dimension' type='nominal' />
@@ -4220,7 +4254,8 @@
       <column caption='Imprisondate as date' datatype='datetime' name='[Imprisondate_as_date]' role='dimension' type='ordinal' />
       <column caption='Last Name' datatype='string' name='[LastName]' role='dimension' type='nominal' />
       <column caption='Laying On' datatype='integer' name='[LayingOn]' role='measure' type='quantitative' />
-      <column caption='Location (Copy of 3.10 WDB Imprisonment.csv)' datatype='string' name='[Location (Copy of 3.10_WDB_Imprisonment.csv)]' role='dimension' type='nominal' />
+      <column caption='Location (Copy of 3.10 WDB Imprisonment.csv)' datatype='string' name='[Location (Copy of 3.10_WDB_Imprisonment.csv)]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='string' name='[Location]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
       <column caption='Male Impotence' datatype='integer' name='[MaleImpotence]' role='measure' type='quantitative' />
       <column caption='Male accusers' datatype='integer' name='[Male_accusers]' role='measure' type='quantitative' />
       <column caption='Maleficium s' datatype='integer' name='[Maleficium_s]' role='measure' type='quantitative' />
@@ -4274,17 +4309,193 @@
       <column caption='Trialref (Copy of 3.05 WDB Denunciation.csv)' datatype='string' name='[Trialref (Copy of 3.05_WDB_Denunciation.csv)]' role='dimension' type='nominal' />
       <column caption='Trialref (Copy of 3.08 WDB Ordeal.csv)' datatype='string' name='[Trialref (Copy of 3.08_WDB_Ordeal.csv)]' role='dimension' type='nominal' />
       <column caption='Trialref (Copy of 3.10 WDB Imprisonment.csv)' datatype='string' name='[Trialref (Copy of 3.10_WDB_Imprisonment.csv)]' role='dimension' type='nominal' />
+      <column caption='Trialref (exec county lat long.csv)' datatype='string' name='[Trialref (exec_county_lat_long.csv)]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
       <column caption='UNorthodoxRelPract p' datatype='integer' name='[UNorthodoxRelPract_p]' role='measure' type='quantitative' />
       <column caption='Unorthodox Religious Practice' datatype='integer' name='[UnorthodoxReligiousPractice]' role='measure' type='quantitative' />
       <column caption='Weather Modification' datatype='integer' name='[WeatherModification]' role='measure' type='quantitative' />
       <column caption='WhiteMagic s' datatype='integer' name='[WhiteMagic_s]' role='measure' type='quantitative' />
       <column caption='Witches Meeting' datatype='integer' name='[WitchesMeeting]' role='measure' type='quantitative' />
-      <layout dim-ordering='alphabetic' dim-percentage='0.712206' measure-ordering='alphabetic' measure-percentage='0.287794' show-structure='true' />
+      <column aggregation='Avg' caption='Exec County Lat' datatype='real' name='[exec county lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Exec County Long' datatype='real' name='[exec county long]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column-instance column='[Exec_county]' derivation='None' name='[none:Exec_county:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Res_county]' derivation='None' name='[none:Res_county:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.647256' measure-ordering='alphabetic' measure-percentage='0.352744' rowDisplayCount='1000' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Exec_county:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Linlithgow&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Dumfries&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Shetland&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Orkney&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Edinburgh&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Aberdeen&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Fife&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Peebles&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Haddington&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Ayr&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Renfrew&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Bute&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Exec_county:nk]&#10;[none:Res_county:nk]' type='palette'>
+            <map-pri to='multiordinal_blue_10_0'>
+              <bucket>%null%</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_brown_10_0'>
+              <bucket>&quot;Edinburgh&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gold_10_0'>
+              <bucket>&quot;Linlithgow&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gray_10_0'>
+              <bucket>&quot;Ayr&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gray_10_0'>
+              <bucket>&quot;Shetland&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_green_10_0'>
+              <bucket>&quot;Haddington&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_orange_10_0'>
+              <bucket>&quot;Fife&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_pink_10_0'>
+              <bucket>&quot;Bute&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_purple_10_0'>
+              <bucket>&quot;Dumfries&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_red_10_0'>
+              <bucket>&quot;Aberdeen&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_red_10_0'>
+              <bucket>&quot;Renfrew&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_teal_10_0'>
+              <bucket>&quot;Orkney&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_teal_10_0'>
+              <bucket>&quot;Peebles&quot;</bucket>
+            </map-pri>
+          </encoding>
+        </style-rule>
+      </style>
       <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+        <semantic-value key='[City].[Name]' value='%null%' />
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+        <semantic-value key='[County].[Name]' value='%null%' />
+        <semantic-value key='[State].[Name]' value='&quot;Scotland&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='alphabetical-order' />
+    </datasource>
+    <datasource caption='Copy of 2.18_WDB_Percentageofaccusations' inline='true' name='federated.1e8odoc1hpnbp0137butc1097oze' version='10.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Copy of 2.18_WDB_Percentageofaccusations' name='textscan.056qs040cy5w0p14wzpe81ghjv36'>
+            <connection class='textscan' directory='C:/Users/Dwarrel/Documents/DataVis/data/allData' filename='Copy of 2.18_WDB_Percentageofaccusations.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.056qs040cy5w0p14wzpe81ghjv36' name='Copy of 2.18_WDB_Percentageofaccusations.csv' table='[Copy of 2.18_WDB_Percentageofaccusations#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Type of accusations' ordinal='0' />
+            <column datatype='real' name='percentage of cases with accusations' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Type of accusations</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type of accusations]</local-name>
+            <parent-name>[Copy of 2.18_WDB_Percentageofaccusations.csv]</parent-name>
+            <remote-alias>Type of accusations</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>percentage of cases with accusations</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[percentage of cases with accusations]</local-name>
+            <parent-name>[Copy of 2.18_WDB_Percentageofaccusations.csv]</parent-name>
+            <remote-alias>percentage of cases with accusations</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Copy of 2.18_WDB_Percentageofaccusations.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Percentage Of Cases With Accusations' datatype='real' name='[percentage of cases with accusations]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.489362' measure-ordering='alphabetic' measure-percentage='0.510638' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
       </semantic-values>
     </datasource>
   </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
   <worksheets>
     <worksheet name='Sheet 1'>
       <layout-options>
@@ -4344,9 +4555,99 @@
         <cols />
       </table>
     </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Schotland Map</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='test_2.01_WDB_Case_START+' name='federated.07kol7t0aqizri18hh0la04cs8wk' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.07kol7t0aqizri18hh0la04cs8wk'>
+            <column aggregation='Avg' caption='Exec County Lat' datatype='real' name='[exec county lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Exec County Long' datatype='real' name='[exec county long]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column-instance column='[exec county lat]' derivation='None' name='[none:exec county lat:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[exec county long]' derivation='None' name='[none:exec county long:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.07kol7t0aqizri18hh0la04cs8wk].[none:exec county long:qk]' included-values='non-null' />
+          <slices>
+            <column>[federated.07kol7t0aqizri18hh0la04cs8wk].[none:exec county long:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.07kol7t0aqizri18hh0la04cs8wk].[none:exec county long:qk]' field-type='quantitative' max='1366471.5772103542' min='-1857370.5785791855' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.07kol7t0aqizri18hh0la04cs8wk].[none:exec county lat:qk]' field-type='quantitative' max='9178760.9589453917' min='6986432.0661619669' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07kol7t0aqizri18hh0la04cs8wk].[none:exec county lat:qk]</rows>
+        <cols>[federated.07kol7t0aqizri18hh0la04cs8wk].[none:exec county long:qk]</cols>
+      </table>
+    </worksheet>
   </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='100000' id='1' name='Sheet 2' w='100000' x='0' y='0' />
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
   <windows source-height='51'>
-    <window class='worksheet' maximized='true' name='Sheet 1'>
+    <window class='worksheet' name='Sheet 1'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -4382,93 +4683,445 @@
         </highlight>
       </viewpoint>
     </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='1' />
+    </window>
   </windows>
   <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      2TUPVwFEAAAAAElFTkSuQmCC
+    </thumbnail>
     <thumbnail height='192' name='Sheet 1' width='192'>
       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
-      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
-      6zs+YAAAAABJRU5ErkJggg==
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+      VAAAAABJRU5ErkJggg==
     </thumbnail>
   </thumbnails>
 </workbook>
