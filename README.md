@@ -4,9 +4,9 @@
 3. [DONE] Count the values
 4. [DONE] start working on the visualisation
 5. Research on: 
-	- Connnecting clusters of data 
-	- make interactive dashboard with data visualizations
-	- find a scottish map
+- Connnecting clusters of data 
+- make interactive dashboard with data visualizations
+- find a scottish map
 	
 6. Make cluster one: demographics data visualisation
 7. Make cluster two: case data visualisation
