@@ -1,0 +1,11 @@
+Connect to data extract 
+
+Under sheets:
+Under marks, set type to Polygon
+drop PointID to Path
+drop PolygonID & SubpolygonID to Details
+
+double click on latitute measure
+double click on longtitute measure 
+
+after the map is drawn, you can drop Regions on the colors filter to visualize them 
