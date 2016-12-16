@@ -1,0 +1,2661 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10100.16.1103.2343                               -->
+<workbook source-build='10.1.1 (10100.16.1103.2343)' source-platform='win' version='10.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='level_2_merged' inline='true' name='federated.15jfau908ai2cf10vg04c0u7ij4j' version='10.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='level_2_merged' name='textscan.0s4mkec0n1z0qr10u83t4015fmxq'>
+            <connection class='textscan' directory='C:/Users/Ani/Github/DataVisTAR/data/allData/merged levels' filename='level_2_merged.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv' name='textscan.1a3ljxd0pbfw9l17qxz420wang6b'>
+            <connection class='textscan' directory='C:/Users/Ani/Github/DataVisTAR/data/allData' filename='Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='level_2_merged_1617' name='textscan.08b1s1300bwtao18n7rpg0auzora'>
+            <connection class='textscan' directory='C:/Users/Ani/Github/DataVisTAR/data' filename='level_2_merged_1617.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv (2)' name='textscan.0bvw14s1gzuszv1a07tzc1t5wgs8'>
+            <connection class='textscan' directory='C:/Users/Ani/Github/DataVisTAR/data/allData' filename='Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[level_2_merged_1617.csv].[CaseRef]' />
+              <expression op='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[CaseRef]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.08b1s1300bwtao18n7rpg0auzora' name='level_2_merged_1617.csv' table='[level_2_merged_1617#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=';'>
+              <column datatype='string' name='CaseRef' ordinal='0' />
+              <column datatype='string' name='AccusedRef' ordinal='1' />
+              <column datatype='real' name='Age_at_case' ordinal='2' />
+              <column datatype='real' name='AggravatingDisease' ordinal='3' />
+              <column datatype='real' name='AnimalDeath' ordinal='4' />
+              <column datatype='real' name='AnimalIllness' ordinal='5' />
+              <column datatype='datetime' name='CaseStart_date_as_date' ordinal='6' />
+              <column datatype='datetime' name='Case_date_as_date' ordinal='7' />
+              <column datatype='string' name='Charnotes' ordinal='8' />
+              <column datatype='real' name='CommunalSex' ordinal='9' />
+              <column datatype='real' name='Consulting_s' ordinal='10' />
+              <column datatype='real' name='Cursing' ordinal='11' />
+              <column datatype='real' name='Dancing' ordinal='12' />
+              <column datatype='real' name='DemonicPact' ordinal='13' />
+              <column datatype='string' name='DemonicRef' ordinal='14' />
+              <column datatype='integer' name='Demonic_Text' ordinal='15' />
+              <column datatype='integer' name='Demonic_Type' ordinal='16' />
+              <column datatype='real' name='Demonic_possess_s' ordinal='17' />
+              <column datatype='real' name='Demonic_s' ordinal='18' />
+              <column datatype='real' name='DevilPresent' ordinal='19' />
+              <column datatype='string' name='DevilRef' ordinal='20' />
+              <column datatype='real' name='DevilWorship' ordinal='21' />
+              <column datatype='integer' name='Devil_Text' ordinal='22' />
+              <column datatype='integer' name='Devil_Type' ordinal='23' />
+              <column datatype='real' name='Dreams/Visions' ordinal='24' />
+              <column datatype='real' name='Elphane/Fairyland' ordinal='25' />
+              <column datatype='real' name='Fairies_s' ordinal='26' />
+              <column datatype='real' name='Familiars' ordinal='27' />
+              <column datatype='real' name='FemaleInfertility' ordinal='28' />
+              <column datatype='real' name='Folk_healing_s' ordinal='29' />
+              <column datatype='real' name='Food/Drink' ordinal='30' />
+              <column datatype='real' name='FoodAndDrink' ordinal='31' />
+              <column datatype='real' name='HealingAnimals' ordinal='32' />
+              <column datatype='real' name='HealingHumans' ordinal='33' />
+              <column datatype='real' name='HumanDeath' ordinal='34' />
+              <column datatype='real' name='HumanIllness' ordinal='35' />
+              <column datatype='real' name='ImplicatedByAnother_s' ordinal='36' />
+              <column datatype='integer' name='Inversion' ordinal='37' />
+              <column datatype='real' name='LayingOn' ordinal='38' />
+              <column datatype='integer' name='Location' ordinal='39' />
+              <column datatype='real' name='MaleImpotence' ordinal='40' />
+              <column datatype='real' name='Maleficium' ordinal='41' />
+              <column datatype='real' name='Maleficium_s' ordinal='42' />
+              <column datatype='string' name='MeetingPlaceRef' ordinal='43' />
+              <column datatype='integer' name='MeetingPlace_Place' ordinal='44' />
+              <column datatype='real' name='Midwifery' ordinal='45' />
+              <column datatype='real' name='Midwifery_s' ordinal='46' />
+              <column datatype='real' name='NamedIndividual' ordinal='47' />
+              <column datatype='real' name='Neighbhd_dispute_s' ordinal='48' />
+              <column datatype='string' name='OtherChargesRef' ordinal='49' />
+              <column datatype='integer' name='OtherCharges_Type' ordinal='50' />
+              <column datatype='string' name='OtherText' ordinal='51' />
+              <column datatype='real' name='Other_s' ordinal='52' />
+              <column datatype='real' name='Poisoning' ordinal='53' />
+              <column datatype='real' name='PoliticalMotive_s' ordinal='54' />
+              <column datatype='real' name='PropertyDamage' ordinal='55' />
+              <column datatype='string' name='PropertyDamageRef' ordinal='56' />
+              <column datatype='integer' name='PropertyDamage_Type' ordinal='57' />
+              <column datatype='real' name='PropertyMotive_s' ordinal='58' />
+              <column datatype='real' name='Quarreling' ordinal='59' />
+              <column datatype='real' name='RecHealer' ordinal='60' />
+              <column datatype='real' name='RefusedCharity_s' ordinal='61' />
+              <column datatype='real' name='Removalbewitchment' ordinal='62' />
+              <column datatype='real' name='Ridingdead' ordinal='63' />
+              <column datatype='string' name='RitualObjectRef' ordinal='64' />
+              <column datatype='integer' name='RitualObject_Type' ordinal='65' />
+              <column datatype='real' name='Shape-Changing' ordinal='66' />
+              <column datatype='real' name='Singing' ordinal='67' />
+              <column datatype='real' name='SpecificRitualActs' ordinal='68' />
+              <column datatype='real' name='SpecificVerbalFormulae' ordinal='69' />
+              <column datatype='real' name='Suspects_text' ordinal='70' />
+              <column datatype='real' name='SympatheticMagic' ordinal='71' />
+              <column datatype='real' name='TransferringDisease' ordinal='72' />
+              <column datatype='real' name='Treason_s' ordinal='73' />
+              <column datatype='real' name='UNorthodoxRelPract_p' ordinal='74' />
+              <column datatype='real' name='UnorthodoxReligiousPractice' ordinal='75' />
+              <column datatype='real' name='WeatherModification' ordinal='76' />
+              <column datatype='real' name='WhiteMagic_s' ordinal='77' />
+              <column datatype='real' name='WitchesMeeting' ordinal='78' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0bvw14s1gzuszv1a07tzc1t5wgs8' name='Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv' table='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='DemonicRef' ordinal='0' />
+              <column datatype='string' name='CaseRef' ordinal='1' />
+              <column datatype='string' name='Demonic_Type' ordinal='2' />
+              <column datatype='string' name='Demonic_Text' ordinal='3' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[AccusedRef]' value='[level_2_merged_1617.csv].[AccusedRef]' />
+          <map key='[Age_at_case]' value='[level_2_merged_1617.csv].[Age_at_case]' />
+          <map key='[AggravatingDisease]' value='[level_2_merged_1617.csv].[AggravatingDisease]' />
+          <map key='[AnimalDeath]' value='[level_2_merged_1617.csv].[AnimalDeath]' />
+          <map key='[AnimalIllness]' value='[level_2_merged_1617.csv].[AnimalIllness]' />
+          <map key='[CaseRef (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' value='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[CaseRef]' />
+          <map key='[CaseRef]' value='[level_2_merged_1617.csv].[CaseRef]' />
+          <map key='[CaseStart_date_as_date]' value='[level_2_merged_1617.csv].[CaseStart_date_as_date]' />
+          <map key='[Case_date_as_date]' value='[level_2_merged_1617.csv].[Case_date_as_date]' />
+          <map key='[Charnotes]' value='[level_2_merged_1617.csv].[Charnotes]' />
+          <map key='[CommunalSex]' value='[level_2_merged_1617.csv].[CommunalSex]' />
+          <map key='[Consulting_s]' value='[level_2_merged_1617.csv].[Consulting_s]' />
+          <map key='[Cursing]' value='[level_2_merged_1617.csv].[Cursing]' />
+          <map key='[Dancing]' value='[level_2_merged_1617.csv].[Dancing]' />
+          <map key='[DemonicPact]' value='[level_2_merged_1617.csv].[DemonicPact]' />
+          <map key='[DemonicRef (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' value='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[DemonicRef]' />
+          <map key='[DemonicRef]' value='[level_2_merged_1617.csv].[DemonicRef]' />
+          <map key='[Demonic_Text (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' value='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[Demonic_Text]' />
+          <map key='[Demonic_Text]' value='[level_2_merged_1617.csv].[Demonic_Text]' />
+          <map key='[Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' value='[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv].[Demonic_Type]' />
+          <map key='[Demonic_Type]' value='[level_2_merged_1617.csv].[Demonic_Type]' />
+          <map key='[Demonic_possess_s]' value='[level_2_merged_1617.csv].[Demonic_possess_s]' />
+          <map key='[Demonic_s]' value='[level_2_merged_1617.csv].[Demonic_s]' />
+          <map key='[DevilPresent]' value='[level_2_merged_1617.csv].[DevilPresent]' />
+          <map key='[DevilRef]' value='[level_2_merged_1617.csv].[DevilRef]' />
+          <map key='[DevilWorship]' value='[level_2_merged_1617.csv].[DevilWorship]' />
+          <map key='[Devil_Text]' value='[level_2_merged_1617.csv].[Devil_Text]' />
+          <map key='[Devil_Type]' value='[level_2_merged_1617.csv].[Devil_Type]' />
+          <map key='[Dreams/Visions]' value='[level_2_merged_1617.csv].[Dreams/Visions]' />
+          <map key='[Elphane/Fairyland]' value='[level_2_merged_1617.csv].[Elphane/Fairyland]' />
+          <map key='[Fairies_s]' value='[level_2_merged_1617.csv].[Fairies_s]' />
+          <map key='[Familiars]' value='[level_2_merged_1617.csv].[Familiars]' />
+          <map key='[FemaleInfertility]' value='[level_2_merged_1617.csv].[FemaleInfertility]' />
+          <map key='[Folk_healing_s]' value='[level_2_merged_1617.csv].[Folk_healing_s]' />
+          <map key='[Food/Drink]' value='[level_2_merged_1617.csv].[Food/Drink]' />
+          <map key='[FoodAndDrink]' value='[level_2_merged_1617.csv].[FoodAndDrink]' />
+          <map key='[HealingAnimals]' value='[level_2_merged_1617.csv].[HealingAnimals]' />
+          <map key='[HealingHumans]' value='[level_2_merged_1617.csv].[HealingHumans]' />
+          <map key='[HumanDeath]' value='[level_2_merged_1617.csv].[HumanDeath]' />
+          <map key='[HumanIllness]' value='[level_2_merged_1617.csv].[HumanIllness]' />
+          <map key='[ImplicatedByAnother_s]' value='[level_2_merged_1617.csv].[ImplicatedByAnother_s]' />
+          <map key='[Inversion]' value='[level_2_merged_1617.csv].[Inversion]' />
+          <map key='[LayingOn]' value='[level_2_merged_1617.csv].[LayingOn]' />
+          <map key='[Location]' value='[level_2_merged_1617.csv].[Location]' />
+          <map key='[MaleImpotence]' value='[level_2_merged_1617.csv].[MaleImpotence]' />
+          <map key='[Maleficium]' value='[level_2_merged_1617.csv].[Maleficium]' />
+          <map key='[Maleficium_s]' value='[level_2_merged_1617.csv].[Maleficium_s]' />
+          <map key='[MeetingPlaceRef]' value='[level_2_merged_1617.csv].[MeetingPlaceRef]' />
+          <map key='[MeetingPlace_Place]' value='[level_2_merged_1617.csv].[MeetingPlace_Place]' />
+          <map key='[Midwifery]' value='[level_2_merged_1617.csv].[Midwifery]' />
+          <map key='[Midwifery_s]' value='[level_2_merged_1617.csv].[Midwifery_s]' />
+          <map key='[NamedIndividual]' value='[level_2_merged_1617.csv].[NamedIndividual]' />
+          <map key='[Neighbhd_dispute_s]' value='[level_2_merged_1617.csv].[Neighbhd_dispute_s]' />
+          <map key='[OtherChargesRef]' value='[level_2_merged_1617.csv].[OtherChargesRef]' />
+          <map key='[OtherCharges_Type]' value='[level_2_merged_1617.csv].[OtherCharges_Type]' />
+          <map key='[OtherText]' value='[level_2_merged_1617.csv].[OtherText]' />
+          <map key='[Other_s]' value='[level_2_merged_1617.csv].[Other_s]' />
+          <map key='[Poisoning]' value='[level_2_merged_1617.csv].[Poisoning]' />
+          <map key='[PoliticalMotive_s]' value='[level_2_merged_1617.csv].[PoliticalMotive_s]' />
+          <map key='[PropertyDamageRef]' value='[level_2_merged_1617.csv].[PropertyDamageRef]' />
+          <map key='[PropertyDamage]' value='[level_2_merged_1617.csv].[PropertyDamage]' />
+          <map key='[PropertyDamage_Type]' value='[level_2_merged_1617.csv].[PropertyDamage_Type]' />
+          <map key='[PropertyMotive_s]' value='[level_2_merged_1617.csv].[PropertyMotive_s]' />
+          <map key='[Quarreling]' value='[level_2_merged_1617.csv].[Quarreling]' />
+          <map key='[RecHealer]' value='[level_2_merged_1617.csv].[RecHealer]' />
+          <map key='[RefusedCharity_s]' value='[level_2_merged_1617.csv].[RefusedCharity_s]' />
+          <map key='[Removalbewitchment]' value='[level_2_merged_1617.csv].[Removalbewitchment]' />
+          <map key='[Ridingdead]' value='[level_2_merged_1617.csv].[Ridingdead]' />
+          <map key='[RitualObjectRef]' value='[level_2_merged_1617.csv].[RitualObjectRef]' />
+          <map key='[RitualObject_Type]' value='[level_2_merged_1617.csv].[RitualObject_Type]' />
+          <map key='[Shape-Changing]' value='[level_2_merged_1617.csv].[Shape-Changing]' />
+          <map key='[Singing]' value='[level_2_merged_1617.csv].[Singing]' />
+          <map key='[SpecificRitualActs]' value='[level_2_merged_1617.csv].[SpecificRitualActs]' />
+          <map key='[SpecificVerbalFormulae]' value='[level_2_merged_1617.csv].[SpecificVerbalFormulae]' />
+          <map key='[Suspects_text]' value='[level_2_merged_1617.csv].[Suspects_text]' />
+          <map key='[SympatheticMagic]' value='[level_2_merged_1617.csv].[SympatheticMagic]' />
+          <map key='[TransferringDisease]' value='[level_2_merged_1617.csv].[TransferringDisease]' />
+          <map key='[Treason_s]' value='[level_2_merged_1617.csv].[Treason_s]' />
+          <map key='[UNorthodoxRelPract_p]' value='[level_2_merged_1617.csv].[UNorthodoxRelPract_p]' />
+          <map key='[UnorthodoxReligiousPractice]' value='[level_2_merged_1617.csv].[UnorthodoxReligiousPractice]' />
+          <map key='[WeatherModification]' value='[level_2_merged_1617.csv].[WeatherModification]' />
+          <map key='[WhiteMagic_s]' value='[level_2_merged_1617.csv].[WhiteMagic_s]' />
+          <map key='[WitchesMeeting]' value='[level_2_merged_1617.csv].[WitchesMeeting]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>CaseRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CaseRef]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>CaseRef</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AccusedRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AccusedRef]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>AccusedRef</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age_at_case</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Age_at_case]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Age_at_case</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AggravatingDisease</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AggravatingDisease]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>AggravatingDisease</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AnimalDeath</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AnimalDeath]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>AnimalDeath</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AnimalIllness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AnimalIllness]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>AnimalIllness</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CaseStart_date_as_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[CaseStart_date_as_date]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>CaseStart_date_as_date</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;datetime&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Case_date_as_date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[Case_date_as_date]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Case_date_as_date</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;datetime&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Charnotes</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Charnotes]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Charnotes</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CommunalSex</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CommunalSex]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>CommunalSex</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Consulting_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Consulting_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Consulting_s</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cursing</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Cursing]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Cursing</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dancing</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Dancing]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Dancing</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DemonicPact</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[DemonicPact]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>DemonicPact</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DemonicRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DemonicRef]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>DemonicRef</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Demonic_Text</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Demonic_Text]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Demonic_Text</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Demonic_Type</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Demonic_Type]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Demonic_Type</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Demonic_possess_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Demonic_possess_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Demonic_possess_s</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Demonic_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Demonic_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Demonic_s</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DevilPresent</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[DevilPresent]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>DevilPresent</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DevilRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DevilRef]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>DevilRef</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DevilWorship</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[DevilWorship]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>DevilWorship</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Devil_Text</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Devil_Text]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Devil_Text</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Devil_Type</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Devil_Type]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Devil_Type</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Dreams/Visions</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Dreams/Visions]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Dreams/Visions</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Elphane/Fairyland</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Elphane/Fairyland]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Elphane/Fairyland</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fairies_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Fairies_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Fairies_s</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Familiars</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Familiars]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Familiars</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FemaleInfertility</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FemaleInfertility]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>FemaleInfertility</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Folk_healing_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Folk_healing_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Folk_healing_s</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Food/Drink</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Food/Drink]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Food/Drink</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FoodAndDrink</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[FoodAndDrink]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>FoodAndDrink</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HealingAnimals</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[HealingAnimals]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>HealingAnimals</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HealingHumans</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[HealingHumans]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>HealingHumans</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HumanDeath</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[HumanDeath]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>HumanDeath</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HumanIllness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[HumanIllness]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>HumanIllness</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ImplicatedByAnother_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[ImplicatedByAnother_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>ImplicatedByAnother_s</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Inversion</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Inversion]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Inversion</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LayingOn</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LayingOn]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>LayingOn</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Location]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Location</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MaleImpotence</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[MaleImpotence]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>MaleImpotence</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Maleficium</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Maleficium]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Maleficium</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Maleficium_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Maleficium_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Maleficium_s</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MeetingPlaceRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MeetingPlaceRef]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>MeetingPlaceRef</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MeetingPlace_Place</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MeetingPlace_Place]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>MeetingPlace_Place</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Midwifery</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Midwifery]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Midwifery</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Midwifery_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Midwifery_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Midwifery_s</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NamedIndividual</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[NamedIndividual]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>NamedIndividual</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Neighbhd_dispute_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Neighbhd_dispute_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Neighbhd_dispute_s</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OtherChargesRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OtherChargesRef]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>OtherChargesRef</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OtherCharges_Type</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OtherCharges_Type]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>OtherCharges_Type</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OtherText</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OtherText]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>OtherText</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Other_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Other_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Other_s</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Poisoning</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Poisoning]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Poisoning</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PoliticalMotive_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PoliticalMotive_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>PoliticalMotive_s</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PropertyDamage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PropertyDamage]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>PropertyDamage</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PropertyDamageRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PropertyDamageRef]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>PropertyDamageRef</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PropertyDamage_Type</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PropertyDamage_Type]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>PropertyDamage_Type</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PropertyMotive_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PropertyMotive_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>PropertyMotive_s</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Quarreling</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Quarreling]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Quarreling</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RecHealer</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RecHealer]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>RecHealer</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RefusedCharity_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RefusedCharity_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>RefusedCharity_s</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Removalbewitchment</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Removalbewitchment]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Removalbewitchment</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ridingdead</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Ridingdead]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Ridingdead</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RitualObjectRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[RitualObjectRef]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>RitualObjectRef</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RitualObject_Type</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[RitualObject_Type]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>RitualObject_Type</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape-Changing</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape-Changing]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Shape-Changing</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Singing</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Singing]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Singing</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SpecificRitualActs</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SpecificRitualActs]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>SpecificRitualActs</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SpecificVerbalFormulae</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SpecificVerbalFormulae]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>SpecificVerbalFormulae</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Suspects_text</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Suspects_text]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Suspects_text</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SympatheticMagic</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[SympatheticMagic]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>SympatheticMagic</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TransferringDisease</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TransferringDisease]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>TransferringDisease</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Treason_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Treason_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>Treason_s</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UNorthodoxRelPract_p</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[UNorthodoxRelPract_p]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>UNorthodoxRelPract_p</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UnorthodoxReligiousPractice</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[UnorthodoxReligiousPractice]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>UnorthodoxReligiousPractice</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WeatherModification</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WeatherModification]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>WeatherModification</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WhiteMagic_s</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WhiteMagic_s]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>WhiteMagic_s</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WitchesMeeting</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WitchesMeeting]</local-name>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias>WitchesMeeting</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[level_2_merged_1617.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DemonicRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DemonicRef (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]</local-name>
+            <parent-name>[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv]</parent-name>
+            <remote-alias>DemonicRef</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CaseRef</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CaseRef (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]</local-name>
+            <parent-name>[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv]</parent-name>
+            <remote-alias>CaseRef</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Demonic_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]</local-name>
+            <parent-name>[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv]</parent-name>
+            <remote-alias>Demonic_Type</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Demonic_Text</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Demonic_Text (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]</local-name>
+            <parent-name>[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv]</parent-name>
+            <remote-alias>Demonic_Text</remote-alias>
+            <ordinal>82</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Accused Ref' datatype='string' name='[AccusedRef]' role='dimension' type='nominal' />
+      <column caption='Age at case' datatype='real' name='[Age_at_case]' role='measure' type='quantitative' />
+      <column caption='Aggravating Disease' datatype='real' name='[AggravatingDisease]' role='measure' type='quantitative' />
+      <column caption='Animal Death' datatype='real' name='[AnimalDeath]' role='measure' type='quantitative' />
+      <column caption='Animal Illness' datatype='real' name='[AnimalIllness]' role='measure' type='quantitative' />
+      <column caption='CaseRef (Copy of 2.04 WDB DemonicPact.csv - WDB DemonicPact.csv.csv)' datatype='string' name='[CaseRef (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' role='dimension' type='nominal' />
+      <column caption='Case Ref' datatype='string' name='[CaseRef]' role='dimension' type='nominal' />
+      <column caption='CaseStart date as date' datatype='datetime' name='[CaseStart_date_as_date]' role='dimension' type='ordinal' />
+      <column caption='Case date as date' datatype='datetime' name='[Case_date_as_date]' role='dimension' type='ordinal' />
+      <column caption='Communal Sex' datatype='real' name='[CommunalSex]' role='measure' type='quantitative' />
+      <column caption='Consulting s' datatype='real' name='[Consulting_s]' role='measure' type='quantitative' />
+      <column caption='Demonic Pact' datatype='real' name='[DemonicPact]' role='measure' type='quantitative' />
+      <column caption='DemonicRef (Copy of 2.04 WDB DemonicPact.csv - WDB DemonicPact.csv.csv)' datatype='string' name='[DemonicRef (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' role='dimension' type='nominal' />
+      <column caption='Demonic Ref' datatype='string' name='[DemonicRef]' role='dimension' type='nominal' />
+      <column caption='Demonic Text (Copy of 2.04 WDB DemonicPact.csv - WDB DemonicPact.csv.csv)' datatype='string' name='[Demonic_Text (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' role='dimension' type='nominal' />
+      <column caption='Demonic Text' datatype='integer' name='[Demonic_Text]' role='measure' type='quantitative' />
+      <column caption='Demonic Pact name' datatype='string' name='[Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' role='dimension' type='nominal' />
+      <column caption='Demonic Type' datatype='integer' name='[Demonic_Type]' role='measure' type='quantitative' />
+      <column caption='Demonic possess s' datatype='real' name='[Demonic_possess_s]' role='measure' type='quantitative' />
+      <column caption='Demonic s' datatype='real' name='[Demonic_s]' role='measure' type='quantitative' />
+      <column caption='Devil Present' datatype='real' name='[DevilPresent]' role='measure' type='quantitative' />
+      <column caption='Devil Ref' datatype='string' name='[DevilRef]' role='dimension' type='nominal' />
+      <column caption='Devil Worship' datatype='real' name='[DevilWorship]' role='measure' type='quantitative' />
+      <column caption='Devil Text' datatype='integer' name='[Devil_Text]' role='measure' type='quantitative' />
+      <column caption='Devil Type' datatype='integer' name='[Devil_Type]' role='measure' type='quantitative' />
+      <column caption='Fairies s' datatype='real' name='[Fairies_s]' role='measure' type='quantitative' />
+      <column caption='Female Infertility' datatype='real' name='[FemaleInfertility]' role='measure' type='quantitative' />
+      <column caption='Folk healing s' datatype='real' name='[Folk_healing_s]' role='measure' type='quantitative' />
+      <column caption='Food And Drink' datatype='real' name='[FoodAndDrink]' role='measure' type='quantitative' />
+      <column caption='Healing Animals' datatype='real' name='[HealingAnimals]' role='measure' type='quantitative' />
+      <column caption='Healing Humans' datatype='real' name='[HealingHumans]' role='measure' type='quantitative' />
+      <column caption='Human Death' datatype='real' name='[HumanDeath]' role='measure' type='quantitative' />
+      <column caption='Human Illness' datatype='real' name='[HumanIllness]' role='measure' type='quantitative' />
+      <column caption='ImplicatedByAnother s' datatype='real' name='[ImplicatedByAnother_s]' role='measure' type='quantitative' />
+      <column caption='Laying On' datatype='real' name='[LayingOn]' role='measure' type='quantitative' />
+      <column caption='Male Impotence' datatype='real' name='[MaleImpotence]' role='measure' type='quantitative' />
+      <column caption='Maleficium s' datatype='real' name='[Maleficium_s]' role='measure' type='quantitative' />
+      <column caption='Meeting Place Ref' datatype='string' name='[MeetingPlaceRef]' role='dimension' type='nominal' />
+      <column caption='MeetingPlace Place' datatype='integer' name='[MeetingPlace_Place]' role='measure' type='quantitative' />
+      <column caption='Midwifery s' datatype='real' name='[Midwifery_s]' role='measure' type='quantitative' />
+      <column caption='Named Individual' datatype='real' name='[NamedIndividual]' role='measure' type='quantitative' />
+      <column caption='Neighbhd dispute s' datatype='real' name='[Neighbhd_dispute_s]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Other Charges Ref' datatype='string' name='[OtherChargesRef]' role='dimension' type='nominal' />
+      <column caption='OtherCharges Type' datatype='integer' name='[OtherCharges_Type]' role='measure' type='quantitative' />
+      <column caption='Other Text' datatype='string' name='[OtherText]' role='dimension' type='nominal' />
+      <column caption='Other s' datatype='real' name='[Other_s]' role='measure' type='quantitative' />
+      <column caption='PoliticalMotive s' datatype='real' name='[PoliticalMotive_s]' role='measure' type='quantitative' />
+      <column caption='Property Damage Ref' datatype='string' name='[PropertyDamageRef]' role='dimension' type='nominal' />
+      <column caption='Property Damage' datatype='real' name='[PropertyDamage]' role='measure' type='quantitative' />
+      <column caption='PropertyDamage Type' datatype='integer' name='[PropertyDamage_Type]' role='measure' type='quantitative' />
+      <column caption='PropertyMotive s' datatype='real' name='[PropertyMotive_s]' role='measure' type='quantitative' />
+      <column caption='Rec Healer' datatype='real' name='[RecHealer]' role='measure' type='quantitative' />
+      <column caption='RefusedCharity s' datatype='real' name='[RefusedCharity_s]' role='measure' type='quantitative' />
+      <column caption='Ritual Object Ref' datatype='string' name='[RitualObjectRef]' role='dimension' type='nominal' />
+      <column caption='RitualObject Type' datatype='integer' name='[RitualObject_Type]' role='measure' type='quantitative' />
+      <column caption='Specific Ritual Acts' datatype='real' name='[SpecificRitualActs]' role='measure' type='quantitative' />
+      <column caption='Specific Verbal Formulae' datatype='real' name='[SpecificVerbalFormulae]' role='measure' type='quantitative' />
+      <column caption='Suspects text' datatype='real' name='[Suspects_text]' role='measure' type='quantitative' />
+      <column caption='Sympathetic Magic' datatype='real' name='[SympatheticMagic]' role='measure' type='quantitative' />
+      <column caption='Transferring Disease' datatype='real' name='[TransferringDisease]' role='measure' type='quantitative' />
+      <column caption='Treason s' datatype='real' name='[Treason_s]' role='measure' type='quantitative' />
+      <column caption='UNorthodoxRelPract p' datatype='real' name='[UNorthodoxRelPract_p]' role='measure' type='quantitative' />
+      <column caption='Unorthodox Religious Practice' datatype='real' name='[UnorthodoxReligiousPractice]' role='measure' type='quantitative' />
+      <column caption='Weather Modification' datatype='real' name='[WeatherModification]' role='measure' type='quantitative' />
+      <column caption='WhiteMagic s' datatype='real' name='[WhiteMagic_s]' role='measure' type='quantitative' />
+      <column caption='Witches Meeting' datatype='real' name='[WitchesMeeting]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.813031' measure-ordering='alphabetic' measure-percentage='0.186969' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Demonic pact frequency</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='level_2_merged' name='federated.15jfau908ai2cf10vg04c0u7ij4j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15jfau908ai2cf10vg04c0u7ij4j'>
+            <column caption='Case date as date' datatype='datetime' name='[Case_date_as_date]' role='dimension' type='ordinal' />
+            <column caption='Demonic Type' datatype='integer' name='[Demonic_Type]' role='measure' type='quantitative' />
+            <column-instance column='[Demonic_Type]' derivation='Sum' name='[sum:Demonic_Type:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Case_date_as_date]' derivation='Year' name='[yr:Case_date_as_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:Demonic_Type:qk]</rows>
+        <cols>[federated.15jfau908ai2cf10vg04c0u7ij4j].[yr:Case_date_as_date:ok]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Demonic pacts</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='level_2_merged' name='federated.15jfau908ai2cf10vg04c0u7ij4j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15jfau908ai2cf10vg04c0u7ij4j'>
+            <column caption='Demonic Pact name' datatype='string' name='[Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' role='dimension' type='nominal' />
+            <column caption='Demonic Type' datatype='integer' name='[Demonic_Type]' role='measure' type='quantitative' />
+            <column-instance column='[Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' derivation='None' name='[none:Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Demonic_Type]' derivation='Sum' name='[sum:Demonic_Type:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:Demonic_Type:qk]' included-values='non-null' />
+          <slices>
+            <column>[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:Demonic_Type:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:Demonic_Type:qk]' />
+              <color column='[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:Demonic_Type:qk]' />
+              <text column='[federated.15jfau908ai2cf10vg04c0u7ij4j].[none:Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv):nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Ritual Objects for demonic pacts</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='level_2_merged' name='federated.15jfau908ai2cf10vg04c0u7ij4j' />
+          </datasources>
+          <datasource-dependencies datasource='federated.15jfau908ai2cf10vg04c0u7ij4j'>
+            <column caption='Demonic Pact name' datatype='string' name='[Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' role='dimension' type='nominal' />
+            <column caption='RitualObject Type' datatype='integer' name='[RitualObject_Type]' role='measure' type='quantitative' />
+            <column caption='Specific Ritual Acts' datatype='real' name='[SpecificRitualActs]' role='measure' type='quantitative' />
+            <column-instance column='[Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv)]' derivation='None' name='[none:Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[RitualObject_Type]' derivation='Sum' name='[sum:RitualObject_Type:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[SpecificRitualActs]' derivation='Sum' name='[sum:SpecificRitualActs:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.15jfau908ai2cf10vg04c0u7ij4j].[none:Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv):nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv):nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv):nk]' member='%null%' />
+                <groupfilter function='member' level='[none:Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv):nk]' member='&quot;tacit pact&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:RitualObject_Type:qk]' included-values='non-null' />
+          <slices>
+            <column>[federated.15jfau908ai2cf10vg04c0u7ij4j].[none:Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv):nk]</column>
+            <column>[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:RitualObject_Type:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:RitualObject_Type:qk]' />
+              <text column='[federated.15jfau908ai2cf10vg04c0u7ij4j].[none:Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv):nk]' />
+              <color column='[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:SpecificRitualActs:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='38000' id='1' name='Sheet 1' w='58700' x='300' y='61000' />
+        <zone h='59625' id='3' name='Sheet 2' w='59400' x='400' y='750' />
+        <zone h='76875' id='8' name='Sheet 3' w='40300' x='59800' y='2625' />
+        <zone h='9125' id='7' name='Sheet 2' pane-specification-id='0' param='[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:Demonic_Type:qk]' type='color' w='38600' x='61000' y='76750' />
+        <zone h='9125' id='9' name='Sheet 3' pane-specification-id='0' param='[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:SpecificRitualActs:qk]' type='color' w='36000' x='61600' y='87750' />
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:Demonic_Type:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:SpecificRitualActs:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.15jfau908ai2cf10vg04c0u7ij4j].[none:Demonic_Type (Copy of 2.04_WDB_DemonicPact.csv - WDB_DemonicPact.csv.csv):nk]</field>
+            <field>[federated.15jfau908ai2cf10vg04c0u7ij4j].[sum:SpecificRitualActs:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 2' />
+        <viewpoint name='Sheet 3' />
+      </viewpoints>
+      <active id='-1' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      QmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+      AAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 3' width='192'>
+      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
+      91OJ8QAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 4' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
