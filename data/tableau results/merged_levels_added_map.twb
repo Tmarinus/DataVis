@@ -3675,7 +3675,6 @@
       <column caption='original address (county to Lat long.csv1)' datatype='string' name='[original address (county_to_Lat_long.csv1)]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
       <column caption='original address (county to Lat long.csv2)' datatype='string' name='[original address (county_to_Lat_long.csv2)]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
       <column caption='Original Address' datatype='string' name='[original address]' role='dimension' type='nominal' />
-      <column-instance column='[Res_county]' derivation='Count' name='[cnt:Res_county:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Exec_county]' derivation='None' name='[none:Exec_county:nk]' pivot='key' type='nominal' />
       <column-instance column='[Res_county]' derivation='None' name='[none:Res_county:nk]' pivot='key' type='nominal' />
       <column-instance column='[Trial_county]' derivation='None' name='[none:Trial_county:nk]' pivot='key' type='nominal' />
@@ -3688,116 +3687,9 @@
           <groupfilter function='level-members' level='[none:Trial_county:nk]' />
         </groupfilter>
       </group>
-      <layout dim-ordering='alphabetic' dim-percentage='0.512965' measure-ordering='alphabetic' measure-percentage='0.449831' parameter-percentage='0.0372041' show-structure='true' user-set-layout='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.513682' measure-ordering='alphabetic' measure-percentage='0.450249' parameter-percentage='0.0360697' show-structure='true' user-set-layout='true' />
       <style>
         <style-rule element='mark'>
-          <encoding attr='color' field='[cnt:Res_county:qk]' type='palette'>
-            <map to='#499894'>
-              <bucket>&quot;Clackmannan&quot;</bucket>
-            </map>
-            <map to='#499894'>
-              <bucket>&quot;Ross&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>%null%</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;Kirkcudbright&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;Banff&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;Orkney&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;Edinburgh&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;Stirling&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;Cromarty&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;Roxburgh&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;Berwick&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;Peebles&quot;</bucket>
-            </map>
-            <map to='#9d7660'>
-              <bucket>&quot;Kincardine&quot;</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>&quot;Aberdeen&quot;</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>&quot;Lanark&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;Haddington&quot;</bucket>
-            </map>
-            <map to='#b6992d'>
-              <bucket>&quot;Bute&quot;</bucket>
-            </map>
-            <map to='#b6992d'>
-              <bucket>&quot;Perth&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;Elgin&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;Sutherland&quot;</bucket>
-            </map>
-            <map to='#d37295'>
-              <bucket>&quot;Fife&quot;</bucket>
-            </map>
-            <map to='#d37295'>
-              <bucket>&quot;Wigtown&quot;</bucket>
-            </map>
-            <map to='#d4a6c8'>
-              <bucket>&quot;Inverness&quot;</bucket>
-            </map>
-            <map to='#d7b5a6'>
-              <bucket>&quot;Kinross&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;Dumfries&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;Selkirk&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;Caithness&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;Renfrew&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;Argyll&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;Linlithgow&quot;</bucket>
-            </map>
-            <map to='#fabfd2'>
-              <bucket>&quot;Forfar&quot;</bucket>
-            </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;Dunbarton&quot;</bucket>
-            </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;Shetland&quot;</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>&quot;Ayr&quot;</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>&quot;Nairn&quot;</bucket>
-            </map>
-          </encoding>
           <encoding attr='color' field='[none:Trial_county:nk]' type='palette'>
             <map to='#499894'>
               <bucket>&quot;Dunbarton&quot;</bucket>
