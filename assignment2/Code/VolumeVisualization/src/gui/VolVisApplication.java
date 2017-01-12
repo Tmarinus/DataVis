@@ -22,6 +22,7 @@ public class VolVisApplication extends javax.swing.JFrame {
     Visualization visualization;
     Volume volume;
     RaycastRenderer raycastRenderer;
+    File lastDirectory = null;
     
     /**
      * Creates new form VolVisApplication
@@ -133,7 +134,7 @@ public class VolVisApplication extends javax.swing.JFrame {
 
     private void loadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadButtonActionPerformed
         // TODO add your handling code here:
-        JFileChooser fc = new JFileChooser();
+        JFileChooser fc = new JFileChooser(lastDirectory);
         fc.setFileFilter(new FileFilter() {
 
             @Override
@@ -156,6 +157,7 @@ public class VolVisApplication extends javax.swing.JFrame {
         });
         int returnVal = fc.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
+        		lastDirectory = fc.getCurrentDirectory();
                 File file = fc.getSelectedFile();
                 volume = new Volume(file);
                 
