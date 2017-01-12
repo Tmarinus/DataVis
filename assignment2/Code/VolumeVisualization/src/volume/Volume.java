@@ -49,7 +49,7 @@ public class Volume {
     public void setVoxel(int i, short value) {
         data[i] = value;
     }
-    
+
     public short getVoxelInterpolate(double[] coord) {
     /* to be implemented: get the trilinear interpolated value. 
         The current implementation gets the Nearest Neightbour */
@@ -67,7 +67,51 @@ public class Volume {
         
     }
     
-    public short getVoxel(int i) {
+    public short getVoxelInterpolateTrilinear(double[] coord) {
+    /* to be implemented: get the trilinear interpolated value. 
+        The current implementation gets the Nearest Neightbour */
+        
+        if (coord[0] < 0 || coord[0] > (dimX-1) || coord[1] < 0 || coord[1] > (dimY-1)
+                || coord[2] < 0 || coord[2] > (dimZ-1)) {
+            return 0;
+        }
+        
+        int x_f = (int) Math.floor(coord[0]);
+        int x_b = (int) Math.ceil(coord[0]);
+        int y_f = (int) Math.floor(coord[1]);
+        int y_b = (int) Math.ceil(coord[1]);
+        int z_f = (int) Math.floor(coord[2]);
+        int z_b = (int) Math.ceil(coord[2]);
+        
+        bilinearInterpolation(x_f, x_b, y_f, y_b, z_f);
+        bilinearInterpolation(x_f, x_b, y_f, y_b, z_b);
+        
+        /* notice that in this framework we assume that the distance between neighbouring voxels is 1 in all directions*/
+        int x = (int) Math.round(coord[0]); 
+        int y = (int) Math.round(coord[1]);
+        int z = (int) Math.round(coord[2]);
+    
+        return getVoxel(x, y, z);
+        
+    }
+    
+    private void bilinearInterpolation(int x_f, int x_b, int y_f, int y_b, int z_f) {
+    	int[] point1 = {x_f, y_f, z_f};
+    	int[] point2 = {x_b, y_f, z_f};
+    	
+    	int[] point3 = {x_f, y_b, z_f};
+    	int[] point4 = {x_b, y_b, z_f};
+
+		linearIterpolation(point1, point2);
+		linearIterpolation(point3, point4);
+	}
+
+	private void linearIterpolation(int[] point1, int[] point2) {
+		getVoxel(point1[0],point1[1],point1[2]);
+		getVoxel(point2[0],point2[1],point2[2]);
+	}
+
+	public short getVoxel(int i) {
         return data[i];
     }
     
