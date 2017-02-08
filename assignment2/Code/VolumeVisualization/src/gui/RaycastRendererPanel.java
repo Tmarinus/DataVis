@@ -50,7 +50,7 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
         compositingButton = new javax.swing.JRadioButton();
         tf2dButton = new javax.swing.JRadioButton();
         shadingCheckbox = new javax.swing.JCheckBox();
-        slicerLinearButton = new javax.swing.JRadioButton();
+        slicerNNButton = new javax.swing.JRadioButton();
         slicerTransferButton = new javax.swing.JRadioButton();
         slicerTrilinearButton = new javax.swing.JRadioButton();
         buttonGroup2 = new javax.swing.ButtonGroup();
@@ -102,12 +102,12 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
 
         //Ugly but science gui and dont want to waste time
         //Add select box for colour selection, ONLY SELECT ONE
-        buttonGroup2.add(slicerLinearButton);
-        slicerLinearButton.setText("Slicer Linear");
-        slicerLinearButton.setSelected(true);
-        slicerLinearButton.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup2.add(slicerNNButton);
+        slicerNNButton.setText("Slicer Nearest Neighbour");
+        slicerNNButton.setSelected(true);
+        slicerNNButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                slicerLinearButtonActionPerformed(evt);
+                slicerNNButtonActionPerformed(evt);
             }
         });
         buttonGroup2.add(slicerTransferButton);
@@ -143,7 +143,7 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
                         .addComponent(mipButton)
                         .addComponent(slicerButton)
                         .addComponent(shadingCheckbox)
-                        .addComponent(slicerLinearButton)
+                        .addComponent(slicerNNButton)
                         .addComponent(slicerTransferButton)
                         .addComponent(slicerTrilinearButton)))
                 .addContainerGap(339, Short.MAX_VALUE))
@@ -165,7 +165,7 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
                 .addComponent(tf2dButton)
                 .addGap(18, 18, 18)
                 .addComponent(shadingCheckbox)
-                .addComponent(slicerLinearButton)
+                .addComponent(slicerNNButton)
                 .addComponent(slicerTransferButton)
                 .addComponent(slicerTrilinearButton)
                 .addContainerGap(137, Short.MAX_VALUE))
@@ -194,8 +194,8 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
     private void slicerTransferButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingButtonActionPerformed
         renderer.SetSlicerTransfer(slicerTransferButton.isSelected());
     }
-    private void slicerLinearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingButtonActionPerformed
-        renderer.SetSlicerLinear(slicerLinearButton.isSelected());
+    private void slicerNNButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingButtonActionPerformed
+        renderer.SetSlicerNN(slicerNNButton.isSelected());
     }
     private void slicerTrilinearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingButtonActionPerformed
         renderer.SetSlicerTrilinear(slicerTrilinearButton.isSelected());
@@ -213,7 +213,7 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JRadioButton slicerTransferButton;
-    private javax.swing.JRadioButton slicerLinearButton;
+    private javax.swing.JRadioButton slicerNNButton;
     private javax.swing.JRadioButton slicerTrilinearButton;
     
 }

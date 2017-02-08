@@ -56,33 +56,46 @@ public class Volume {
     public void setVoxel(int i, short value) {
         data[i] = value;
     }
+    
+    public short getVoxelNN(double[] coord) {
 
-    public short getVoxelInterpolate(double[] coord) {
-    	return getVoxelInterpolate(coord, false);
+		if (coord[0] < 0 || coord[0] > (dimX-1) || coord[1] < 0 || coord[1] > (dimY-1)
+				|| coord[2] < 0 || coord[2] > (dimZ-1)) {
+			return 0;
+		}
+		/* notice that in this framework we assume that the distance between neighbouring voxels is 1 in all directions*/
+		int x = (int) Math.round(coord[0]); 
+		int y = (int) Math.round(coord[1]);
+		int z = (int) Math.round(coord[2]);
+		return getVoxel(x, y, z);
     }
     
-    public short getVoxelInterpolate(double[] coord, boolean trilinear) {
-    /* to be implemented: get the trilinear interpolated value. 
-        The current implementation gets the Nearest Neightbour */
-        
-        if (coord[0] < 0 || coord[0] > (dimX-1) || coord[1] < 0 || coord[1] > (dimY-1)
-                || coord[2] < 0 || coord[2] > (dimZ-1)) {
-            return 0;
-        }
-        if (!trilinear){
-	        /* notice that in this framework we assume that the distance between neighbouring voxels is 1 in all directions*/
-	        int x = (int) Math.round(coord[0]); 
-	        int y = (int) Math.round(coord[1]);
-	        int z = (int) Math.round(coord[2]);
-
-//	        System.out.print(getVoxel(x, y, z));
-//	        System.out.print("\n");
-
-	        return getVoxel(x, y, z);
-        }else {
-        	return getVoxelInterpolateTrilinear(coord);
-        }
-    }
+//    public short getVoxelInterpolate(double[] coord) {
+//    	return getVoxelInterpolate(coord, false);
+//    }
+    
+//    public short getVoxelInterpolate(double[] coord, boolean trilinear) {
+//    /* to be implemented: get the trilinear interpolated value. 
+//        The current implementation gets the Nearest Neightbour */
+//        
+//        if (coord[0] < 0 || coord[0] > (dimX-1) || coord[1] < 0 || coord[1] > (dimY-1)
+//                || coord[2] < 0 || coord[2] > (dimZ-1)) {
+//            return 0;
+//        }
+//        if (!trilinear){
+//	        /* notice that in this framework we assume that the distance between neighbouring voxels is 1 in all directions*/
+//	        int x = (int) Math.round(coord[0]); 
+//	        int y = (int) Math.round(coord[1]);
+//	        int z = (int) Math.round(coord[2]);
+//
+////	        System.out.print(getVoxel(x, y, z));
+////	        System.out.print("\n");
+//
+//	        return getVoxel(x, y, z);
+//        }else {
+//        	return getVoxelInterpolateTrilinear(coord);
+//        }
+//    }
     
     public short getVoxelInterpolateTrilinear(double[] coord) {
     /* to be implemented: get the trilinear interpolated value. 
@@ -132,18 +145,6 @@ public class Volume {
     	return val_z;
         
     }
-    
-//    private void bilinearInterpolation(int x_f, int x_b, int y_f, int y_b, int z_f, double dist_x, double dist_y) {
-//
-//		double val_y_front = linearIterpolation(point1, point2,dist_x);
-//		double val_y_back = linearIterpolation(point3, point4,dist_x);
-//	}
-//
-//	private double linearIterpolation(int[] point1, int[] point2, double dist) {
-//		getVoxel(point1[0],point1[1],point1[2]);
-//		getVoxel(point2[0],point2[1],point2[2]);
-//		return 0;
-//	}
 
 	public short getVoxel(int i) {
         return data[i];

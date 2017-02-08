@@ -42,7 +42,7 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
     
     // Select slicer colour calculation
     public enum SlicerType {
-    	TRILINEAR, LINEARSCALING, TRANSFER
+    	TRILINEAR, NEARESTNEIGH, TRANSFER
     }
     private SlicerType currSlicerType = SlicerType.TRILINEAR;
     
@@ -402,20 +402,15 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                         + volumeCenter[2];
                 int val;
                 switch (currSlicerType) {
-                case LINEARSCALING:
-                    val = volume.getVoxelInterpolate(pixelCoord);
-                    // Map the intensity to a grey value by linear scaling
-//                    if (val > 0) {
-//	                    System.out.print(val);
-//	                    System.out.print("\n");
-//                    }
+                case NEARESTNEIGH:
+                    val = volume.getVoxelNN(pixelCoord);
                     voxelColor.r = val/max;
                     voxelColor.g = voxelColor.r;
                     voxelColor.b = voxelColor.r;
                     voxelColor.a = val > 0 ? 1.0 : 0.0;  // this makes intensity 0 completely transparent and the rest opaque
                 	break;
                 case TRANSFER:
-                    val = volume.getVoxelInterpolate(pixelCoord);
+                    val = volume.getVoxelInterpolateTrilinear(pixelCoord);
                     // Alternatively, apply the transfer function to obtain a color
                     TFColor auxColor = new TFColor(); 
                     auxColor = tFunc.getColor(val);
@@ -425,12 +420,7 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                     voxelColor.a=auxColor.a;
                 	break;
                 case TRILINEAR:
-                	val = volume.getVoxelInterpolate(pixelCoord, true);
-//                    if (val > 0) {
-//	                    System.out.print(val);
-//	                    System.out.print("\n");
-//                    }
-                    // Map the intensity to a grey value by trilinear scaling
+                	val = volume.getVoxelInterpolateTrilinear(pixelCoord);
                     voxelColor.r = val/max;
                     voxelColor.g = voxelColor.r;
                     voxelColor.b = voxelColor.r;
@@ -526,17 +516,20 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
 	public void SetSlicerTransfer(boolean selected) {
 		if (true) {
 			currSlicerType = SlicerType.TRANSFER;
+			changed();
 		}
 		
 	}
 	public void SetSlicerTrilinear(boolean selected) {
 		if (true) {
 			currSlicerType = SlicerType.TRILINEAR;
+			changed();
 		}
 	}
-	public void SetSlicerLinear(boolean selected) {
+	public void SetSlicerNN(boolean selected) {
 		if (true) {
-			currSlicerType = SlicerType.LINEARSCALING;
+			currSlicerType = SlicerType.NEARESTNEIGH;
+			changed();
 		}
 	}
 }
