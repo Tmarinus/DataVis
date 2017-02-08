@@ -247,7 +247,33 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
             }
         }
     }
-    
+    int compositing(double[] entryPoint, double[] exitPoint, double[] viewVec, double sampleStep) {
+        /* to be implemented:  You need to sample the ray and implement the MIP
+         * right now it just returns yellow as a color
+        */
+        float colornew=0;
+        float color=0;
+        int j=1;
+        float opacity=0;
+        float opacityprev=0;
+        double[] gapcoordinate=new double[3];
+        double[] gap=new double[3];
+    	while (opacity!=1){
+    		for (int i=0;i<3;i++){
+    			if(gapcoordinate[i]<exitPoint[i]){
+    				gapcoordinate[i]=entryPoint[i]+gap[i]*j;
+    			}
+			color=volume.getVoxelNN(gapcoordinate);
+			int max=volume.getMaximum();
+    		opacity=color/max;
+    		opacity=opacityprev*(1-opacity)+opacity;
+			colornew=color+(1-opacity)*colornew;
+			opacityprev=opacity;
+    		}
+    		j++;
+    	}
+        return Math.round(colornew);
+    }
 
       int traceRayMIP(double[] entryPoint, double[] exitPoint, double[] viewVec, double sampleStep) {
         /* to be implemented:  You need to sample the ray and implement the MIP
@@ -346,7 +372,8 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                     //System.out.println("Entry: " + entryPoint[0] + " " + entryPoint[1] + " " + entryPoint[2]);
                     //System.out.println("Exit: " + exitPoint[0] + " " + exitPoint[1] + " " + exitPoint[2]);
                     int pixelColor = 0;
-                                   
+                    if(compositingMode) 
+                        pixelColor= compositing(entryPoint,exitPoint,viewVec,sampleStep);                
                     /* set color to green if MipMode- see slicer function*/
                    if(mipMode) 
                         pixelColor= traceRayMIP(entryPoint,exitPoint,viewVec,sampleStep);
