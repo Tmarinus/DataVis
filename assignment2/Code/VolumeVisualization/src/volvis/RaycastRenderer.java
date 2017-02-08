@@ -42,8 +42,9 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
     private boolean tf2dMode = false;
     private boolean shadingMode = false;
     
-    //
+    //Slowmode skips rendering frames to increase performance.
     private boolean slowMode = false;
+    //Book keeping bool for frame skipping  
     private boolean skipOne = false;
     
     //Set the size of skipped elements when interacting
@@ -419,6 +420,7 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                 pixelCoord[2] = uVec[2] * (i - imageCenter) + vVec[2] * (j - imageCenter)
                         + volumeCenter[2];
                 int val;
+                //Switch to decide which color creation to apply.
                 switch (currSlicerType) {
                 case NEARESTNEIGH:
                     val = volume.getVoxelNN(pixelCoord);
@@ -465,12 +467,6 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                 }
             }
         }
-        
-//        if (activeResolution){
-//        	image = Scalr.resize(tmpImage, Scalr.Method.BALANCED, image.getWidth(), image.getHeight());
-//        } else {
-//        	image = tmpImage;
-//        }
     }
 
 
@@ -485,16 +481,6 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         drawBoundingBox(gl);
 
         gl.glGetDoublev(GL2.GL_MODELVIEW_MATRIX, viewMatrix, 0);
-        
-        if(interactiveMode) {
-			frames++;
-			if (System.currentTimeMillis() - activeStart > 1000) {
-				framesPerSec = frames;
-				frames = 0;
-				activeStart = System.currentTimeMillis();
-				panel.setFpsLabel(Double.toString(framesPerSec));
-			}
-		}
         
         long startTime = System.currentTimeMillis();
         if (!slowMode) {
@@ -548,7 +534,20 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         gl.glPopMatrix();
 
         gl.glPopAttrib();
+        
 
+        //If interactive mode is active, count the frames.
+        if(interactiveMode) {
+          frames++;
+          //After counting frames for 1 second, update fps counter
+          //Please note that initial activeStart is done in Renderer class.
+          if (System.currentTimeMillis() - activeStart > 1000) {
+            framesPerSec = frames;
+            frames = 0;
+            activeStart = System.currentTimeMillis();
+            panel.setFpsLabel(Double.toString(framesPerSec));
+          }
+        }
 
         if (gl.glGetError() > 0) {
             System.out.println("some OpenGL error: " + gl.glGetError());

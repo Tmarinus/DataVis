@@ -81,6 +81,8 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
         renderingSpeedLabel.setText("jLabel2");
 
         fpsTextLabel.setText("FPS per second: ");
+        fpsTextLabel.setToolTipText("Please note, fps is only calculate when actively rotating object"
+            + ", therefore this cannot be used as a true measurement.");
         fpsLabel.setText("0");
         
         buttonGroup1.add(slicerButton);

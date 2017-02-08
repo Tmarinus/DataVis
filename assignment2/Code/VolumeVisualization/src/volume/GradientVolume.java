@@ -21,7 +21,9 @@ public class GradientVolume {
         dimZ = vol.getDimZ();
         data = new VoxelGradient[dimX * dimY * dimZ];
         compute();
-        maxmag = -1.0;
+        //Removed maxmag for safety, either have to always update it, or keep dirty flag.
+        //Use getMaxGradientMagnitude function
+//        maxmag = -1.0;
     }
 
     public VoxelGradient getGradient(int x, int y, int z) {
@@ -81,23 +83,42 @@ public class GradientVolume {
     public int getDimZ() {
         return dimZ;
     }
-
+    
+    /**
+     * Compute the gradient based on the volume.
+     * Borders are handled by getSafeVoxel which will give the closest existing voxel when 
+     * a value is undefined.
+     */
     private void compute() {
-        /* To be implemented: compute the gradient of contained in the volume attribute */
-        for (int i=0; i<data.length; i++) {
-            data[i] = zero;
-        }   
-     
+      int dim_x = volume.getDimX();
+      int dim_y = volume.getDimY();
+      int dim_z = volume.getDimZ();
+      float tmp_x, tmp_y, tmp_z;
+      for (int z = 0; z < dim_z; z++) {
+        for (int y = 0; y < dim_y; y++) {
+          for (int x = 0; x < dim_x; x++) {
+            tmp_x = (volume.getSafeVoxel(x+1, y, z) - volume.getSafeVoxel(x-1, y, z)) / 2;
+            tmp_y = (volume.getSafeVoxel(x, y+1, z) - volume.getSafeVoxel(x, y-1, z)) / 2;
+            tmp_z = (volume.getSafeVoxel(x, y, z+1) - volume.getSafeVoxel(x-1, y, z-1)) / 2;
+            setGradient(x,y,z,new VoxelGradient(tmp_x, tmp_y, tmp_z));
+          }
+        }
+      }
     }
     
     public double getMaxGradientMagnitude() {
-        /* to be implemented: Returns the maximum gradient magnitude*/
-        return 0;
+        float max = Float.MIN_VALUE;
+        for (int i = 0; i < data.length; i++) {
+          if (data[i].mag > max) {
+            max = data[i].mag;
+          }
+        }
+        return max;
     }
     
     private int dimX, dimY, dimZ;
     private VoxelGradient zero = new VoxelGradient();
     VoxelGradient[] data;
     Volume volume;
-    double maxmag;
+//    double maxmag;
 }
