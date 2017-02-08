@@ -5,8 +5,14 @@
 package gui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import volvis.RaycastRenderer;
 
@@ -19,6 +25,10 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
     RaycastRenderer renderer;
     TransferFunctionEditor tfEditor = null;
     TransferFunction2DEditor tfEditor2D = null;
+	private JLabel increaseSizeLabel;
+	private JLabel fpsLabel;
+	private JLabel fpsTextLabel;
+	private JCheckBox slowModeCheckbox;
     
     /**
      * Creates new form RaycastRendererPanel
@@ -30,6 +40,10 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
 
     public void setSpeedLabel(String text) {
         renderingSpeedLabel.setText(text);
+    }
+    
+    public void setFpsLabel(String text) {
+        fpsLabel.setText(text);
     }
     
     
@@ -45,6 +59,8 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         renderingSpeedLabel = new javax.swing.JLabel();
+        fpsTextLabel = new javax.swing.JLabel();
+        fpsLabel = new javax.swing.JLabel();
         slicerButton = new javax.swing.JRadioButton();
         mipButton = new javax.swing.JRadioButton();
         compositingButton = new javax.swing.JRadioButton();
@@ -54,11 +70,19 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
         slicerTransferButton = new javax.swing.JRadioButton();
         slicerTrilinearButton = new javax.swing.JRadioButton();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        slowModeCheckbox = new javax.swing.JCheckBox();
+        
+        SpinnerNumberModel model1 = new SpinnerNumberModel(2, 1, null, 1);
+        increaseSizeLabel = new javax.swing.JLabel();
+        increaseSizeLabel.setText("# skipped pixels while interacting");
+        increaseSelector = new javax.swing.JSpinner(model1);
         
         jLabel1.setText("Rendering time (ms):");
-
         renderingSpeedLabel.setText("jLabel2");
 
+        fpsTextLabel.setText("FPS per second: ");
+        fpsLabel.setText("0");
+        
         buttonGroup1.add(slicerButton);
         slicerButton.setSelected(true);
         slicerButton.setText("Slicer");
@@ -99,6 +123,12 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
             }
         });
 
+        slowModeCheckbox.setText("Skip frames");
+        slowModeCheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                slowModeCheckboxActionPerformed(evt);
+            }
+        });
 
         //Ugly but science gui and dont want to waste time
         //Add select box for colour selection, ONLY SELECT ONE
@@ -125,7 +155,13 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
             }
         });
         
-        
+        increaseSelector.setValue(2);
+        increaseSelector.setMaximumSize(new Dimension(50, 40));
+        increaseSelector.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                increaseSelectorActionPerformed(e);
+             }
+          });
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -133,10 +169,14 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(renderingSpeedLabel))
+                		.addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(renderingSpeedLabel))
+                		.addGroup(layout.createSequentialGroup()
+                                .addComponent(fpsTextLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(fpsLabel))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(compositingButton)
                         .addComponent(tf2dButton)
@@ -145,7 +185,10 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
                         .addComponent(shadingCheckbox)
                         .addComponent(slicerNNButton)
                         .addComponent(slicerTransferButton)
-                        .addComponent(slicerTrilinearButton)))
+                        .addComponent(slicerTrilinearButton)
+                        .addComponent(increaseSizeLabel)
+                        .addComponent(increaseSelector)
+                        .addComponent(slowModeCheckbox)))
                 .addContainerGap(339, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -153,8 +196,11 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(renderingSpeedLabel))
+                        .addComponent(jLabel1)
+                        .addComponent(renderingSpeedLabel))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fpsTextLabel)
+                        .addComponent(fpsLabel))
                 .addGap(49, 49, 49)
                 .addComponent(slicerButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -168,6 +214,9 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
                 .addComponent(slicerNNButton)
                 .addComponent(slicerTransferButton)
                 .addComponent(slicerTrilinearButton)
+                .addComponent(increaseSizeLabel)
+                .addComponent(increaseSelector)
+                .addComponent(slowModeCheckbox)
                 .addContainerGap(137, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -200,7 +249,21 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
     private void slicerTrilinearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingButtonActionPerformed
         renderer.SetSlicerTrilinear(slicerTrilinearButton.isSelected());
     }
+    private void increaseSelectorActionPerformed(ChangeEvent evt) {//GEN-FIRST:event_shadingButtonActionPerformed
+    	
+    	try{ 
+    		int val = (int) increaseSelector.getValue();
+            renderer.setIncrementSize(val);
+    	} catch (Exception e) {
+			System.out.println("Incorrect increasement");
+		}
+    }
 
+
+    private void slowModeCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingCheckboxActionPerformed
+        renderer.setSlowMode(slowModeCheckbox.isSelected());
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton compositingButton;
@@ -215,5 +278,6 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton slicerTransferButton;
     private javax.swing.JRadioButton slicerNNButton;
     private javax.swing.JRadioButton slicerTrilinearButton;
+    private javax.swing.JSpinner increaseSelector;
     
 }

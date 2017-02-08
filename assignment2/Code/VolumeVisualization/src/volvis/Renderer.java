@@ -17,12 +17,20 @@ public abstract class Renderer {
     boolean visible = false;
     boolean interactiveMode = false;
     ArrayList<TFChangeListener> listeners = new ArrayList<TFChangeListener>();
-
+    long activeStart = 0;
+    int frames = 0;
+    int framesPerSec = 0;
+    
     public Renderer() {
         
     }
 
     public void setInteractiveMode(boolean flag) {
+    	if (!interactiveMode && flag) {
+    		activeStart = System.currentTimeMillis();
+    	} else if (!flag) {
+    		activeStart = 0;
+    	}
         interactiveMode = flag;
     }
     

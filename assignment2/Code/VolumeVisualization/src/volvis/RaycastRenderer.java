@@ -8,6 +8,8 @@ import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.util.texture.Texture;
 import com.jogamp.opengl.util.texture.awt.AWTTextureIO;
+
+import external_libs.Scalr;
 import gui.RaycastRendererPanel;
 import gui.TransferFunction2DEditor;
 import gui.TransferFunctionEditor;
@@ -40,6 +42,13 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
     private boolean tf2dMode = false;
     private boolean shadingMode = false;
     
+    //
+    private boolean slowMode = false;
+    private boolean skipOne = false;
+    
+    //Set the size of skipped elements when interacting
+    private int incrementSize = 2;
+    
     // Select slicer colour calculation
     public enum SlicerType {
     	TRILINEAR, NEARESTNEIGH, TRANSFER
@@ -48,6 +57,10 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
     
     public void setSlicerType(SlicerType newType) {
     	currSlicerType = newType;
+    }
+    
+    public void setSlowMode(boolean val) {
+    	slowMode = val;
     }
     
     public RaycastRenderer() {
@@ -372,7 +385,12 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                 image.setRGB(i, j, 0);
             }
         }
-        
+        boolean activeResolution = false;
+        int local_increment = 1;
+        if (interactiveMode) {
+        	activeResolution = true;
+        	local_increment = incrementSize;
+        }
         // vector uVec and vVec define a plane through the origin, 
         // perpendicular to the view vector viewVec
         double[] viewVec = new double[3];
@@ -392,8 +410,8 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         // sample on a plane through the origin of the volume data
         double max = volume.getMaximum();
         TFColor voxelColor = new TFColor();
-        for (int j = 0; j < image.getHeight(); j++) {
-            for (int i = 0; i < image.getWidth(); i++) {
+        for (int j = 0; j < image.getHeight(); j += local_increment) {
+            for (int i = 0; i < image.getWidth(); i += local_increment) {
                 pixelCoord[0] = uVec[0] * (i - imageCenter) + vVec[0] * (j - imageCenter)
                         + volumeCenter[0];
                 pixelCoord[1] = uVec[1] * (i - imageCenter) + vVec[1] * (j - imageCenter)
@@ -436,10 +454,23 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                 int c_blue = voxelColor.b <= 1.0 ? (int) Math.floor(voxelColor.b * 255) : 255;
                 int pixelColor = (c_alpha << 24) | (c_red << 16) | (c_green << 8) | c_blue;
                 image.setRGB(i, j, pixelColor);
+                if (activeResolution) {
+                	for (int incr_j = j; incr_j < j+local_increment && incr_j < image.getHeight(); incr_j++){
+                		for (int incr_i = i; incr_i < i+local_increment && incr_i < image.getWidth(); incr_i++){
+                        	image.setRGB(incr_i, incr_j, pixelColor);
+                    	}
+                	}
+                } else {
+                	image.setRGB(i, j, pixelColor);
+                }
             }
         }
-
-
+        
+//        if (activeResolution){
+//        	image = Scalr.resize(tmpImage, Scalr.Method.BALANCED, image.getWidth(), image.getHeight());
+//        } else {
+//        	image = tmpImage;
+//        }
     }
 
 
@@ -454,14 +485,36 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         drawBoundingBox(gl);
 
         gl.glGetDoublev(GL2.GL_MODELVIEW_MATRIX, viewMatrix, 0);
-
-        long startTime = System.currentTimeMillis();
-        if (slicerMode) {
-            slicer(viewMatrix);    
-        } else {
-            raycast(viewMatrix);
-        }
         
+        if(interactiveMode) {
+			frames++;
+			if (System.currentTimeMillis() - activeStart > 1000) {
+				framesPerSec = frames;
+				frames = 0;
+				activeStart = System.currentTimeMillis();
+				panel.setFpsLabel(Double.toString(framesPerSec));
+			}
+		}
+        
+        long startTime = System.currentTimeMillis();
+        if (!slowMode) {
+	        if (slicerMode) {
+	            slicer(viewMatrix);    
+	        } else {
+	            raycast(viewMatrix);
+	        }
+        } else {
+        	if (skipOne) {
+        		skipOne = false;
+        	} else {
+        		if (slicerMode) {
+    	            slicer(viewMatrix);    
+    	        } else {
+    	            raycast(viewMatrix);
+    	        }
+        		skipOne = true;
+        	}
+        }
         long endTime = System.currentTimeMillis();
         double runningTime = (endTime - startTime);
         panel.setSpeedLabel(Double.toString(runningTime));
@@ -530,6 +583,11 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
 		if (true) {
 			currSlicerType = SlicerType.NEARESTNEIGH;
 			changed();
+		}
+	}
+	public void setIncrementSize(int size) {
+		if (size > 0) {
+			incrementSize = size;
 		}
 	}
 }
