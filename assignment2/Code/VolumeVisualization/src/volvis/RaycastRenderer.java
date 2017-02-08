@@ -40,6 +40,16 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
     private boolean tf2dMode = false;
     private boolean shadingMode = false;
     
+    // Select slicer colour calculation
+    public enum SlicerType {
+    	TRILINEAR, LINEARSCALING, TRANSFER
+    }
+    private SlicerType currSlicerType = SlicerType.TRILINEAR;
+    
+    public void setSlicerType(SlicerType newType) {
+    	currSlicerType = newType;
+    }
+    
     public RaycastRenderer() {
         panel = new RaycastRendererPanel(this);
         panel.setSpeedLabel("0");
@@ -362,7 +372,7 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                 image.setRGB(i, j, 0);
             }
         }
-
+        
         // vector uVec and vVec define a plane through the origin, 
         // perpendicular to the view vector viewVec
         double[] viewVec = new double[3];
@@ -390,18 +400,43 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                         + volumeCenter[1];
                 pixelCoord[2] = uVec[2] * (i - imageCenter) + vVec[2] * (j - imageCenter)
                         + volumeCenter[2];
-
-                int val = volume.getVoxelInterpolate(pixelCoord);
-                // Map the intensity to a grey value by linear scaling
-                voxelColor.r = val/max;
-                voxelColor.g = voxelColor.r;
-                voxelColor.b = voxelColor.r;
-                voxelColor.a = val > 0 ? 1.0 : 0.0;  // this makes intensity 0 completely transparent and the rest opaque
-                
-                // Alternatively, apply the transfer function to obtain a color
-                TFColor auxColor = new TFColor(); 
-                auxColor = tFunc.getColor(val);
-                voxelColor.r=auxColor.r;voxelColor.g=auxColor.g;voxelColor.b=auxColor.b;voxelColor.a=auxColor.a;
+                int val;
+                switch (currSlicerType) {
+                case LINEARSCALING:
+                    val = volume.getVoxelInterpolate(pixelCoord);
+                    // Map the intensity to a grey value by linear scaling
+//                    if (val > 0) {
+//	                    System.out.print(val);
+//	                    System.out.print("\n");
+//                    }
+                    voxelColor.r = val/max;
+                    voxelColor.g = voxelColor.r;
+                    voxelColor.b = voxelColor.r;
+                    voxelColor.a = val > 0 ? 1.0 : 0.0;  // this makes intensity 0 completely transparent and the rest opaque
+                	break;
+                case TRANSFER:
+                    val = volume.getVoxelInterpolate(pixelCoord);
+                    // Alternatively, apply the transfer function to obtain a color
+                    TFColor auxColor = new TFColor(); 
+                    auxColor = tFunc.getColor(val);
+                    voxelColor.r=auxColor.r;
+                    voxelColor.g=auxColor.g;
+                    voxelColor.b=auxColor.b;
+                    voxelColor.a=auxColor.a;
+                	break;
+                case TRILINEAR:
+                	val = volume.getVoxelInterpolate(pixelCoord, true);
+//                    if (val > 0) {
+//	                    System.out.print(val);
+//	                    System.out.print("\n");
+//                    }
+                    // Map the intensity to a grey value by trilinear scaling
+                    voxelColor.r = val/max;
+                    voxelColor.g = voxelColor.r;
+                    voxelColor.b = voxelColor.r;
+                    voxelColor.a = val > 0 ? 1.0 : 0.0;  // this makes intensity 0 completely transparent and the rest opaque
+                	break;
+                }
                 
                 
                 // BufferedImage expects a pixel color packed as ARGB in an int
@@ -486,4 +521,22 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
             listeners.get(i).changed();
         }
     }
+
+    // UGLY for gui, science purposes.
+	public void SetSlicerTransfer(boolean selected) {
+		if (true) {
+			currSlicerType = SlicerType.TRANSFER;
+		}
+		
+	}
+	public void SetSlicerTrilinear(boolean selected) {
+		if (true) {
+			currSlicerType = SlicerType.TRILINEAR;
+		}
+	}
+	public void SetSlicerLinear(boolean selected) {
+		if (true) {
+			currSlicerType = SlicerType.LINEARSCALING;
+		}
+	}
 }

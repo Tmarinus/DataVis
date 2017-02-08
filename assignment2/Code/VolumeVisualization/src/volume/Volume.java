@@ -7,6 +7,8 @@ package volume;
 import java.io.File;
 import java.io.IOException;
 
+import volvis.TransferFunction;
+
 /**
  *
  * @author michel
@@ -14,7 +16,12 @@ import java.io.IOException;
  * Volume object: This class contains the object and assumes that the distance between the voxels in x,y and z are 1 
  */
 public class Volume {
+
     
+    private int dimX, dimY, dimZ;
+    private short[] data;
+    private int[] histogram;
+	
     public Volume(int xd, int yd, int zd) {
         data = new short[xd*yd*zd];
         dimX = xd;
@@ -51,6 +58,10 @@ public class Volume {
     }
 
     public short getVoxelInterpolate(double[] coord) {
+    	return getVoxelInterpolate(coord, false);
+    }
+    
+    public short getVoxelInterpolate(double[] coord, boolean trilinear) {
     /* to be implemented: get the trilinear interpolated value. 
         The current implementation gets the Nearest Neightbour */
         
@@ -58,13 +69,19 @@ public class Volume {
                 || coord[2] < 0 || coord[2] > (dimZ-1)) {
             return 0;
         }
-        /* notice that in this framework we assume that the distance between neighbouring voxels is 1 in all directions*/
-        int x = (int) Math.round(coord[0]); 
-        int y = (int) Math.round(coord[1]);
-        int z = (int) Math.round(coord[2]);
-    
-        return getVoxel(x, y, z);
-        
+        if (!trilinear){
+	        /* notice that in this framework we assume that the distance between neighbouring voxels is 1 in all directions*/
+	        int x = (int) Math.round(coord[0]); 
+	        int y = (int) Math.round(coord[1]);
+	        int z = (int) Math.round(coord[2]);
+
+//	        System.out.print(getVoxel(x, y, z));
+//	        System.out.print("\n");
+
+	        return getVoxel(x, y, z);
+        }else {
+        	return getVoxelInterpolateTrilinear(coord);
+        }
     }
     
     public short getVoxelInterpolateTrilinear(double[] coord) {
@@ -83,33 +100,50 @@ public class Volume {
         int z_f = (int) Math.floor(coord[2]);
         int z_b = (int) Math.ceil(coord[2]);
         
-        bilinearInterpolation(x_f, x_b, y_f, y_b, z_f);
-        bilinearInterpolation(x_f, x_b, y_f, y_b, z_b);
+        double dist_x = Math.abs(x_f - coord[0]);
+        double dist_y = Math.abs(y_f - coord[1]);
+        double dist_z = Math.abs(z_f - coord[2]);
         
-        /* notice that in this framework we assume that the distance between neighbouring voxels is 1 in all directions*/
-        int x = (int) Math.round(coord[0]); 
-        int y = (int) Math.round(coord[1]);
-        int z = (int) Math.round(coord[2]);
-    
-        return getVoxel(x, y, z);
+
+    	int voxel000 = getVoxel(x_f, y_f, z_f);
+    	int voxel100 = getVoxel(x_b, y_f, z_f);
+    	
+    	int voxel010 = getVoxel(x_f, y_b, z_f);
+    	int voxel110 = getVoxel(x_b, y_b, z_f);
+    	
+    	int voxel001 = getVoxel(x_f, y_f, z_b);
+    	int voxel101 = getVoxel(x_b, y_f, z_b);
+    	
+    	int voxel011 = getVoxel(x_f, y_b, z_b);
+    	int voxel111 = getVoxel(x_b, y_b, z_b);
+
+
+
+    	double val_x1_front = voxel000 * (1 - dist_x) + voxel100 * dist_x;
+    	double val_x2_front = voxel010 * (1 - dist_x) + voxel110 * dist_x;
+    	
+    	double val_x1_back = voxel001 * (1 - dist_x) + voxel101 * dist_x;
+    	double val_x2_back = voxel011 * (1 - dist_x) + voxel111 * dist_x;
+
+    	double val_y_front = val_x1_front * (1 - dist_y) + val_x2_front * dist_y;
+    	double val_y_back = val_x1_back * (1 - dist_y) + val_x2_back * dist_y;
+    	
+    	short val_z = (short) (val_y_front * (1 - dist_z) + val_y_back * dist_z); 
+    	return val_z;
         
     }
     
-    private void bilinearInterpolation(int x_f, int x_b, int y_f, int y_b, int z_f) {
-    	int[] point1 = {x_f, y_f, z_f};
-    	int[] point2 = {x_b, y_f, z_f};
-    	
-    	int[] point3 = {x_f, y_b, z_f};
-    	int[] point4 = {x_b, y_b, z_f};
-
-		linearIterpolation(point1, point2);
-		linearIterpolation(point3, point4);
-	}
-
-	private void linearIterpolation(int[] point1, int[] point2) {
-		getVoxel(point1[0],point1[1],point1[2]);
-		getVoxel(point2[0],point2[1],point2[2]);
-	}
+//    private void bilinearInterpolation(int x_f, int x_b, int y_f, int y_b, int z_f, double dist_x, double dist_y) {
+//
+//		double val_y_front = linearIterpolation(point1, point2,dist_x);
+//		double val_y_back = linearIterpolation(point3, point4,dist_x);
+//	}
+//
+//	private double linearIterpolation(int[] point1, int[] point2, double dist) {
+//		getVoxel(point1[0],point1[1],point1[2]);
+//		getVoxel(point2[0],point2[1],point2[2]);
+//		return 0;
+//	}
 
 	public short getVoxel(int i) {
         return data[i];
@@ -153,8 +187,4 @@ public class Volume {
             histogram[data[i]]++;
         }
     }
-    
-    private int dimX, dimY, dimZ;
-    private short[] data;
-    private int[] histogram;
 }
