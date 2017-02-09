@@ -477,7 +477,6 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         if (volume == null) {
             return;
         }
-
         drawBoundingBox(gl);
 
         gl.glGetDoublev(GL2.GL_MODELVIEW_MATRIX, viewMatrix, 0);
