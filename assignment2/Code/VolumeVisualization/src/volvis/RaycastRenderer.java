@@ -273,24 +273,27 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         double errorcorrection=0.001;
         double[] gapcoordinate=new double[3];
         double[] gap=new double[3];
+        boolean insideVol = true;
         for (int k=0;k<3;k++){
         	gap[k]=(exitPoint[k]-entryPoint[k])*sampleStep;
         }
-    	while (opacity<1 && j>0){
+    	while (opacity<1-errorcorrection && insideVol){
     		for (int i=0;i<3;i++){
-    			gapcoordinate[i]=entryPoint[i]+gap[i]*j;
-    			j++;
-    			if(gapcoordinate[i]>exitPoint[i]){	
-    				j=0;
+    			gapcoordinate[i]=gapcoordinate[i] + viewVec[i]*sampleStep;
+    			if(gapcoordinate[i]>exitPoint[i]){
+    				insideVol = false;
     			}
+    		}
+    		if (insideVol) {
+    			break;
     		}
 			color=volume.getVoxelNN(gapcoordinate);
 			int max=volume.getMaximum();
     		//System.out.println(max);
 			opacity=color/max;
     		opacity=opacityprev*(1-opacity)+opacity;
-    		if(opacity>1-errorcorrection){
-    			opacity=1;	    		
+    		if(opacity == opacityprev){
+    			break;
     		}
     		else{
     			colornew=color+(1-opacity)*colornew;
@@ -373,8 +376,13 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         double[] pixelCoord = new double[3];
         double[] entryPoint = new double[3];
         double[] exitPoint = new double[3];
-        
-        int increment=1;
+
+        boolean activeResolution = false;
+        int local_increment = 1;
+        if (interactiveMode) {
+        	activeResolution = true;
+        	local_increment = incrementSize;
+        }
         float sampleStep=0.2f;
         
 
@@ -386,8 +394,8 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         }
 
 
-        for (int j = 0; j < image.getHeight(); j += increment) {
-            for (int i = 0; i < image.getWidth(); i += increment) {
+        for (int j = 0; j < image.getHeight(); j += local_increment) {
+            for (int i = 0; i < image.getWidth(); i += local_increment) {
                 // compute starting points of rays in a plane shifted backwards to a position behind the data set
                 pixelCoord[0] = uVec[0] * (i - imageCenter) + vVec[0] * (j - imageCenter) - viewVec[0] * imageCenter
                         + volume.getDimX() / 2.0;
@@ -401,26 +409,36 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                     //System.out.println("Entry: " + entryPoint[0] + " " + entryPoint[1] + " " + entryPoint[2]);
                     //System.out.println("Exit: " + exitPoint[0] + " " + exitPoint[1] + " " + exitPoint[2]);
                     int pixelColor = 0;
-                    if(compositingMode) 
-                        pixelColor= compositing(entryPoint,exitPoint,viewVec,sampleStep);                
-                    /* set color to green if MipMode- see slicer function*/
-                   if(mipMode) 
-                        pixelColor= traceRayMIP(entryPoint,exitPoint,viewVec,sampleStep);
-                                
-                    for (int ii = i; ii < i + increment; ii++) {
-                        for (int jj = j; jj < j + increment; jj++) {
-                            image.setRGB(ii, jj, pixelColor);
-                        }
+                    if(compositingMode) {
+                        pixelColor= compositing(entryPoint,exitPoint,viewVec,sampleStep);
+                    } else if(mipMode) { 
+				        pixelColor= traceRayMIP(entryPoint,exitPoint,viewVec,sampleStep);
+				    } else if(tf2dMode){
+				    	pixelColor = tf2Color(entryPoint,exitPoint,viewVec,sampleStep);
+				    }
+
+                    if (activeResolution) {
+                    	for (int incr_j = j; incr_j < j+local_increment && incr_j < image.getHeight(); incr_j++){
+                    		for (int incr_i = i; incr_i < i+local_increment && incr_i < image.getWidth(); incr_i++){
+                            	image.setRGB(incr_i, incr_j, pixelColor);
+                        	}
+                    	}
+                    } else {
+                    	image.setRGB(i, j, pixelColor);
                     }
                 }
-
             }
         }
 
 
     }
 
-    void slicer(double[] viewMatrix) {
+    private int tf2Color(double[] entryPoint, double[] exitPoint, double[] viewVec, float sampleStep) {
+		
+		return 0;
+	}
+
+	void slicer(double[] viewMatrix) {
 
         // clear image
         for (int j = 0; j < image.getHeight(); j++) {
@@ -497,7 +515,7 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                 int c_green = voxelColor.g <= 1.0 ? (int) Math.floor(voxelColor.g * 255) : 255;
                 int c_blue = voxelColor.b <= 1.0 ? (int) Math.floor(voxelColor.b * 255) : 255;
                 int pixelColor = (c_alpha << 24) | (c_red << 16) | (c_green << 8) | c_blue;
-                image.setRGB(i, j, pixelColor);
+                
                 if (activeResolution) {
                 	for (int incr_j = j; incr_j < j+local_increment && incr_j < image.getHeight(); incr_j++){
                 		for (int incr_i = i; incr_i < i+local_increment && incr_i < image.getWidth(); incr_i++){
