@@ -28,7 +28,7 @@ import volume.VoxelGradient;
  */
 public class RaycastRenderer extends Renderer implements TFChangeListener {
 
-    private Volume volume = null;
+	private Volume volume = null;
     private GradientVolume gradients = null;
     RaycastRendererPanel panel;
     TransferFunction tFunc;
@@ -256,21 +256,34 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         int j=1;
         float opacity=0;
         float opacityprev=0;
+        double errorcorrection=0.001;
         double[] gapcoordinate=new double[3];
         double[] gap=new double[3];
-    	while (opacity!=1){
+        for (int k=0;k<3;k++){
+        	gap[k]=(exitPoint[k]-entryPoint[k])*sampleStep;
+        }
+    	while (opacity<1 && j>0){
     		for (int i=0;i<3;i++){
-    			if(gapcoordinate[i]<exitPoint[i]){
-    				gapcoordinate[i]=entryPoint[i]+gap[i]*j;
+    			gapcoordinate[i]=entryPoint[i]+gap[i]*j;
+    			j++;
+    			if(gapcoordinate[i]>exitPoint[i]){	
+    				j=0;
     			}
+    		}
 			color=volume.getVoxelNN(gapcoordinate);
 			int max=volume.getMaximum();
-    		opacity=color/max;
+    		//System.out.println(max);
+			opacity=color/max;
     		opacity=opacityprev*(1-opacity)+opacity;
-			colornew=color+(1-opacity)*colornew;
-			opacityprev=opacity;
+    		if(opacity>1-errorcorrection){
+    			opacity=1;	    		
     		}
-    		j++;
+    		else{
+    			colornew=color+(1-opacity)*colornew;
+    			opacityprev=opacity;
+			}				
+    		System.out.println(opacity);
+    		//System.out.println(j);   		
     	}
         return Math.round(colornew);
     }
@@ -281,6 +294,8 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         */
          
         int color=0;
+        //int maxMIP=volume.getMaximum();
+        //System.out.println(maxMIP);
 
         color = (255 << 24) | (255 << 16) | (255 << 8); 
         
