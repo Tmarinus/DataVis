@@ -30,7 +30,7 @@ import volume.VoxelGradient;
  */
 public class RaycastRenderer extends Renderer implements TFChangeListener {
 
-    private Volume volume = null;
+	private Volume volume = null;
     private GradientVolume gradients = null;
     RaycastRendererPanel panel;
     TransferFunction tFunc;
@@ -261,18 +261,108 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
             }
         }
     }
-    
-
-      int traceRayMIP(double[] entryPoint, double[] exitPoint, double[] viewVec, double sampleStep) {
+    TFColor compositing(double[] entryPoint, double[] exitPoint, double[] viewVec, double sampleStep) {
         /* to be implemented:  You need to sample the ray and implement the MIP
          * right now it just returns yellow as a color
         */
-         
-        int color=0;
+    	TFColor finalColor= new TFColor(0,0,0,1);
+    	TFColor tmpColor = null;
+        double[] coord = entryPoint;
+        int maxSteps = (int) (VectorMath.distance(exitPoint, entryPoint) / sampleStep);
+        int maxColor = volume.getMaximum();
+        for (int i = 0; i < maxSteps; i++) {
+        	coord[0] = coord[0] - (viewVec[0] * sampleStep);
+        	coord[1] = coord[1] - (viewVec[1] * sampleStep);
+        	coord[2] = coord[2] - (viewVec[2] * sampleStep);
+        	tmpColor = tFunc.getColor(volume.getVoxelNN(coord));
+        	finalColor.a = finalColor.a * (1 - tmpColor.a) + tmpColor.a;
+        	finalColor.r = finalColor.r * (1 - tmpColor.a) + tmpColor.a * tmpColor.r;
+        	finalColor.g = finalColor.g * (1 - tmpColor.a) + tmpColor.a * tmpColor.g;
+        	finalColor.b = finalColor.b * (1 - tmpColor.a) + tmpColor.a * tmpColor.b;
+        	
+        }
+//        System.out.println(finalColor + " tmp " + tmpColor);
+        return finalColor;
+    	}
+    
+    /**
+     * Check if coord is beofre exit point. 
+     * @param coord
+     * @param pointStart pointEnd
+     * @return true if pointStart< coord < point (in any dimension)
+     */
+    //CARE! now just check endpoint not sure if good,chance comments later
+    private boolean coordInside(double[] coord, double[] pointStart, double[] pointEnd) {
+    	if (coord[0] < pointEnd[0] && coord[1] < pointEnd[1] && coord[2] < pointEnd[2] &&
+    		coord[0] >= pointStart[0] && coord[1] >= pointStart[1] && coord[2] >= pointStart[2]){
+    		return true;
+    	}
+    	return false;
+    }
 
-        color = (255 << 24) | (255 << 16) | (255 << 8); 
-        
-        return color;
+	int traceRayMIP(double[] entryPoint, double[] exitPoint, double[] viewVec, double sampleStep) {
+        /* to be implemented:  You need to sample the ray and implement the MIP
+         * right now it just returns yellow as a color
+         */
+        double[] coord = entryPoint;
+//        double[] gap=new double[3];
+        /*gap calculates the vector in the direction of the entry point to the exit point;
+        gap has magnitude of the sample step */
+//        for (int k=0;k<3;k++){
+//        	gap[k]=(exitPoint[k]-entryPoint[k])/VectorMath.distance(exitPoint, entryPoint)*sampleStep;
+//        }
+//        
+//        System.out.println(gap[0]);
+//        System.out.println(gap[1]);
+//        System.out.println(gap[2]);
+        /*the opacity has to be less than 1, and the error correction 
+        prevents the never ending loop as the opacity converges a value less than 1.
+        The gap coordinate is the coordinate on the gap vector.
+        The color is calculated as the value which of the nearest neighbor voxel and the opacity 
+        is the ratio of this color by maximum voxel value.
+        Finally iterations for obtaining final color value is done*/
+        int maxSteps = (int) (VectorMath.distance(exitPoint, entryPoint) / sampleStep);
+        int i = 0;
+        int maxColor = Integer.MIN_VALUE;
+        int tmpColor = 0;
+//        System.out.println(maxSteps);
+//    	System.out.println(entryPoint[0] + " " + entryPoint[1] + " " + entryPoint[2]);
+//    	System.out.println(coord[0] + " " + coord[1] + " " + coord[2]);
+//    	System.out.println(exitPoint[0] + " " + exitPoint[1] + " " + exitPoint[2]);
+//    	System.out.println(viewVec[0] + " " + viewVec[1] + " " + viewVec[2]);
+        while (i <= maxSteps){
+        	coord[0] = coord[0] - (viewVec[0] * sampleStep);
+        	coord[1] = coord[1] - (viewVec[1] * sampleStep);
+        	coord[2] = coord[2] - (viewVec[2] * sampleStep);
+//        	System.out.println(coord[2]+ " " + i);
+        	tmpColor = volume.getVoxelNN(coord);
+        	if (maxColor < tmpColor){
+        		maxColor = tmpColor;
+        	}
+        	i++;
+        }
+//    	System.out.println(entryPoint[0] + " " + entryPoint[1] + " " + entryPoint[2]);
+//    	System.out.println(coord[0] + " " + coord[1] + " " + coord[2]);
+//    	System.out.println(exitPoint[0] + " " + exitPoint[1] + " " + exitPoint[2]);
+//        System.out.println("Done " + maxColor );
+//     		for (int i=0;i<3;i++){
+//     			if(gapcoordinate[i]<exitPoint[i]){
+//    				gapcoordinate[i]=entryPoint[i]+gap[i]*j;
+//     			}
+//	 			color=volume.getVoxelNN(gapcoordinate);
+//	 			int max=volume.getMaximum();
+//	     		opacity=color/max;
+//	    		opacity=opacityprev*(1-opacity)+opacity;
+//	 			colornew=color+(1-opacity)*colornew;
+//	 			opacityprev=opacity;
+//     			}
+//     		System.out.println(color);
+//     		System.out.println(colornew);
+//     		System.out.println(opacity);
+//     		j++;
+//     		}
+//        return Math.round(colornew);
+        return maxColor;
     }
    
     
@@ -343,8 +433,9 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                 image.setRGB(i, j, 0);
             }
         }
-
-
+        double max = volume.getMaximum();
+        TFColor voxelColor = new TFColor();
+        float pixelFloat = 0;
         for (int j = 0; j < image.getHeight(); j += increment) {
             for (int i = 0; i < image.getWidth(); i += increment) {
                 // compute starting points of rays in a plane shifted backwards to a position behind the data set
@@ -360,11 +451,26 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                     //System.out.println("Entry: " + entryPoint[0] + " " + entryPoint[1] + " " + entryPoint[2]);
                     //System.out.println("Exit: " + exitPoint[0] + " " + exitPoint[1] + " " + exitPoint[2]);
                     int pixelColor = 0;
-                                   
+                    if(compositingMode) { 
+                        voxelColor = compositing(entryPoint,exitPoint,viewVec,sampleStep);
+                        
+                    }
                     /* set color to green if MipMode- see slicer function*/
-                   if(mipMode) 
+                   if(mipMode) {
                         pixelColor= traceRayMIP(entryPoint,exitPoint,viewVec,sampleStep);
+	                   voxelColor.r = pixelColor/max;
+	                   voxelColor.g = voxelColor.r;
+	                   voxelColor.b = voxelColor.r;
+	                   voxelColor.a = pixelColor > 0 ? 1.0 : 0.0;
+                   }
                                 
+                   // BufferedImage expects a pixel color packed as ARGB in an int
+                   int c_alpha = voxelColor.a <= 1.0 ? (int) Math.floor(voxelColor.a * 255) : 255;
+                   int c_red = voxelColor.r <= 1.0 ? (int) Math.floor(voxelColor.r * 255) : 255;
+                   int c_green = voxelColor.g <= 1.0 ? (int) Math.floor(voxelColor.g * 255) : 255;
+                   int c_blue = voxelColor.b <= 1.0 ? (int) Math.floor(voxelColor.b * 255) : 255;
+                   pixelColor = (c_alpha << 24) | (c_red << 16) | (c_green << 8) | c_blue;
+                   image.setRGB(i, j, pixelColor);
                     for (int ii = i; ii < i + increment; ii++) {
                         for (int jj = j; jj < j + increment; jj++) {
                             image.setRGB(ii, jj, pixelColor);

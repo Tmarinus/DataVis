@@ -178,11 +178,16 @@ public class Volume {
         return minimum;
     }
 
+    private short max = 0;
     public short getMaximum() {
+    	if (max != 0){
+    		return max;
+    	}
         short maximum = data[0];
         for (int i=0; i<data.length; i++) {
             maximum = data[i] > maximum ? data[i] : maximum;
         }
+        max = maximum;
         return maximum;
     }
  
