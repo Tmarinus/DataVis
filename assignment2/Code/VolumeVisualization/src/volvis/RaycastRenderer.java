@@ -252,31 +252,33 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
          * right now it just returns yellow as a color
         */
     	float colornew=0;
-         float color=0;
-         double errorcorrection = 0.001;
-         int j=1;
-         boolean insidebox=true;
-         float opacity=0;
-         float opacityprev=0;
-         double[] gapcoordinate=new double[3];
-	     	while (opacity<1-errorcorrection){
-	     		for (int i=0;i<3;i++){
-	     			if(gapcoordinate[i]<exitPoint[i]){
-	     				gapcoordinate[i]=entryPoint[i]+viewVec[i]*j;
-	     			}
-	     			color=volume.getVoxelNN(gapcoordinate);
-		 			int max=volume.getMaximum();
-		     		opacity=color/max;
-		     		opacity=opacityprev*(1-opacity)+opacity;
-		 			colornew=color+(1-opacity)*colornew;
-		 			opacityprev=opacity;
-		     	}		     	
-	     		j++;	
-	     		System.out.println(opacity);
-	     	}
-	     	return Math.round(colornew);
-	     }
-
+        float color=0;
+        int j=1;
+        float opacity=0;
+        float opacityprev=0;
+        double errorcorrection=0.001;
+        double[] gapcoordinate=new double[3];
+        double[] gap=new double[3];
+        for (int k=0;k<3;k++){
+        	gap[k]=(exitPoint[k]-entryPoint[k])*sampleStep;
+        }
+        while (opacity<1-errorcorrection){
+     		for (int i=0;i<3;i++){
+     			if(gapcoordinate[i]<exitPoint[i]){
+    				gapcoordinate[i]=entryPoint[i]+gap[i]*j;
+     			}
+	 			color=volume.getVoxelNN(gapcoordinate);
+	 			int max=volume.getMaximum();
+	     		opacity=color/max;
+	    		opacity=opacityprev*(1-opacity)+opacity;
+	 			colornew=color+(1-opacity)*colornew;
+	 			opacityprev=opacity;
+     			}
+     		System.out.println(opacity);
+     		j++;
+     		}
+        return Math.round(colornew);
+    	}
       int traceRayMIP(double[] entryPoint, double[] exitPoint, double[] viewVec, double sampleStep) {
         /* to be implemented:  You need to sample the ray and implement the MIP
          * right now it just returns yellow as a color
