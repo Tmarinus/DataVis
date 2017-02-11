@@ -9,7 +9,6 @@ import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.util.texture.Texture;
 import com.jogamp.opengl.util.texture.awt.AWTTextureIO;
 
-import external_libs.Scalr;
 import gui.RaycastRendererPanel;
 import gui.TransferFunction2DEditor;
 import gui.TransferFunctionEditor;
@@ -423,7 +422,6 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         double[] entryPoint = new double[3];
         double[] exitPoint = new double[3];
         
-        int increment=1;
         float sampleStep=0.2f;
         
 
@@ -433,11 +431,17 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                 image.setRGB(i, j, 0);
             }
         }
+        boolean activeResolution = false;
+        int local_increment = 1;
+        if (interactiveMode) {
+        	activeResolution = true;
+        	local_increment = incrementSize;
+        }
         double max = volume.getMaximum();
         TFColor voxelColor = new TFColor();
         float pixelFloat = 0;
-        for (int j = 0; j < image.getHeight(); j += increment) {
-            for (int i = 0; i < image.getWidth(); i += increment) {
+        for (int j = 0; j < image.getHeight(); j += local_increment) {
+            for (int i = 0; i < image.getWidth(); i += local_increment) {
                 // compute starting points of rays in a plane shifted backwards to a position behind the data set
                 pixelCoord[0] = uVec[0] * (i - imageCenter) + vVec[0] * (j - imageCenter) - viewVec[0] * imageCenter
                         + volume.getDimX() / 2.0;
@@ -471,11 +475,15 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                    int c_blue = voxelColor.b <= 1.0 ? (int) Math.floor(voxelColor.b * 255) : 255;
                    pixelColor = (c_alpha << 24) | (c_red << 16) | (c_green << 8) | c_blue;
                    image.setRGB(i, j, pixelColor);
-                    for (int ii = i; ii < i + increment; ii++) {
-                        for (int jj = j; jj < j + increment; jj++) {
-                            image.setRGB(ii, jj, pixelColor);
-                        }
-                    }
+                   if (activeResolution) {
+                   	for (int incr_j = j; incr_j < j+local_increment && incr_j < image.getHeight(); incr_j++){
+                   		for (int incr_i = i; incr_i < i+local_increment && incr_i < image.getWidth(); incr_i++){
+                           	image.setRGB(incr_i, incr_j, pixelColor);
+                       	}
+                   	}
+                   } else {
+                   	image.setRGB(i, j, pixelColor);
+                   }
                 }
 
             }
