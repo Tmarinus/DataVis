@@ -259,9 +259,17 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         double errorcorrection=0.001;
         double[] gapcoordinate=new double[3];
         double[] gap=new double[3];
+        /*gap calculates the vector in the direction of the entry point to the exit point;
+        gap has magnitude of the sample step */
         for (int k=0;k<3;k++){
-        	gap[k]=(exitPoint[k]-entryPoint[k])*sampleStep;
+        	gap[k]=(exitPoint[k]-entryPoint[k])/VectorMath.distance(exitPoint, entryPoint)*sampleStep;
         }
+        /*the opacity has to be less than 1, and the error correction 
+        prevents the never ending loop as the opacity converges a value less than 1.
+        The gap coordinate is the coordinate on the gap vector.
+        The color is calculated as the value which of the nearest neighbor voxel and the opacity 
+        is the ratio of this color by maximum voxel value.
+        Finally iterations for obtaining final color value is done*/
         while (opacity<1-errorcorrection){
      		for (int i=0;i<3;i++){
      			if(gapcoordinate[i]<exitPoint[i]){
@@ -274,6 +282,8 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
 	 			colornew=color+(1-opacity)*colornew;
 	 			opacityprev=opacity;
      			}
+     		System.out.println(color);
+     		System.out.println(colornew);
      		System.out.println(opacity);
      		j++;
      		}
