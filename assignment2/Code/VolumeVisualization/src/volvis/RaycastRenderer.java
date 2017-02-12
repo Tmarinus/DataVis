@@ -267,8 +267,13 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
     	TFColor finalColor= new TFColor(0,0,0,1);
     	TFColor tmpColor = null;
         double[] coord = entryPoint;
+        
+        // calculate max steps by dividing the volumetric data "cube" to the sample step we provide as parameter
         int maxSteps = (int) (VectorMath.distance(exitPoint, entryPoint) / sampleStep);
         int maxColor = volume.getMaximum();
+        
+        // while we are still in the cube, we iterate over the volumetric samples
+        // and calculate their final color value until we reach the end of the cube
         for (int i = 0; i < maxSteps; i++) {
         	coord[0] = coord[0] - (viewVec[0] * sampleStep);
         	coord[1] = coord[1] - (viewVec[1] * sampleStep);
@@ -303,63 +308,26 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
          * right now it just returns yellow as a color
          */
         double[] coord = entryPoint;
-//        double[] gap=new double[3];
-        /*gap calculates the vector in the direction of the entry point to the exit point;
-        gap has magnitude of the sample step */
-//        for (int k=0;k<3;k++){
-//        	gap[k]=(exitPoint[k]-entryPoint[k])/VectorMath.distance(exitPoint, entryPoint)*sampleStep;
-//        }
-//        
-//        System.out.println(gap[0]);
-//        System.out.println(gap[1]);
-//        System.out.println(gap[2]);
-        /*the opacity has to be less than 1, and the error correction 
-        prevents the never ending loop as the opacity converges a value less than 1.
-        The gap coordinate is the coordinate on the gap vector.
-        The color is calculated as the value which of the nearest neighbor voxel and the opacity 
-        is the ratio of this color by maximum voxel value.
-        Finally iterations for obtaining final color value is done*/
+        
+        // calculate max steps by dividing the volumetric data "cube" to the sample step we provide as parameter
         int maxSteps = (int) (VectorMath.distance(exitPoint, entryPoint) / sampleStep);
         int i = 0;
+        // define variables to hold maximum intensity value found and current (temporary) value
         int maxColor = Integer.MIN_VALUE;
         int tmpColor = 0;
-//        System.out.println(maxSteps);
-//    	System.out.println(entryPoint[0] + " " + entryPoint[1] + " " + entryPoint[2]);
-//    	System.out.println(coord[0] + " " + coord[1] + " " + coord[2]);
-//    	System.out.println(exitPoint[0] + " " + exitPoint[1] + " " + exitPoint[2]);
-//    	System.out.println(viewVec[0] + " " + viewVec[1] + " " + viewVec[2]);
+        
+        // while we are still in the cube, we iterate over the z-dimension and compare the values. 
+        // We keep only the maximum value and return it to be projected as final image on the plane
         while (i <= maxSteps){
         	coord[0] = coord[0] - (viewVec[0] * sampleStep);
         	coord[1] = coord[1] - (viewVec[1] * sampleStep);
         	coord[2] = coord[2] - (viewVec[2] * sampleStep);
-//        	System.out.println(coord[2]+ " " + i);
         	tmpColor = volume.getVoxelNN(coord);
         	if (maxColor < tmpColor){
         		maxColor = tmpColor;
         	}
         	i++;
         }
-//    	System.out.println(entryPoint[0] + " " + entryPoint[1] + " " + entryPoint[2]);
-//    	System.out.println(coord[0] + " " + coord[1] + " " + coord[2]);
-//    	System.out.println(exitPoint[0] + " " + exitPoint[1] + " " + exitPoint[2]);
-//        System.out.println("Done " + maxColor );
-//     		for (int i=0;i<3;i++){
-//     			if(gapcoordinate[i]<exitPoint[i]){
-//    				gapcoordinate[i]=entryPoint[i]+gap[i]*j;
-//     			}
-//	 			color=volume.getVoxelNN(gapcoordinate);
-//	 			int max=volume.getMaximum();
-//	     		opacity=color/max;
-//	    		opacity=opacityprev*(1-opacity)+opacity;
-//	 			colornew=color+(1-opacity)*colornew;
-//	 			opacityprev=opacity;
-//     			}
-//     		System.out.println(color);
-//     		System.out.println(colornew);
-//     		System.out.println(opacity);
-//     		j++;
-//     		}
-//        return Math.round(colornew);
         return maxColor;
     }
    
