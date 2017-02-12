@@ -156,13 +156,18 @@ public class GradientVolume {
       }
     }
     
+    private double setMaximum = Float.MIN_VALUE;
     public double getMaxGradientMagnitude() {
         float max = Float.MIN_VALUE;
+        if (setMaximum != max) {
+        	return setMaximum;
+        }
         for (int i = 0; i < data.length; i++) {
           if (data[i].mag > max) {
             max = data[i].mag;
           }
         }
+        setMaximum = max;
         return max;
     }
     

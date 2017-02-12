@@ -66,9 +66,9 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
         compositingButton = new javax.swing.JRadioButton();
         tf2dButton = new javax.swing.JRadioButton();
         shadingCheckbox = new javax.swing.JCheckBox();
+        interpolateCheckbox = new javax.swing.JCheckBox();
         slicerNNButton = new javax.swing.JRadioButton();
         slicerTransferButton = new javax.swing.JRadioButton();
-        slicerTrilinearButton = new javax.swing.JRadioButton();
         buttonGroup2 = new javax.swing.ButtonGroup();
         slowModeCheckbox = new javax.swing.JCheckBox();
         
@@ -124,6 +124,12 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
                 shadingCheckboxActionPerformed(evt);
             }
         });
+        interpolateCheckbox.setText("Coordinate interpolation");
+        interpolateCheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	interpolateCheckboxActionPerformed(evt);
+            }
+        });
 
         slowModeCheckbox.setText("Skip frames");
         slowModeCheckbox.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +141,7 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
         //Ugly but science gui and dont want to waste time
         //Add select box for colour selection, ONLY SELECT ONE
         buttonGroup2.add(slicerNNButton);
-        slicerNNButton.setText("Slicer Nearest Neighbour");
+        slicerNNButton.setText("Slicer Grey");
         slicerNNButton.setSelected(true);
         slicerNNButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,17 +149,10 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
             }
         });
         buttonGroup2.add(slicerTransferButton);
-        slicerTransferButton.setText("Slicer transfer");
+        slicerTransferButton.setText("Slicer Transfer");
         slicerTransferButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 slicerTransferButtonActionPerformed(evt);
-            }
-        });
-        buttonGroup2.add(slicerTrilinearButton);
-        slicerTrilinearButton.setText("Slicer trilinear");
-        slicerTrilinearButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                slicerTrilinearButtonActionPerformed(evt);
             }
         });
         
@@ -185,9 +184,9 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
                         .addComponent(mipButton)
                         .addComponent(slicerButton)
                         .addComponent(shadingCheckbox)
+                        .addComponent(interpolateCheckbox)
                         .addComponent(slicerNNButton)
                         .addComponent(slicerTransferButton)
-                        .addComponent(slicerTrilinearButton)
                         .addComponent(increaseSizeLabel)
                         .addComponent(increaseSelector)
                         .addComponent(slowModeCheckbox)))
@@ -213,9 +212,9 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
                 .addComponent(tf2dButton)
                 .addGap(18, 18, 18)
                 .addComponent(shadingCheckbox)
+                .addComponent(interpolateCheckbox)
                 .addComponent(slicerNNButton)
                 .addComponent(slicerTransferButton)
-                .addComponent(slicerTrilinearButton)
                 .addComponent(increaseSizeLabel)
                 .addComponent(increaseSelector)
                 .addComponent(slowModeCheckbox)
@@ -242,14 +241,14 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
     private void shadingCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingCheckboxActionPerformed
         renderer.setShadingMode(shadingCheckbox.isSelected());
     }//GEN-LAST:event_shadingCheckboxActionPerformed
+    private void interpolateCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingCheckboxActionPerformed
+        renderer.setInterpolate(interpolateCheckbox.isSelected());
+    }//GEN-LAST:event_shadingCheckboxActionPerformed
     private void slicerTransferButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingButtonActionPerformed
         renderer.SetSlicerTransfer(slicerTransferButton.isSelected());
     }
     private void slicerNNButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingButtonActionPerformed
         renderer.SetSlicerNN(slicerNNButton.isSelected());
-    }
-    private void slicerTrilinearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shadingButtonActionPerformed
-        renderer.SetSlicerTrilinear(slicerTrilinearButton.isSelected());
     }
     private void increaseSelectorActionPerformed(ChangeEvent evt) {//GEN-FIRST:event_shadingButtonActionPerformed
     	
@@ -273,13 +272,13 @@ public class RaycastRendererPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton mipButton;
     private javax.swing.JLabel renderingSpeedLabel;
     private javax.swing.JCheckBox shadingCheckbox;
+    private javax.swing.JCheckBox interpolateCheckbox;
     private javax.swing.JRadioButton slicerButton;
     private javax.swing.JRadioButton tf2dButton;
     // End of variables declaration//GEN-END:variables
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JRadioButton slicerTransferButton;
     private javax.swing.JRadioButton slicerNNButton;
-    private javax.swing.JRadioButton slicerTrilinearButton;
     private javax.swing.JSpinner increaseSelector;
     
 }

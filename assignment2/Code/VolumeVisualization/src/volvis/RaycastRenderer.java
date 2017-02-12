@@ -49,11 +49,19 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
     //Set the size of skipped elements when interacting
     private int incrementSize = 2;
     
-    // Select slicer colour calculation
-    public enum SlicerType {
-    	TRILINEAR, NEARESTNEIGH, TRANSFER
+    //Interpolate or NN
+    private boolean interpolate = false;
+    
+    public void setInterpolate(boolean val){
+    	interpolate = val;
+    	changed();
     }
-    private SlicerType currSlicerType = SlicerType.TRILINEAR;
+    
+    // Select slicer colour calculation sort of legacy
+    public enum SlicerType {
+    	NEARESTNEIGH, TRANSFER
+    }
+    private SlicerType currSlicerType = SlicerType.NEARESTNEIGH;
     
     public void setSlicerType(SlicerType newType) {
     	currSlicerType = newType;
@@ -260,6 +268,53 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
             }
         }
     }
+    
+    TFColor tf2dRay(double[] entryPoint, double[] exitPoint, double[] viewVec, double sampleStep) {
+        /* to be implemented:  You need to sample the ray and implement the MIP
+         * right now it just returns yellow as a color
+        */
+    	TFColor finalColor= new TFColor(0,0,0,1);
+    	short tmpGradient = 0;
+        double[] coord = entryPoint;
+        short tmpVoxelValue;
+        double alpha;
+        double radius = tfEditor2D.triangleWidget.radius;
+        int intensity = tfEditor2D.triangleWidget.baseIntensity;
+        TFColor baseColor = tfEditor2D.triangleWidget.color;
+        // calculate max steps by dividing the volumetric data "cube" to the sample step we provide as parameter
+        int maxSteps = (int) (VectorMath.distance(exitPoint, entryPoint) / sampleStep);
+        int maxColor = volume.getMaximum();
+        
+        // while we are still in the cube, we iterate over the volumetric samples
+        // and calculate their final color value until we reach the end of the cube
+        for (int i = 0; i < maxSteps; i++) {
+        	coord[0] = coord[0] - (viewVec[0] * sampleStep);
+        	coord[1] = coord[1] - (viewVec[1] * sampleStep);
+        	coord[2] = coord[2] - (viewVec[2] * sampleStep);
+        	if (interpolate) {
+	        	tmpGradient	 = (short) gradients.getGradientInterpolate(coord).mag;
+	        	tmpVoxelValue = volume.getVoxelInterpolateTrilinear(coord);
+        	} else {
+	        	tmpGradient	 = (short) gradients.getGradientNN(coord).mag;
+	        	tmpVoxelValue = volume.getVoxelNN(coord);
+        	}
+        	if (tmpGradient == 0 && tmpVoxelValue == intensity){
+        		alpha = finalColor.a;
+        	} else if (tmpGradient > 0 && intensity >= tmpVoxelValue - (tmpGradient * radius) &&
+        				intensity <= tmpVoxelValue + (tmpGradient * radius)) {
+        		alpha = 1 - (Math.abs(intensity - tmpVoxelValue)/(tmpGradient*radius));
+        	} else {
+        		alpha = 0;
+        	}
+        	finalColor.a = finalColor.a * (1 - alpha) + alpha;
+        	finalColor.r = finalColor.r * (1 - alpha) + alpha * baseColor.r;
+        	finalColor.g = finalColor.g * (1 - alpha) + alpha * baseColor.g;
+        	finalColor.b = finalColor.b * (1 - alpha) + alpha * baseColor.b;
+        	
+        }
+        return finalColor;
+	}
+    
     TFColor compositing(double[] entryPoint, double[] exitPoint, double[] viewVec, double sampleStep) {
         /* to be implemented:  You need to sample the ray and implement the MIP
          * right now it just returns yellow as a color
@@ -278,7 +333,12 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         	coord[0] = coord[0] - (viewVec[0] * sampleStep);
         	coord[1] = coord[1] - (viewVec[1] * sampleStep);
         	coord[2] = coord[2] - (viewVec[2] * sampleStep);
-        	tmpColor = tFunc.getColor(volume.getVoxelNN(coord));
+        	
+        	if (interpolate) {
+        		tmpColor = tFunc.getColor(volume.getVoxelInterpolateTrilinear(coord));
+        	} else {
+        		tmpColor = tFunc.getColor(volume.getVoxelNN(coord));
+        	}
         	finalColor.a = finalColor.a * (1 - tmpColor.a) + tmpColor.a;
         	finalColor.r = finalColor.r * (1 - tmpColor.a) + tmpColor.a * tmpColor.r;
         	finalColor.g = finalColor.g * (1 - tmpColor.a) + tmpColor.a * tmpColor.g;
@@ -286,7 +346,7 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         	
         }
         return finalColor;
-    	}
+	}
     
     /**
      * Check if coord is beofre exit point. 
@@ -322,7 +382,11 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
         	coord[0] = coord[0] - (viewVec[0] * sampleStep);
         	coord[1] = coord[1] - (viewVec[1] * sampleStep);
         	coord[2] = coord[2] - (viewVec[2] * sampleStep);
-        	tmpColor = volume.getVoxelNN(coord);
+        	if (interpolate) { 
+        		tmpColor = volume.getVoxelInterpolateTrilinear(coord);
+        	} else {
+        		tmpColor = volume.getVoxelNN(coord);
+        	}
         	if (maxColor < tmpColor){
         		maxColor = tmpColor;
         	}
@@ -433,6 +497,8 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
 	                   voxelColor.g = voxelColor.r;
 	                   voxelColor.b = voxelColor.r;
 	                   voxelColor.a = pixelColor > 0 ? 1.0 : 0.0;
+                   } else if (tf2dMode) {
+                	   voxelColor = tf2dRay(entryPoint,exitPoint,viewVec,sampleStep);
                    }
                                 
                    // BufferedImage expects a pixel color packed as ARGB in an int
@@ -508,28 +574,24 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
                 //Switch to decide which color creation to apply.
                 switch (currSlicerType) {
                 case NEARESTNEIGH:
-                    val = volume.getVoxelNN(pixelCoord);
+                	if (interpolate){
+                		val = volume.getVoxelInterpolateTrilinear(pixelCoord);
+                	} else {
+                		val = volume.getVoxelNN(pixelCoord);
+                	}
                     voxelColor.r = val/max;
                     voxelColor.g = voxelColor.r;
                     voxelColor.b = voxelColor.r;
                     voxelColor.a = val > 0 ? 1.0 : 0.0;  // this makes intensity 0 completely transparent and the rest opaque
                 	break;
                 case TRANSFER:
-                    val = volume.getVoxelInterpolateTrilinear(pixelCoord);
-                    // Alternatively, apply the transfer function to obtain a color
-                    TFColor auxColor = new TFColor(); 
-                    auxColor = tFunc.getColor(val);
-                    voxelColor.r=auxColor.r;
-                    voxelColor.g=auxColor.g;
-                    voxelColor.b=auxColor.b;
-                    voxelColor.a=auxColor.a;
-                	break;
-                case TRILINEAR:
-                	val = volume.getVoxelInterpolateTrilinear(pixelCoord);
-                    voxelColor.r = val/max;
-                    voxelColor.g = voxelColor.r;
-                    voxelColor.b = voxelColor.r;
-                    voxelColor.a = val > 0 ? 1.0 : 0.0;  // this makes intensity 0 completely transparent and the rest opaque
+                	if (interpolate){
+                		val = volume.getVoxelInterpolateTrilinear(pixelCoord);
+                	} else {
+                		val = volume.getVoxelNN(pixelCoord);
+                	}
+                    // Alternatively, apply the transfer function to obtain a color 
+                    voxelColor = tFunc.getColor(val);
                 	break;
                 }
                 
@@ -655,12 +717,6 @@ public class RaycastRenderer extends Renderer implements TFChangeListener {
 			changed();
 		}
 		
-	}
-	public void SetSlicerTrilinear(boolean selected) {
-		if (true) {
-			currSlicerType = SlicerType.TRILINEAR;
-			changed();
-		}
 	}
 	public void SetSlicerNN(boolean selected) {
 		if (true) {
